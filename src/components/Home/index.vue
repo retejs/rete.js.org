@@ -1,12 +1,13 @@
 <template lang="pug">
 .home
-  p.title {{title | stranslate}}
-  p.description
-    | {{description | stranslate}}
+  .section
+    p.title {{title | stranslate}}
+    p.description
+      | {{description | stranslate}}
   .links
     iframe(:src="gitHubBadge" frameborder="0" scrolling="0" width="160px" height="30px")
   Logo.logo
-  .highlights
+  .highlights.section
     .highlight
       .title {{'Модульный' | translate}}
       .description {{'Основанная на событиях архитектура дает возможность добавлять новые функциональные возможности в виде плагинов' | translate}}
@@ -38,26 +39,28 @@ export default {
 
 
 <style lang="sass" scoped>
+@import '../../assets/styles/media.sass'
+.section
+  margin: 2em 0
 .title
-  margin: 3em 0 1em 0
+  margin: 1em 2em
 .description
   font-size: 80%
-  margin: 0 0 3em 0
+  margin: 1em 2em
 
 .home
   .links
     margin-top: 5vh
     text-align: center
   .logo
-    max-height: 50vh;
+    max-height: 50vh
+    max-width: 80vw
     margin: calc(1vw + 3vh)
   .highlights
     display: flex
-    padding: 2vh 0 8vh 0
+    +phone
+      flex-direction: column
     .highlight
       flex: 1
       font-size: 85%
-      .description
-        margin-left: 4vw
-        margin-right: 4vw
 </style>

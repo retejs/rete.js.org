@@ -1,27 +1,45 @@
 <template lang="pug">
 .header
-  Menu.menu(mode="horizontal")
-    MenuItem.logo(name="1", to="/")
+  Menu.menu(
+      :mode="smallScreen?'vertical':'horizontal'"
+      :class="{horizontal: !smallScreen}"
+      width="100%"
+    )
+    MenuItem.logo(name="logo", to="/")
       Logo.icon.ivu-icon(:hover="true")
       span Rete.js
     .space
-    Submenu(name="2")
+    Submenu(name="learn")
       template(slot="title") {{'Изучение' | translate}}
-      MenuItem(name="2-2", to="/docs") {{'Документация' | translate}}
-      MenuItem(name="2-1", to="/examples") {{'Примеры' | translate}}
-    Submenu(name="3")
+      MenuItem(name="docs", to="/docs") {{'Документация' | translate}}
+      MenuItem(name="examples", to="/examples") {{'Примеры' | translate}}
+    Submenu(name="ecosystem")
       template(slot="title") {{'Экосистема' | translate}}
-      MenuItem(name="3-1", to="/components") {{'Компоненты' | translate}}
-      MenuItem(name="3-1", to="/cli") {{'Rete CLI' | translate}}
-    MenuItem(name="4", to="/donate") {{'Пожертвовать' | translate}}
+      MenuItem(name="components", to="/components") {{'Компоненты' | translate}}
+      MenuItem(name="cli", to="/cli") {{'Rete CLI' | translate}}
+    MenuItem(name="donate", to="/donate") {{'Пожертвовать' | translate}}
 </template>
 
 <script>
 import Logo from './Logo';
 
 export default {
+  data() {
+    return {
+      smallScreen: false,
+    }
+  },
   components: {
     Logo
+  },
+  methods: {
+    resize() {
+      this.smallScreen = window.innerWidth < 500
+    }
+  },
+  mounted(){
+    this.resize();
+    window.addEventListener('resize', this.resize)
   }
 }
 </script>
@@ -31,7 +49,8 @@ export default {
 .header
   align-self: stretch
   .menu
-    display: flex
+    &.horizontal
+      display: flex
     .logo
       font-size: 20px
       .icon
