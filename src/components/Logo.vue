@@ -1,8 +1,8 @@
 <template>
 <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
   xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-  xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="210mm" height="140mm" viewBox="0 0 210 140" version="1.1"
-  id="svg8" inkscape:version="0.92.3 (unknown)" sodipodi:docname="d3ne1.svg">
+  xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="210mm" height="140mm" :viewBox="hover ? '40 40 130 80' : '0 0 210 140'" version="1.1"
+  id="svg8" inkscape:version="0.92.3 (unknown)" sodipodi:docname="d3ne1.svg" :class="{hover: hover}">
   <defs id="defs2" />
   <sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageopacity="0.0" inkscape:pageshadow="2"
     inkscape:zoom="1.979899" inkscape:cx="324.42862" inkscape:cy="899.00069" inkscape:document-units="mm" inkscape:current-layer="layer1"
@@ -50,17 +50,25 @@
 </svg>
 </template>
 
-<style scoped>
-svg {
-    max-height: 60vh;
+<script>
+export default {
+  props: {
+    hover: {
+      type: Boolean,
+      default: false
+    },
+  }
 }
+</script>
 
+
+<style scoped>
 .g1 {
   transition: 0.4s;
   transition-delay: 0.5s;
 }
 
-svg:hover .g1 {
+svg:hover .g1, svg.hover .g1 {
   transition-delay: 0s !important;
 }
 
@@ -69,7 +77,7 @@ svg:hover .g1 {
   transition-delay: 0s;
 }
 
-svg:hover .g2 {
+svg:hover .g2, svg.hover .g2 {
   transition-delay: 0.4s;
 }
 
@@ -85,23 +93,24 @@ svg:hover .g2 {
   transform-origin: 160px 40px;
 }
 
-svg:hover #node1 {
+svg:hover #node1, svg.hover #node1 {
   transform: translate(62px, 30px) skewX(-15deg) rotate(15deg)
 }
 
-svg:hover #node2 {
+svg:hover #node2, svg.hover #node2 {
   transform: translate(70px, -28px) skewX(-15deg) rotate(15deg)
 }
 
-svg:hover #node3 {
+svg:hover #node3, svg.hover #node3 {
   transform: translate(-55px, 25px) skewX(-15deg) rotate(15deg) scaleY(0.6)
 }
 
-svg:hover .s {
+svg:hover .s, svg.hover .s {
   r: 0;
 } 
 
-svg:hover #content1, svg:hover #content2, svg:hover #content3 {
+svg:hover #content1, svg:hover #content2, svg:hover #content3,
+svg.hover #content1, svg.hover #content2, svg.hover #content3 {
   opacity: 0;
 } 
 
@@ -112,7 +121,7 @@ svg:hover #content1, svg:hover #content2, svg:hover #content3 {
   stroke-dasharray: 70; stroke-dashoffset: 0;
 }
 
-svg:hover .conn {
+svg:hover .conn, svg.hover .conn {
   stroke-dashoffset: 70 !important;
 }
 </style>
