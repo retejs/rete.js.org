@@ -8,14 +8,12 @@ script:
 
 cache:
   directories:
-    - "node_modules"
-
-before_deploy:
-  - cd dist
+  - node_modules
 
 deploy:
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
+  local_dir: dist
   on:
     branch: master
