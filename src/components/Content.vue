@@ -1,5 +1,5 @@
 <template lang="pug">
-.content
+Content.content
   router-view
 </template>
 

@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import iView from 'iview';
-import { setTranslations } from './i18n'
+import { setTranslations, detect } from './i18n'
 import 'iview/dist/styles/iview.css';
 
 import I18n from './i18n';
@@ -20,6 +20,6 @@ new Vue({
   router,
   render: h => h(App),
   created(){
-    setTranslations('en')
+    setTranslations(detect())
   }
 })

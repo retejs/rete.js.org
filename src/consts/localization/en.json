@@ -1,0 +1,16 @@
+{
+    "Изучение": "Home",
+    "Экосистема": "Ecosystem",
+    "Пожертвовать": "Donate",
+    "Документация": "Documentation",
+    "Примеры": "Examples",
+    "Компоненты": "Components",
+    "Модульный": "Modular",
+    "Гибкий": "Flexible",
+    "Универсальный": "Universal",
+    "JavaScript фреймворк для визуального программирования": "The JavaScript framework for visual programming",
+    "Rete это модульный фреймворк для визуаьного программирования": "Rete is a modular framework for visual programming",
+    "Rete позволяет Вам создавать редакторы узлов прямо в браузере": "Rete allows you to create node-based editor directly in the browser",
+    "Вы можете определить узлы и воркеры, которые возволят пользователям создавать инструкции для обработки данных без единой строчки кода": "You can define nodes and workers that allow users to create instructions for processing data in your editor without a single line of code"
+    
+}
