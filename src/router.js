@@ -1,8 +1,10 @@
 import VueRouter from 'vue-router';
-import Home from './components/Home';
-import Examples from './components/Examples';
-import Components from './components/Components';
-import Donate from './components/Donate';
+
+const Home = () => import('./components/Home');
+const Examples = () => import('./components/Examples');
+const Components = () => import('./components/Components');
+const Cli = () => import('./components/Cli');
+const Donate = () => import('./components/Donate');
 
 const router = new VueRouter({
   routes: [
@@ -11,6 +13,7 @@ const router = new VueRouter({
     { path: '/docs', beforeEnter(){ window.open('https://rete.readthedocs.io')} },
     { path: '/examples', component: Examples },
     { path: '/components', component: Components},
+    { path: '/cli', component: Cli},
     { path: '/donate', component: Donate },
   ]
 })

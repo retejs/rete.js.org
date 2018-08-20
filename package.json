@@ -9,6 +9,10 @@
   },
   "dependencies": {
     "iview": "^3.0.0",
+    "rete": "^1.0.0-alpha.8",
+    "rete-alight-render-plugin": "^0.1.5",
+    "rete-area-plugin": "^0.1.5",
+    "rete-connection-plugin": "^0.1.2",
     "sass-media-query": "^0.1.2",
     "vue": "^2.5.17",
     "vue-router": "^3.0.1",
