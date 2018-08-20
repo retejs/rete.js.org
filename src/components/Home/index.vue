@@ -8,26 +8,21 @@
     iframe(:src="gitHubBadge" frameborder="0" scrolling="0" width="160px" height="30px")
   Logo.logo
   .highlights.section
-    .highlight
-      .title {{'Модульный' | translate}}
-      .description {{'Основанная на событиях архитектура дает возможность добавлять новые функциональные возможности в виде плагинов' | translate}}
-    .highlight
-      .title {{'Гибкий' | translate}}
-      .description {{'Вы свободны в выборе необходимых компонентов. Подключайте те плагины, которые лучше всего подходят для Вашей задачи' | translate}}
-    .highlight
-      .title {{'Универсальный' | translate}}
-      .description {{'Фреймворк не привязак к какой либо предметной области, а только визуализирует и обрабатывает редактор узлов' | translate}}
+    .highlight(v-for="{ title, description } in highlights")
+      .title {{title | translate}}
+      .description {{description | translate}}
 </template>
 
 <script>
 import Logo from '../Logo';
-import { title, description } from '../../consts/product.json';
+import { title, description, highlights } from '../../consts/product.json';
 
 export default {
   data(){
     return {
       title,
       description,
+      highlights,
       gitHubBadge: 'https://ghbtns.com/github-btn.html?user=retejs&repo=rete&type=star&count=true&size=large'
     }
   },
