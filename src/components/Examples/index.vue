@@ -1,26 +1,26 @@
 <template lang="pug">
 .examples
   .example(v-for="(item, i) in list")
-    .text 
-      router-link.title(:to="'#'+item.key") {{item.title}}
-      | {{descriptions[item.key]}}
+    Info(:item="item")
     .view
       div(:ref="item.key")
 </template>
 
 <script>
-import descriptions from '../../consts/examples/descriptions.json';
 import list from './list';
+import Info from './Info';
 
 export default {
   data(){
     return {
-      list,
-      descriptions
+      list
     }
   },
   async mounted() {
     this.list.map(item => item.init(this.$refs[item.key][0]));
+  },
+  components: {
+    Info
   }
 }
 </script>
@@ -35,6 +35,7 @@ export default {
   .example
     display: flex
     max-width: 100%
+    margin: 6vh 0
     &:nth-child(odd)
       flex-direction: row-reverse
     +phone
@@ -43,11 +44,9 @@ export default {
       display: block
       font-size: 120%
       margin-bottom: 1em
-    .text
-      flex: 1
-      padding: 2em
     .view
       flex: 2
+      position: relative
       overflow: hidden
       max-height: 80vh
       min-height: 50vh

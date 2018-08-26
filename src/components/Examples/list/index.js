@@ -1,14 +1,58 @@
-import initEx1 from './ex1';
+import basic from './basic';
+import readonly from './readonly';
+import area from './area';
+import module from './module';
+import task from './task';
 
 export default [
     {
-        key: 'ex1',
-        title: 'Example 1',
-        init: initEx1
+        key: 'basic',
+        init: basic,
+        packages: [
+            'rete',
+            'rete-connection-plugin',
+            'rete-alight-render-plugin',
+            'rete-context-menu-plugin'
+        ]
     },
     {
-        key: 'ex2',
-        title: 'Example 2',
-        init: initEx1
+        key: 'readonly',
+        init: readonly,
+        packages: [
+            'rete',
+            'rete-connection-plugin',
+            'rete-alight-render-plugin',
+            'rete-readonly-plugin'
+        ]
+    },
+    {
+        key: 'area',
+        init: area,
+        packages: [
+            'rete',
+            'rete-connection-plugin',
+            'rete-alight-render-plugin',
+            'rete-area-plugin'
+        ]
+    },
+    {
+        key: 'module',
+        init: module,
+        packages: [
+            'rete',
+            'rete-connection-plugin',
+            'rete-alight-render-plugin',
+            'rete-module-plugin'
+        ]
+    },
+    {
+        key: 'task',
+        init: task,
+        packages: [
+            'rete',
+            'rete-connection-plugin',
+            'rete-alight-render-plugin',
+            'rete-task-plugin'
+        ]
     }
 ]

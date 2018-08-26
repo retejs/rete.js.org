@@ -27,7 +27,8 @@ export class AddComponent extends Component {
         var n2 = inputs['num2'].length?inputs['num2'][0]:node.data.num2;
         var sum = n1 + n2;
         
-        this.editor.nodes.find(n => n.id == node.id).controls.get('preview').setValue(sum);
+        var n = this.editor.nodes.find(n => n.id == node.id);
+        if(n) n.controls.get('preview').setValue(sum);
         outputs['num'] = sum;
     }
 }

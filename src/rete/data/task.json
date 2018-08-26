@@ -1,0 +1,123 @@
+{
+    "id": "retejs@0.1.0",
+    "nodes": {
+        "2": {
+            "id": 2,
+            "data": {},
+            "group": null,
+            "inputs": {},
+            "outputs": {
+                "act": {
+                    "connections": [
+                        {
+                            "node": 3,
+                            "input": "act"
+                        }
+                    ]
+                }, 
+                "key": {
+                    "connections": [
+                        {
+                            "node": 3,
+                            "input": "key"
+                        }
+                    ]
+                }
+            },
+            "position": [
+                114, 133
+            ],
+            "name": "Mouse event"
+        },
+        "3": {
+            "id": 3,
+            "data": {},
+            "group": null,
+            "inputs": {
+                "act": {
+                    "connections": [
+                        {
+                            "node": 2,
+                            "output": "act"
+                        }
+                    ]
+                }, 
+                "key": {
+                    "connections": [
+                        {
+                            "node": 2,
+                            "output": "data"
+                        }
+                    ]
+                }
+            },
+            "outputs": {
+                "then": {
+                    "connections": [
+                        {
+                            "node": 10,
+                            "input": "act"
+                        }
+                    ]
+                }, 
+                "else": {
+                    "connections": [
+                        {
+                            "node": 11,
+                            "input": "act"
+                        }
+                    ]
+                }
+            },
+            "position": [
+                443, 112
+            ],
+            "name": "Match"
+        },
+        "10": {
+            "id": 10,
+            "data": {
+                "msg": "Mouse move + Ctrl"
+            },
+            "group": null,
+            "inputs": {
+                "act": {
+                    "connections": [
+                        {
+                            "node": 3,
+                            "output": "act"
+                        }
+                    ]
+                }
+            },
+            "outputs": {},
+            "position": [
+                773, 106
+            ],
+            "name": "Alert"
+        },
+        "11": {
+            "id": 11,
+            "data": {
+                "msg": "Mouse move"
+            },
+            "group": null,
+            "inputs": {
+                "act": {
+                    "connections": [
+                        {
+                            "node": 3,
+                            "output": 1
+                        }
+                    ]
+                }
+            },
+            "outputs": {},
+            "position": [
+                766, 292
+            ],
+            "name": "Alert"
+        }
+    },
+    "groups": {}
+}
