@@ -3,6 +3,7 @@ import readonly from './readonly';
 import area from './area';
 import module from './module';
 import task from './task';
+import customization from './customization';
 
 export default [
     {
@@ -54,5 +55,14 @@ export default [
             'rete-alight-render-plugin',
             'rete-task-plugin'
         ]
-    }
+    },
+    {
+        key: 'customization',
+        init: customization,
+        packages: [
+            'rete',
+            'rete-connection-plugin',
+            'rete-alight-render-plugin'
+        ]
+    },
 ]
