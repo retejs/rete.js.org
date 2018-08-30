@@ -3,11 +3,11 @@ import ConnectionPlugin from 'rete-connection-plugin';
 import AlightRenderPlugin from 'rete-alight-render-plugin';
 import AreaPlugin from 'rete-area-plugin';
 
-export async function initialize(container) {
+export async function initialize(container, connOptions = {}, renderOptions = {}) {
     const editor = new NodeEditor('retejs@0.1.0', container);
 
-    editor.use(ConnectionPlugin);
-    editor.use(AlightRenderPlugin);
+    editor.use(ConnectionPlugin, connOptions);
+    editor.use(AlightRenderPlugin, renderOptions);
 
     const engine = new Engine('retejs@0.1.0');
     
