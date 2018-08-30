@@ -1,0 +1,321 @@
+{
+  "id": "retejs@0.1.0",
+  "nodes": {
+    "1": {
+      "id": 1,
+      "data": {
+        "name": "rete",
+        "importance": 1
+      },
+      "inputs": {
+        "pkg": {
+          "connections": [{
+            "node": 2,
+            "output": "pkg",
+            "data": {}
+          }]
+        }
+      },
+      "outputs": {
+        "pkg": {
+          "connections": [{
+            "node": 3,
+            "input": "pkg",
+            "data": {}
+          }, {
+            "node": 4,
+            "input": "pkg",
+            "data": {}
+          }, {
+            "node": 5,
+            "input": "pkg",
+            "data": {}
+          }, {
+            "node": 6,
+            "input": "pkg",
+            "data": {}
+          }, {
+            "node": 7,
+            "input": "pkg",
+            "data": {}
+          }, {
+            "node": 10,
+            "input": "pkg",
+            "data": {}
+          }, {
+            "node": 9,
+            "input": "pkg",
+            "data": {}
+          }, {
+            "node": 8,
+            "input": "pkg",
+            "data": {}
+          }, {
+            "node": 11,
+            "input": "pkg",
+            "data": {}
+          }, {
+            "node": 12,
+            "input": "pkg",
+            "data": {}
+          }]
+        }
+      },
+      "position": [-149.49444380667046, -52.189114927176604],
+      "name": "Package"
+    },
+    "2": {
+      "id": 2,
+      "data": {
+        "name": "rete-cli",
+        "importance": 0.8
+      },
+      "inputs": {
+        "pkg": {
+          "connections": []
+        }
+      },
+      "outputs": {
+        "pkg": {
+          "connections": [{
+            "node": 1,
+            "input": "pkg",
+            "data": {}
+          }]
+        }
+      },
+      "position": [-813.8760719961011, 338.68963292917397],
+      "name": "Package"
+    },
+    "3": {
+      "id": 3,
+      "data": {
+        "name": "rete-alight-render-plugin",
+        "importance": 0.8
+      },
+      "inputs": {
+        "pkg": {
+          "connections": [{
+            "node": 1,
+            "output": "pkg",
+            "data": {}
+          }]
+        }
+      },
+      "outputs": {
+        "pkg": {
+          "connections": []
+        }
+      },
+      "position": [537.5067103664463, -998.9448481492198],
+      "name": "Package"
+    },
+    "4": {
+      "id": 4,
+      "data": {
+        "name": "rete-connection-plugin",
+        "importance": 1
+      },
+      "inputs": {
+        "pkg": {
+          "connections": [{
+            "node": 1,
+            "output": "pkg",
+            "data": {}
+          }]
+        }
+      },
+      "outputs": {
+        "pkg": {
+          "connections": []
+        }
+      },
+      "position": [540.0093144238449, -663.5947259218487],
+      "name": "Package"
+    },
+    "5": {
+      "id": 5,
+      "data": {
+        "name": "rete-context-menu-plugin",
+        "importance": 0.7
+      },
+      "inputs": {
+        "pkg": {
+          "connections": [{
+            "node": 1,
+            "output": "pkg",
+            "data": {}
+          }]
+        }
+      },
+      "outputs": {
+        "pkg": {
+          "connections": []
+        }
+      },
+      "position": [551.4882076870657, 392.36989911640944],
+      "name": "Package"
+    },
+    "6": {
+      "id": 6,
+      "data": {
+        "name": "rete-module-plugin",
+        "importance": 0.6
+      },
+      "inputs": {
+        "pkg": {
+          "connections": [{
+            "node": 1,
+            "output": "pkg",
+            "data": {}
+          }]
+        }
+      },
+      "outputs": {
+        "pkg": {
+          "connections": []
+        }
+      },
+      "position": [553.1183292741291, -323.2642124806632],
+      "name": "Package"
+    },
+    "7": {
+      "id": 7,
+      "data": {
+        "name": "rete-task-plugin",
+        "importance": 0.6
+      },
+      "inputs": {
+        "pkg": {
+          "connections": [{
+            "node": 1,
+            "output": "pkg",
+            "data": {}
+          }]
+        }
+      },
+      "outputs": {
+        "pkg": {
+          "connections": []
+        }
+      },
+      "position": [561.9035302421262, 36.658179831613936],
+      "name": "Package"
+    },
+    "8": {
+      "id": 8,
+      "data": {
+        "name": "rete-area-plugin",
+        "importance": 0.6
+      },
+      "inputs": {
+        "pkg": {
+          "connections": [{
+            "node": 1,
+            "output": "pkg",
+            "data": {}
+          }]
+        }
+      },
+      "outputs": {
+        "pkg": {
+          "connections": []
+        }
+      },
+      "position": [1237.5412969103381, -1022.6889846839941],
+      "name": "Package"
+    },
+    "9": {
+      "id": 9,
+      "data": {
+        "name": "rete-minimap-plugin",
+        "importance": 0.4
+      },
+      "inputs": {
+        "pkg": {
+          "connections": [{
+            "node": 1,
+            "output": "pkg",
+            "data": {}
+          }]
+        }
+      },
+      "outputs": {
+        "pkg": {
+          "connections": []
+        }
+      },
+      "position": [1214.5182628071914, -681.180844339159],
+      "name": "Package"
+    },
+    "10": {
+      "id": 10,
+      "data": {
+        "name": "rete-readonly-plugin",
+        "importance": 0.5
+      },
+      "inputs": {
+        "pkg": {
+          "connections": [{
+            "node": 1,
+            "output": "pkg",
+            "data": {}
+          }]
+        }
+      },
+      "outputs": {
+        "pkg": {
+          "connections": []
+        }
+      },
+      "position": [1239.1092625391302, -291.1320150329676],
+      "name": "Package"
+    },
+    "11": {
+      "id": 11,
+      "data": {
+        "name": "rete-profiler-plugin",
+        "importance": 0.5
+      },
+      "inputs": {
+        "pkg": {
+          "connections": [{
+            "node": 1,
+            "output": "pkg",
+            "data": {}
+          }]
+        }
+      },
+      "outputs": {
+        "pkg": {
+          "connections": []
+        }
+      },
+      "position": [1213.421217703698, 20.725052031689515],
+      "name": "Package"
+    },
+    "12": {
+      "id": 12,
+      "data": {
+        "name": "rete-keyboard-plugin",
+        "importance": 0.5
+      },
+      "inputs": {
+        "pkg": {
+          "connections": [{
+            "node": 1,
+            "output": "pkg",
+            "data": {}
+          }]
+        }
+      },
+      "outputs": {
+        "pkg": {
+          "connections": []
+        }
+      },
+      "position": [1235.9718835993842, 386.9150610837004],
+      "name": "Package"
+    }
+  }
+}

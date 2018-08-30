@@ -1,0 +1,31 @@
+$color: #cb3837
+  
+.node.package
+  background: $color
+  border-radius: 0
+  border: none
+  row
+    display: flex
+    &[vertical]
+      flex-direction: column
+  &:hover
+    background: $color
+  .image
+    height: 100px
+    width: 260px
+    flex: 1
+  .inputs, .outputs
+    margin-top: 1em
+  .name
+    text-align:: center
+    color: white
+    font-size: 42px
+    margin: 0.2em 0.7em
+  .shield
+    display: block
+    margin: 1em auto
+    height: 20px
+.connection
+  &.input-package, &.output-package
+    path
+      stroke: #e6e6e6
