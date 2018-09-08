@@ -18,10 +18,12 @@
       MenuItem(name="components", to="/components") {{'Компоненты' | translate}}
       MenuItem(name="cli", to="/cli") {{'Rete CLI' | translate}}
     MenuItem(name="donate", to="/donate") {{'Пожертвовать' | translate}}
+    Language
 </template>
 
 <script>
 import Logo from './Logo';
+import Language from './Language';
 
 export default {
   data() {
@@ -30,7 +32,8 @@ export default {
     }
   },
   components: {
-    Logo
+    Logo,
+    Language
   },
   methods: {
     resize() {
