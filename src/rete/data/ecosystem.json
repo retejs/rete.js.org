@@ -58,6 +58,10 @@
             "node": 12,
             "input": "pkg",
             "data": {}
+          }, {
+            "node": 35,
+            "input": "pkg",
+            "data": {}
           }]
         }
       },
@@ -91,7 +95,7 @@
       "id": 3,
       "data": {
         "name": "rete-alight-render-plugin",
-        "importance": 0.8
+        "importance": 0.7
       },
       "inputs": {
         "pkg": {
@@ -315,6 +319,29 @@
         }
       },
       "position": [1235.9718835993842, 386.9150610837004],
+      "name": "Package"
+    },
+    "35": {
+      "id": 35,
+      "data": {
+        "name": "rete-vue-render-plugin",
+        "importance": 0.9
+      },
+      "inputs": {
+        "pkg": {
+          "connections": [{
+            "node": 1,
+            "output": "pkg",
+            "data": {}
+          }]
+        }
+      },
+      "outputs": {
+        "pkg": {
+          "connections": []
+        }
+      },
+      "position": [538.7464247466504, -1324.7511567312567],
       "name": "Package"
     }
   }
