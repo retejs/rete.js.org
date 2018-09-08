@@ -32,16 +32,8 @@ export default {
 }
 </script>
 
-
 <style lang="sass" scoped>
 @import '../../assets/styles/media.sass'
-.section
-  margin: 2em 0
-.title
-  margin: 1em 2em
-.description
-  font-size: 80%
-  margin: 1em 2em
 
 .home
   .links
@@ -51,11 +43,4 @@ export default {
     max-height: 50vh
     max-width: 80vw
     margin: calc(1vw + 3vh)
-  .highlights
-    display: flex
-    +phone
-      flex-direction: column
-    .highlight
-      flex: 1
-      font-size: 85%
 </style>

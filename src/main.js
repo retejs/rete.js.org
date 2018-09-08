@@ -3,6 +3,7 @@ import Vuex from 'vuex';
 import iView from 'iview';
 import { setTranslations, detect } from './i18n'
 import 'iview/dist/styles/iview.css';
+import './assets/styles/common.sass';
 
 import I18n from './i18n';
 import VueRouter, { router } from './router';
