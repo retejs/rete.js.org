@@ -1,12 +1,14 @@
+@import './vars.sass'
 @import './media.sass'
-  
+
 .section
   margin: 2em 0
   .title
-    margin: 1em 2em
+    margin: $v-margin $h-margin
+    font-size: 2em
   .description
-    font-size: 80%
-    margin: 1em 2em
+    font-size: 1.6em
+    margin: $v-margin $h-margin
 
 .highlights
   display: flex
@@ -14,4 +16,26 @@
     flex-direction: column
   .highlight
     flex: 1
-    font-size: 85%
+    font-size: 0.86em
+
+.steps
+  margin: 2em 0
+  .title
+    font-size: 2em
+    margin: $v-margin $h-margin
+  .step
+    font-size: 1.4em
+    margin: 0 $h-margin
+  
+
+code
+  padding: 1em
+  margin: 0.5em 0
+  border-radius: 1em
+  color: $code-foreround
+  background: $code-background
+  font-size: 1rem
+  display: block
+  .comment
+    display: inline
+    color: #bbbbbb

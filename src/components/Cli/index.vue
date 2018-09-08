@@ -7,6 +7,16 @@
     .highlight(v-for="{ title, description } in highlights")
           .title {{title | translate}}
           vue-markdown.description {{description | stranslate}}
+  .steps
+    p.title {{'Начало работы' | translate}}
+    .step 
+      div {{'Установка' | translate}}:
+      code npm i -g rete-cli
+    .step 
+      div {{'Создание плагина' | translate}}:
+      code rete --plugin &lt;name&gt; 
+        .comment # {{'где' | translate}} &lt;name&gt; - {{'имя плагина' | translate}}
+
 </template>
 
 <script>
@@ -33,4 +43,11 @@ export default {
   .logo
     max-width: 80vw
     height: 240px
+  .steps
+    text-align: left
+    .title
+      font-weight: bold
+    .step
+      fony-size: 1rem
+   
 </style>

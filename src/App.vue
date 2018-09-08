@@ -32,7 +32,6 @@ export default {
   min-height: 100vh
   align-items: center
   flex-direction: column
-  font-size: 2em
   font-family: Ubuntu
 </style>
 
