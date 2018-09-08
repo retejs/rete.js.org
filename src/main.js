@@ -2,7 +2,7 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 import iView from 'iview';
 import VueMarkdown from 'vue-markdown';
-import { setTranslations, detect } from './i18n'
+import { loadTranslation, detect } from './i18n'
 import 'iview/dist/styles/iview.css';
 import './assets/styles/common.sass';
 
@@ -23,6 +23,6 @@ new Vue({
   router,
   render: h => h(App),
   created(){
-    setTranslations(detect())
+    loadTranslation(detect())
   }
 })

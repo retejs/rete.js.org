@@ -8,20 +8,17 @@ export const Languages = [
     ...Object.keys(langs)
 ]
 
-export function setTranslations(lang) {
+export function loadTranslation(lang) {
     Vue.i18n.set(lang);
+    localStorage.setItem('lang', lang);
     
-    if(langs[lang]) 
+    if(langs[lang]) {
         Vue.i18n.replace(lang, langs[lang]); 
+    }
 }
 
 export function get(){
     return Vue.i18n.locale();
-}
-
-export function set(lang){
-    localStorage.setItem('lang', lang);
-    Vue.i18n.set(lang);
 }
 
 export function detect() {

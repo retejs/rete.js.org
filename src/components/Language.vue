@@ -7,7 +7,7 @@
 
 
 <script>
-import { Languages as list, get, set } from '../i18n'
+import { Languages as list, get, loadTranslation } from '../i18n'
 
 export default {
   data(){
@@ -18,7 +18,7 @@ export default {
   },
   watch: {
     lang(v){
-      set(v);
+      loadTranslation(v);
     }
   }
 }
