@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import iView from 'iview';
+import VueMarkdown from 'vue-markdown';
 import { setTranslations, detect } from './i18n'
 import 'iview/dist/styles/iview.css';
 import './assets/styles/common.sass';
@@ -15,6 +16,7 @@ Vue.use(Vuex);
 Vue.use(iView);
 Vue.use(VueRouter);
 Vue.use(I18n, new Vuex.Store());
+Vue.use(VueMarkdown);
 
 new Vue({
   el: '#app',
