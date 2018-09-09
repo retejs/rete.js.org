@@ -17,7 +17,7 @@
       template(slot="title") {{'Экосистема' | translate}}
       MenuItem(name="components", to="/components") {{'Компоненты' | translate}}
       MenuItem(name="cli", to="/cli") {{'Rete CLI' | translate}}
-    MenuItem(name="donate", to="/donate") {{'Пожертвовать' | translate}}
+    MenuItem(name="support", to="/support") {{'Поддержать' | translate}}
     Language
 </template>
 

@@ -4,7 +4,7 @@ const Home = () => import('./components/Home');
 const Examples = () => import('./components/Examples');
 const Components = () => import('./components/Components');
 const Cli = () => import('./components/Cli');
-const Donate = () => import('./components/Donate');
+const Support = () => import('./components/Support');
 
 const router = new VueRouter({
   routes: [
@@ -14,7 +14,7 @@ const router = new VueRouter({
     { path: '/examples', component: Examples },
     { path: '/components', component: Components},
     { path: '/cli', component: Cli},
-    { path: '/donate', component: Donate },
+    { path: '/support', component: Support },
   ]
 })
 
