@@ -4,6 +4,7 @@ import area from './area';
 import module from './module';
 import task from './task';
 import customization from './customization';
+import reroute from './reroute';
 
 export default [
     {
@@ -65,4 +66,14 @@ export default [
             'rete-alight-render-plugin'
         ]
     },
+    {
+        key: 'reroute',
+        init: reroute,
+        packages: [
+            'rete',
+            'rete-connection-plugin',
+            'rete-alight-render-plugin',
+            'rete-connection-reroute-plugin'
+        ]
+    }
 ]

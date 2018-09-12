@@ -10,10 +10,11 @@
   "dependencies": {
     "html-loader": "^0.5.5",
     "iview": "^3.0.0",
-    "rete": "^1.0.0-alpha.9",
+    "rete": "^1.0.0-alpha.10",
     "rete-alight-render-plugin": "^0.1.5",
     "rete-area-plugin": "^0.1.6",
-    "rete-connection-plugin": "^0.1.2",
+    "rete-connection-plugin": "^0.2.0",
+    "rete-connection-reroute-plugin": "^0.1.1",
     "rete-context-menu-plugin": "^0.1.4",
     "rete-module-plugin": "^0.1.4",
     "rete-readonly-plugin": "^0.1.2",
