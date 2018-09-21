@@ -10,7 +10,7 @@
   .highlights.section
     .highlight(v-for="{ title, description } in highlights")
       .title {{title | translate}}
-      .description {{description | translate}}
+      .description {{description | stranslate}}
 </template>
 
 <script>
