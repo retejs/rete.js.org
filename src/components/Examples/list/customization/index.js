@@ -1,13 +1,12 @@
 import ContextMenuPlugin from 'rete-context-menu-plugin';
+import AreaPlugin from 'rete-area-plugin';
 import { NumComponent } from '@/rete/components/num-component';
 import { AddComponent } from '@/rete/components/add-component';
 import { initialize as init } from '@/rete'
-import Node from './Node.vue';
 import { FieldControl } from '@/rete/controls/field/index';
-// import VueNumControl from '@/rete/controls/field/component.vue';
 import Control from './Control.vue';
+import Node from './Node.vue';
 import data from '@/rete/data/simple.json';
-// import template from 'html-loader!./template.html';
 import 'style-loader!./style.sass';
 
 class CustomFieldControl extends FieldControl {
@@ -41,7 +40,11 @@ export default async function(container) {
     
     const { editor, engine, resize, process } = await init(container)
 
+    const background = document.createElement('div');
+    background.classList = 'background';
+
     editor.use(ContextMenuPlugin);
+    editor.use(AreaPlugin, { background });
 
     [
         new CustomNumComponent, 

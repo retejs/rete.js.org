@@ -1,11 +1,20 @@
-$grid-size: 20px
+$grid-size: 170px
 $grid-color: #363636
+$th: 0.008
+
+@function line($dir, $t, $w)
+  $start: $grid-size * $t - $w * $grid-size
+  $end: $grid-size * $t + $w * $grid-size
+  @return linear-gradient(to $dir, transparent $start, $grid-color $start, $grid-color $end, transparent $end)
+
+@function lines($dir)
+  @return line($dir, 0.5, $th * 2), line($dir, 0.25, $th), line($dir, 0.75, $th), line($dir, 1, $th * 2)
 
 .custom-node-editor
-  background-size: $grid-size $grid-size
-  background-image: linear-gradient(to right, $grid-color 1px, transparent 1px), linear-gradient(to bottom, $grid-color 1px, transparent 1px)
-  background-color:  darken($grid-color, 6%)
-  overflow: hidden
+  .background
+    background-size: $grid-size $grid-size
+    background-image: lines(right), lines(bottom)
+    background-color:  darken($grid-color, 6%)
   *
     box-sizing: border-box
   
