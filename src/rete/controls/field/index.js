@@ -14,4 +14,3 @@ export class FieldControl extends Control {
         ctx.value = value;
     }
 }
-  
