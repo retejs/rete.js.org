@@ -1,5 +1,5 @@
 import { Component } from 'rete';
-import { TextControl } from '../controls/text-control';
+import { FieldControl } from '../controls/field/index';
 
 export class ModuleComponent extends Component {
 
@@ -11,7 +11,7 @@ export class ModuleComponent extends Component {
     }
 
     builder(node) {
-        var ctrl = new TextControl(this.editor, 'module');
+        var ctrl = new FieldControl(this.editor, 'module');
         ctrl.onChange = () => {
             this.updateModuleSockets(node);
             node._alight.scan();

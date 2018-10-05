@@ -1,5 +1,5 @@
 import { Component, Input, Output } from 'rete';
-import { NumControl } from '../controls/num-control';
+import { FieldControl } from '../controls/field/index';
 import Socket from '../sockets';
 
 export class AddComponent extends Component {
@@ -12,13 +12,13 @@ export class AddComponent extends Component {
         var inp2 = new Input('num2', "Number", Socket.num);
         var out = new Output('num', "Number", Socket.num);
 
-        inp1.addControl(new NumControl(this.editor, 'num1'))
-        inp2.addControl(new NumControl(this.editor, 'num2'))
+        inp1.addControl(new FieldControl(this.editor, 'num1', 'number'))
+        inp2.addControl(new FieldControl(this.editor, 'num2', 'number'))
 
         return node
             .addInput(inp1)
             .addInput(inp2)
-            .addControl(new NumControl(this.editor, 'preview', true))
+            .addControl(new FieldControl(this.editor, 'preview',  'number', true))
             .addOutput(out);
     }
 

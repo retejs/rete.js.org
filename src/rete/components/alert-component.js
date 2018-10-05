@@ -1,5 +1,5 @@
 import { Component, Input } from 'rete';
-import { TextControl } from '../controls/text-control';
+import { FieldControl } from '../controls/field/index';
 import Socket from '../sockets';
 
 export class AlertComponent extends Component {
@@ -13,7 +13,7 @@ export class AlertComponent extends Component {
     }
   
     builder(node) {
-      var ctrl = new TextControl(this.editor, 'msg', false);
+      const ctrl = new FieldControl(this.editor, 'msg', false);
       
       ctrl.setValue(node.data.msg);
 

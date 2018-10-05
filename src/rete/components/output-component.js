@@ -1,5 +1,5 @@
 import { Component, Input } from 'rete';
-import { TextControl } from '../controls/text-control';
+import { FieldControl } from '../controls/field/index';
 import Socket from '../sockets';
 
 export class OutputComponent extends Component {
@@ -14,7 +14,7 @@ export class OutputComponent extends Component {
 
     builder(node) {
         var inp = new Input('input', "Number", Socket.num);
-        var ctrl = new TextControl(this.editor, 'name');
+        var ctrl = new FieldControl(this.editor, 'name');
 
         return node.addControl(ctrl).addInput(inp);
     }
