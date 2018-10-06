@@ -13,7 +13,7 @@ export default [
         packages: [
             'rete',
             'rete-connection-plugin',
-            'rete-alight-render-plugin',
+            'rete-vue-render-plugin',
             'rete-context-menu-plugin'
         ]
     },
@@ -23,7 +23,7 @@ export default [
         packages: [
             'rete',
             'rete-connection-plugin',
-            'rete-alight-render-plugin',
+            'rete-vue-render-plugin',
             'rete-readonly-plugin'
         ]
     },
@@ -33,7 +33,7 @@ export default [
         packages: [
             'rete',
             'rete-connection-plugin',
-            'rete-alight-render-plugin',
+            'rete-vue-render-plugin',
             'rete-area-plugin'
         ]
     },
@@ -43,7 +43,7 @@ export default [
         packages: [
             'rete',
             'rete-connection-plugin',
-            'rete-alight-render-plugin',
+            'rete-vue-render-plugin',
             'rete-module-plugin'
         ]
     },
@@ -53,7 +53,7 @@ export default [
         packages: [
             'rete',
             'rete-connection-plugin',
-            'rete-alight-render-plugin',
+            'rete-vue-render-plugin',
             'rete-task-plugin'
         ]
     },
@@ -63,7 +63,7 @@ export default [
         packages: [
             'rete',
             'rete-connection-plugin',
-            'rete-alight-render-plugin'
+            'rete-vue-render-plugin'
         ]
     },
     {
@@ -72,7 +72,7 @@ export default [
         packages: [
             'rete',
             'rete-connection-plugin',
-            'rete-alight-render-plugin',
+            'rete-vue-render-plugin',
             'rete-connection-reroute-plugin'
         ]
     }

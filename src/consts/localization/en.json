@@ -46,7 +46,7 @@
     "Данный плагин обрабатывает схему с целью ее дальнейшего выполнения подобно UE4 Blueprint, когда узлы выполняются после обработки по какому-либо вызову извне": "This plugin processing the scheme for its further execution, similar to UE4 Blueprint when nodes are executed after processing for any call from outside",
     "В примере узел Mouse event реагирует на событие mousemove, узел Match проверяет, была ли нажата клавиша Ctrl и передает управление соответствующему узлу, который выводит уведомление": "In the example, the Mouse event node responds to the mousemove event, the Match node checks whether the Ctrl key was pressed and passes control to the corresponding node that outputs the notification",
     "Кастомизация": "Customization",
-    "Плагин rete-alight-render, отвечающий за отображение узлов и контролов, позволяет использовать кастомные шаблоны и переопределить стили": "The rete-alight-render plug-in, which is responsible for displaying nodes and controls, allows using custom templates and redefining styles",
+    "Плагин rete-vue-render, отвечающий за отображение узлов и контролов, позволяет использовать кастомные шаблоны и переопределить стили": "The rete-vue-render plug-in, which is responsible for displaying nodes and controls, allows using custom templates and redefining styles",
     "Перенаправление соединений": "Reroute connection",
     "Соединения обычно задаются кривой, которая проходит горизонтально слева направо": "Connections are usually defined by a curve that placed horizontally from left to right",
     "Это может повлиять на распоздаваемость этих соединений в случае их пересечения с узлами": "This can affect the distribution of these compounds in case of their intersection with the nodes",
