@@ -6,11 +6,8 @@ export default [
         path: '',
         redirect: list[0].key
     },
-    ...list.map(item => {
-        return {
-            path: item.key,
-            component: Example,
-            props: { item }
-        }
-    })
+    {
+        path: ':key',
+        component: Example
+    }
 ]

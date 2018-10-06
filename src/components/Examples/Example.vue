@@ -8,9 +8,15 @@
 
 <script>
 import Info from './Info';
+import list from './list';
 
 export default {
-  props: ['item'],
+  props: ['example'],
+  computed: {
+    item() {
+      return list.find(i => i.key === this.example)
+    }
+  },
   methods: {
     init() {
       this.$refs.view.innerHTML = '';
@@ -36,7 +42,7 @@ export default {
 .example
   display: flex
   max-width: 100%
-  margin: 6vh 0
+  margin: 2vh 0
   flex-direction: row-reverse
   +phone
     flex-direction: column !important

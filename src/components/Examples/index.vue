@@ -1,12 +1,13 @@
 <template lang="pug">
 .examples
-  Anchor.links
-    AnchorLink(v-for="item in list"
-      :key="item.key"
-      :href="item.key"
-      :title="text[item.key].title | translate"
+  Tabs(v-model="tab", @on-click="open(tab)", :animated="false")
+    TabPane(v-for="item in list"
+      :key="item.key" 
+      :name="item.key"
+      :label="text[item.key].title | translate"
+      icon="md-arrow-forward"
       )
-  router-view
+  router-view(:example="tab")
 </template>
 
 <script>
@@ -17,7 +18,13 @@ export default {
   data() {
     return {
       text,
-      list
+      list,
+      tab: this.$route.params.key
+    }
+  },
+  methods: {
+    open(key) {
+      this.$router.push(key)
     }
   }
 }
@@ -34,5 +41,4 @@ export default {
     position: absolute
     left: 2%
     top: auto
-    z-index: 5
 </style>
