@@ -14,7 +14,7 @@ export class ModuleComponent extends Component {
         var ctrl = new FieldControl(this.editor, 'module');
         ctrl.onChange = () => {
             this.updateModuleSockets(node);
-            node._alight.scan();
+            node.update();
         }
         return node.addControl(ctrl);
     }
