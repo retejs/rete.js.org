@@ -4,7 +4,7 @@ import View from './View';
 export default async function(container, props){
     const list = document.createElement('div');
 
-    container.parentElement.appendChild(list);
+    container.appendChild(list);
 
     new Vue({
         render: h => h(View, { props })

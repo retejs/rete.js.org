@@ -1,4 +1,5 @@
 import VueRouter from 'vue-router';
+import examplesRoute from './components/Examples/route';
 
 const Home = () => import('./components/Home');
 const Examples = () => import('./components/Examples');
@@ -11,7 +12,11 @@ const router = new VueRouter({
     { path: '/', component: Home },
     { path: '/home', redirect: '/' },
     { path: '/docs', beforeEnter(){ window.open('https://rete.readthedocs.io')} },
-    { path: '/examples', component: Examples },
+    {
+      path: '/examples',
+      component: Examples,
+      children: examplesRoute
+    },
     { path: '/components', component: Components},
     { path: '/cli', component: Cli},
     { path: '/support', component: Support },

@@ -1,6 +1,6 @@
 <template lang="pug">
 .info 
-  router-link.title(:to="'#'+item.key") {{text[item.key].title | translate}}
+  router-link.title(:to="item.key") {{text[item.key].title | translate}}
   Card.packages-card(:title="'Пакеты' | translate" :padding="0" shadow)
     CellGroup
       Cell(v-for="pkg in item.packages" :title="pkg", :key="pkg" :to="'https://www.npmjs.com/package/'+pkg" target="_blank")
