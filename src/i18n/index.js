@@ -26,10 +26,10 @@ export function detect() {
         return localStorage.getItem('lang');
         
     if (navigator.userLanguage)
-        return navigator.userLanguage;
+        return navigator.userLanguage.split('-')[0];
 
     if (navigator.language)
-        return navigator.language;
+        return navigator.language.split('-')[0];
     
     return 'en';
 }
