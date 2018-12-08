@@ -2,8 +2,7 @@
 .home
   .section
     p.title {{title | stranslate}}
-    p.description
-      | {{description | stranslate}}
+    p.description {{description | stranslate}}
   .links
     iframe(:src="gitHubBadge" frameborder="0" scrolling="0" width="160px" height="30px")
   Logo.logo

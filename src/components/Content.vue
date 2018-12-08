@@ -9,4 +9,5 @@ Content.content
   max-width: 1400px
   align-self: center
   text-align: center
+  width: 100%
 </style>

@@ -4,6 +4,7 @@ import examplesRoute from './components/Examples/route';
 const Home = () => import('./components/Home');
 const Examples = () => import('./components/Examples');
 const Components = () => import('./components/Components');
+const Issues = () => import('./components/Issues');
 const Cli = () => import('./components/Cli');
 const Support = () => import('./components/Support');
 
@@ -17,8 +18,9 @@ const router = new VueRouter({
       component: Examples,
       children: examplesRoute
     },
-    { path: '/components', component: Components},
-    { path: '/cli', component: Cli},
+    { path: '/components', component: Components },
+    { path: '/issues', component: Issues },
+    { path: '/cli', component: Cli },
     { path: '/support', component: Support },
   ]
 })

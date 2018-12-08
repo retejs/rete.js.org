@@ -16,6 +16,7 @@
     Submenu(name="ecosystem")
       template(slot="title") {{'Экосистема' | translate}}
       MenuItem(name="components", to="/components") {{'Компоненты' | translate}}
+      MenuItem(name="issues", to="/issues") {{'Проблемы' | translate}}
       MenuItem(name="cli", to="/cli") {{'Rete CLI' | translate}}
     MenuItem(name="support", to="/support") {{'Поддержать' | translate}}
     Language

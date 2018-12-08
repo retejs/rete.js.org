@@ -50,5 +50,9 @@
     "Перенаправление соединений": "Reroute connection",
     "Соединения обычно задаются кривой, которая проходит горизонтально слева направо": "Connections are usually defined by a curve that placed horizontally from left to right",
     "Это может повлиять на распоздаваемость этих соединений в случае их пересечения с узлами": "This can affect the distribution of these compounds in case of their intersection with the nodes",
-    "Данный плагин позволяет задать ключевые точки, через которые будет проходить линия": "This plugin allows you to set the key points through which the line will pass"
+    "Данный плагин позволяет задать ключевые точки, через которые будет проходить линия": "This plugin allows you to set the key points through which the line will pass",
+    "Проблемы": "Issues",
+    "Открытые проблемы": "Open issues",
+    "Здесь размещен список проблем в репозиториях Rete.js": "Here is a list of issues in Rete.js repositories",
+    "Вы можете отслеживать их на одной странице и помочь в их решении": "You can watch it on one page and help in solving them"
 }
