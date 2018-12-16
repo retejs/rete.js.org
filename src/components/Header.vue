@@ -1,5 +1,5 @@
 <template lang="pug">
-.header
+.header(v-t9n.deep)
   Menu.menu(
       :mode="smallScreen?'vertical':'horizontal'"
       :class="{horizontal: !smallScreen}"
@@ -10,15 +10,15 @@
       span Rete.js
     .space
     Submenu(name="learn")
-      template(slot="title") {{'Изучение' | translate}}
-      MenuItem(name="docs", to="/docs") {{'Документация' | translate}}
-      MenuItem(name="examples", to="/examples") {{'Примеры' | translate}}
+      span(slot="title") Изучение
+      MenuItem(name="docs", to="/docs") Документация
+      MenuItem(name="examples", to="/examples") Примеры
     Submenu(name="ecosystem")
-      template(slot="title") {{'Экосистема' | translate}}
-      MenuItem(name="components", to="/components") {{'Компоненты' | translate}}
-      MenuItem(name="issues", to="/issues") {{'Проблемы' | translate}}
-      MenuItem(name="cli", to="/cli") {{'Rete CLI' | translate}}
-    MenuItem(name="support", to="/support") {{'Поддержать' | translate}}
+      span(slot="title") Экосистема
+      MenuItem(name="components", to="/components") Компоненты
+      MenuItem(name="issues", to="/issues") Проблемы
+      MenuItem(name="cli", to="/cli") Rete CLI
+    MenuItem(name="support", to="/support") Поддержать
     Language
 </template>
 

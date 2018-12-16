@@ -1,15 +1,15 @@
 <template lang="pug">
-.home
+.home(v-t9n)
   .section
-    p.title {{title | stranslate}}
-    p.description {{description | stranslate}}
+    p.title {{title}}
+    p.description {{description}}
   .links
     iframe(:src="gitHubBadge" frameborder="0" scrolling="0" width="160px" height="30px")
   Logo.logo
   .highlights.section
     .highlight(v-for="{ title, description } in highlights")
-      .title {{title | translate}}
-      .description {{description | stranslate}}
+      .title {{title}}
+      .description {{description}}
 </template>
 
 <script>

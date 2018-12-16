@@ -5,20 +5,20 @@
       | {{lang}}
 </template>
 
-
 <script>
-import { Languages as list, get, loadTranslation } from '../i18n'
+import { Languages as list, getLocale } from '../i18n'
 
 export default {
   data(){
     return {
-      lang: get(),
+      lang: getLocale(),
       list
     }
   },
   watch: {
-    lang(v){
-      loadTranslation(v);
+    lang(value){
+      this.$setLocale(value);
+      localStorage.setItem('lang', value);
     }
   }
 }

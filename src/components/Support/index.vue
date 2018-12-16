@@ -1,7 +1,7 @@
 <template lang="pug">
-.support
+.support(v-t9n)
   .section
-    .title {{'Пожертвовать Rete.js' | translate}}
+    .title Пожертвовать Rete.js
   .methods
     a.payment.liqpay(:href="liqpay", target="_blank")
       img.logo(src="../../assets/images/LIQPAY.svg")

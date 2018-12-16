@@ -1,27 +1,12 @@
-import Vue from 'vue';
-import vuexI18n from 'vuex-i18n';
+import T9N from 'vue-t9n';
 import langs from '../consts/localization';
-import './splitter';
 
 export const Languages = [
     'ru',
-    ...Object.keys(langs)
+    ...Object.keys(langs[0][1])
 ]
 
-export function loadTranslation(lang) {
-    Vue.i18n.set(lang);
-    localStorage.setItem('lang', lang);
-    
-    if(langs[lang]) {
-        Vue.i18n.replace(lang, langs[lang]); 
-    }
-}
-
-export function get(){
-    return Vue.i18n.locale();
-}
-
-export function detect() {
+export function getLocale() {
     if(localStorage.getItem('lang'))
         return localStorage.getItem('lang');
         
@@ -34,4 +19,4 @@ export function detect() {
     return 'en';
 }
 
-export default vuexI18n.plugin;
+export default T9N;

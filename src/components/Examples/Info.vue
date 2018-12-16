@@ -1,11 +1,11 @@
 <template lang="pug">
-.info 
-  router-link.title(:to="item.key") {{text[item.key].title | translate}}
-  Card.packages-card(:title="'Пакеты' | translate" :padding="0" shadow)
+.info(v-t9n)
+  router-link.title(:to="item.key") {{text[item.key].title}}
+  Card.packages-card(:title="$t('Пакеты')" :padding="0" shadow)
     CellGroup
       Cell(v-for="pkg in item.packages" :title="pkg", :key="pkg" :to="'https://www.npmjs.com/package/'+pkg" target="_blank")
         img(:src="'https://img.shields.io/npm/v/'+pkg+'.svg'" slot="extra"  alt="npm version" height="22")     
-  p {{text[item.key].description | stranslate}}
+  p {{text[item.key].description}}
 </template>
 
 <script>

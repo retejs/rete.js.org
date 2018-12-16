@@ -1,21 +1,28 @@
 <template lang="pug">
-.cli
+.cli(v-t9n)
   .section
-    p.title {{title | translate}}
+    p.title {{title}}
   Logo.logo
   .highlights.section
     .highlight(v-for="{ title, description } in highlights")
-          .title {{title | translate}}
-          vue-markdown.description {{description | stranslate}}
+      .title {{title}}
+      .description {{description}}
   .steps
-    p.title {{'Начало работы' | translate}}
+    p.title Начало работы
     .step 
-      div {{'Установка' | translate}}:
+      div Установка
       code npm i -g rete-cli
     .step 
-      div {{'Создание плагина' | translate}}:
+      div Создание плагина
+        span :
       code rete --plugin &lt;name&gt; 
-        .comment # {{'где' | translate}} &lt;name&gt; - {{'имя плагина' | translate}}
+        .comment
+          span 
+            | # 
+          span где
+          span 
+            | &lt;name&gt; - 
+          span имя плагина
 
 </template>
 

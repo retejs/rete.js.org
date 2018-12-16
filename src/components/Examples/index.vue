@@ -4,7 +4,7 @@
     TabPane(v-for="item in list"
       :key="item.key" 
       :name="item.key"
-      :label="text[item.key].title | translate"
+      :label="$t(text[item.key].title)"
       icon="md-arrow-forward"
       )
   router-view(:example="tab")

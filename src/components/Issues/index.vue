@@ -1,8 +1,8 @@
 <template lang="pug">
-.issues
+.issues(v-t9n)
   .section
-    p.title {{title | translate}}
-    p.description {{description | stranslate}}
+    p.title {{title}}
+    p.description {{description}}
   Repo.repo(v-for="repo in repos", :repo="repo", :key="repo.name")
 </template>
 
