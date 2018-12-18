@@ -33,6 +33,7 @@ export default {
   align-items: center
   flex-direction: column
   font-family: Ubuntu
+  font-size: 1rem
 </style>
 
 

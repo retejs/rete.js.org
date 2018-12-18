@@ -11,11 +11,11 @@
     p.title Начало работы
     .step 
       div Установка
-      code npm i -g rete-cli
+      code.highlight npm i -g rete-cli
     .step 
       div Создание плагина
         span :
-      code rete --plugin &lt;name&gt; 
+      code.highlight rete --plugin &lt;name&gt; 
         .comment
           span 
             | # 

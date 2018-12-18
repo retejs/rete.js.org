@@ -1,0 +1,7 @@
+const engine = new Rete.Engine('demo@0.1.0');
+editor.register(numComponent);
+
+editor.on('process nodecreated noderemoved connectioncreated connectionremoved', async () => {
+    await engine.abort();
+    await engine.process(editor.toJSON());
+});

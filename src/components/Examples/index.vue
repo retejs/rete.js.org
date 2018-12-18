@@ -33,7 +33,6 @@ export default {
 
 <style lang="sass" scoped>
 .examples
-  font-size: 1rem
   text-align: left
   margin: 2em 1em
   .links

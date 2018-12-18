@@ -1,0 +1,8 @@
+const container = document.querySelector('#rete');
+const editor = new Rete.NodeEditor('demo@0.1.0', container);
+
+editor.use(ConnectionPlugin)
+editor.use(VueRenderPlugin)
+
+const numComponent = new NumComponent();
+editor.register(numComponent);

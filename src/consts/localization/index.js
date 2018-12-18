@@ -1,4 +1,7 @@
-export default [
+import getDocs from './docs';
+
+export default () => [
+    ...getDocs(),
     ["Изучение", {
         en: "Learning",
         ua: "Вивчення"

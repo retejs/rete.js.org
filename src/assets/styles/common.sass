@@ -2,13 +2,31 @@
 @import './media.sass'
 
 .section
-  margin: 2em 0
+  margin: 1.5em 0
   .title
     margin: $v-margin $h-margin
-    font-size: 2em
+    font-size: 1.5em
   .description
-    font-size: 1.6em
+    font-size: 1.2em
     margin: $v-margin $h-margin
+
+
+h1, h2
+  margin: 1em 0
+  font-weight: normal
+h1
+  font-size: 1.5em
+  &:first-child
+    margin-top: 0
+h2
+  font-size: 1.2em
+  margin-top: 3em
+h1 + h2
+  margin-top: 1em
+
+h1 + p, h2 + p, p.indent
+  text-indent: 1.5em
+
 
 .highlights
   display: flex
@@ -19,23 +37,24 @@
     font-size: 0.86em
 
 .steps
-  margin: 2em 0
+  margin: 1.5em 0
   .title
-    font-size: 2em
+    font-size: 1.5em
     margin: $v-margin $h-margin
   .step
-    font-size: 1.4em
     margin: 0 $h-margin
   
 
-code
+code, code.hljs
   padding: 1em
   margin: 0.5em 0
   border-radius: 1em
-  color: $code-foreround
-  background: $code-background
-  font-size: 1rem
   display: block
-  .comment
-    display: inline
-    color: #bbbbbb
+  background: $code-background
+  font-size: 0.9em
+  overflow-x: auto
+  &.highlight
+    color: $code-foreround
+    .comment
+      display: inline
+      color: #bbbbbb
