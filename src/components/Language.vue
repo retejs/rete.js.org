@@ -6,13 +6,13 @@
 </template>
 
 <script>
-import { Languages as list, getLocale } from '../i18n'
+import { getLocale } from '../i18n'
 
 export default {
   data(){
     return {
       lang: getLocale(),
-      list
+      list: ['ru', ...this.$getLangs().list]
     }
   },
   watch: {

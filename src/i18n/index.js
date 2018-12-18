@@ -1,10 +1,4 @@
 import T9N from 'vue-t9n';
-import langs from '../consts/localization';
-
-export const Languages = [
-    'ru',
-    ...Object.keys(langs[0][1])
-]
 
 export function getLocale() {
     if(localStorage.getItem('lang'))
@@ -17,6 +11,10 @@ export function getLocale() {
         return navigator.language.split('-')[0];
     
     return 'en';
+}
+
+export function assignSection(list, name) {
+    return list.map(([origin, translation]) => ([origin, translation, name]))
 }
 
 export default T9N;

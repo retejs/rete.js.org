@@ -5,7 +5,7 @@ import VueMarkdown from 'vue-markdown';
 import { getLocale } from './i18n'
 import 'iview/dist/styles/iview.css';
 import './assets/styles/common.sass';
-import langs from './consts/localization';
+import loadTranslations from './consts/localization';
 
 import I18n from './i18n';
 import VueRouter, { router } from './router';
@@ -24,7 +24,7 @@ new Vue({
   router,
   render: h => h(App),
   created(){
-    this.$setTranslations(langs)
+    this.$setTranslations(loadTranslations())
     this.$setLocale(getLocale())
   }
 })
