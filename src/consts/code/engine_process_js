@@ -1,0 +1,4 @@
+editor.on('process', async () => {
+    await engine.abort();
+    await engine.process(editor.toJSON());
+});

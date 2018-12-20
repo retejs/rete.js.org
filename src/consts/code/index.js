@@ -11,3 +11,5 @@ export { default as editorInstance } from 'raw-loader!./editor-instance_js';
 export { default as toJson } from 'raw-loader!./tojson_js';
 export { default as dataStructure } from 'raw-loader!./data-structure_json';
 export { default as fromJson } from 'raw-loader!./fromjson_js';
+export { default as engineNode } from 'raw-loader!./engine_node_js';
+export { default as engineProcess } from 'raw-loader!./engine_process_js';
