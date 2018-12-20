@@ -8,14 +8,28 @@ pre(v-highlightjs="code")
 import * as sources from '@/consts/code';
 
 export default {
-  props: ['lang', 'source'],
+  props: {
+    lang: {
+      type: String,
+      default: 'javascript'
+    },
+    source: {
+      type: String,
+      default: null
+    }
+  },
   data() {
     return {
       code: '',
     }
   },
   mounted() {
-    this.code = sources[this.source];
+    if(this.$slots.default)
+      this.code = this.$slots.default[0].text;
+    else if(this.source)
+      this.code = sources[this.source];
+    else
+      throw new Error('Slot or source not defined')
   }
 }
 </script>
