@@ -1,0 +1,4 @@
+var comp = new MyComponent();
+
+editor.register(comp);
+engine.register(comp);

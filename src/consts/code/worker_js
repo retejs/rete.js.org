@@ -1,0 +1,11 @@
+class NumberComponent extends Rete.Component {
+
+    constructor(){
+        super('Number');
+    }
+
+    async worker(node, inputs, outputs){
+        // inputs['key1']
+        outputs['key2'] = node.data.num;
+    }
+}

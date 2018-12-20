@@ -13,3 +13,7 @@ export { default as dataStructure } from 'raw-loader!./data-structure_json';
 export { default as fromJson } from 'raw-loader!./fromjson_js';
 export { default as engineNode } from 'raw-loader!./engine_node_js';
 export { default as engineProcess } from 'raw-loader!./engine_process_js';
+export { default as componentPure } from 'raw-loader!./component_pure_js';
+export { default as registerComponent } from 'raw-loader!./register_component_js';
+export { default as builder } from 'raw-loader!./builder_js';
+export { default as worker } from 'raw-loader!./worker_js';
