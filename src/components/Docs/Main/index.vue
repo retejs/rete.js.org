@@ -11,22 +11,22 @@
   p или установите из npm
   Code(lang="bash" source="install")
   p Импортируйте следующим образом
-  Code(lang="javascript" source="importRete")
+  Code(source="importRete")
   p Если вы хотите использовать только движок на серверной стороне, будет достаточно:
-  Code(lang="javascript" source="importEngine")
+  Code(source="importEngine")
 
   h2 Создание редактора
   p Для создания редактора необходимо несколько составляющих: Сокеты, Входы, Выходы, Компоненты
   p Создадим экземпляр сокета. Эта часть узла отвечает за коммуникации между узлами.
-  Code(lang="javascript" source="socket")
+  Code(source="socket")
   p Непосредственно для создания и обрабтки узла необходимо определить Компонент.
-  Code(lang="javascript" source="component")
+  Code(source="component")
   p В своей HTML странице добавьте контейнер для редактора
   Code(lang="html" source="editorHtml")
   p Инициализируйте редактор, подключите минимально необходимые плагины (для отображения узлов и соединений) и зарегестрируйте компоненты.
-  Code(lang="javascript" source="editor")
+  Code(source="editor")
   p Визуальная часть редактора готова. Теперь для обработки схемы нужно инициализировать Движок и подписаться на события Редактора, по которым будет выполняться обработка схемы
-  Code(lang="javascript" source="engine")
+  Code(source="engine")
   p Рассмотрены самые необходимые этапы, которые нужно выполнить для работы редактора. Полный пример смотрите на Codepen
 </template>
 
