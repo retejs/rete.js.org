@@ -37,10 +37,7 @@ export default {
 
 <style lang="sass" scoped>
 .node
-  position: absolute
-  left: 50%
-  top: 50%
-  transform: translate(-50%, -50%)
+  margin: 3em 7em
   background: rgba(110, 136, 255, 0.8)
   border: 0px solid #4e58bf
   border-radius: 10px
