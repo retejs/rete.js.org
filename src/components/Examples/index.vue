@@ -7,7 +7,7 @@
       :label="$t(text[item.key].title)"
       icon="md-arrow-forward"
       )
-  router-view(:example="tab")
+  router-view(:example="example")
 </template>
 
 <script>
@@ -20,6 +20,11 @@ export default {
       text,
       list,
       tab: this.$route.params.key
+    }
+  },
+  computed: {
+    example() {
+      return list.find(i => i.key === this.tab);
     }
   },
   methods: {

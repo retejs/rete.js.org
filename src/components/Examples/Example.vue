@@ -1,6 +1,6 @@
 <template lang="pug">
 .example
-  Info(:item="item")
+  Info(:item="example")
   .view
     div(ref="view")
 </template>
@@ -8,20 +8,14 @@
 
 <script>
 import Info from './Info';
-import list from './list';
 
 export default {
   props: ['example'],
-  computed: {
-    item() {
-      return list.find(i => i.key === this.example)
-    }
-  },
   methods: {
     init() {
       this.$refs.view.innerHTML = '';
       this.$refs.view.className = '';
-      this.item.init(this.$refs.view);
+      this.example.init(this.$refs.view);
     }
   },
   mounted() {
