@@ -2,17 +2,18 @@
 .plugins
   h1 Плагины
   Tabs(:value="tab", @on-click="open($event)" :animated="false")
-    TabPane(v-for="item in list" :key="item" :name="item" :label="sentence(item)")
-      h2.title
-        | {{sentence(item)}}
-        a(:href="'https://www.npmjs.com/package/rete-'+item+'-plugin'")
-          img.badge(:src="'https://img.shields.io/npm/v/rete-'+item+'-plugin.svg'" alt="npm version")
+    TabPane(v-for="item in list" :key="item.path" :name="item.path" :label="sentence(item.path)")
+  h2.title
+    | {{sentence(tab)}}
+    a(:href="'https://www.npmjs.com/package/rete-'+tab+'-plugin'" target="_blank")
+      img.badge(:src="'https://img.shields.io/npm/v/rete-'+tab+'-plugin.svg'" alt="npm version")
+  router-view
 </template>
 
 
 <script>
-import list from './list';
 import { sentence } from 'case';
+import list from './list/index';
 
 export default {
   data() {
@@ -23,12 +24,12 @@ export default {
   },
   computed: {
     tab() {
-      return this.$route.params.name
+      return this.$route.meta.name;
     }
   },
   methods: {
-    open(key) {
-      this.$router.push('/docs/plugins/'+key)
+    open(name) {
+      this.$router.push('/docs/plugins/'+name)
     }
   }
 }

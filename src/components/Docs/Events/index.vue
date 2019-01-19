@@ -43,16 +43,3 @@ export default {
   }
 }
 </script>
-
-
-<style lang="sass" scoped>
-.events
-  table
-    border-collapse: collapse
-    border-spacing: 0
-    empty-cells: show
-    th, td
-      padding: 0.8em
-    tr:nth-child(2n-1) td
-      background: #f2f2ff
-</style>
