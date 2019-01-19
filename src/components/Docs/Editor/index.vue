@@ -26,19 +26,42 @@
   p С таким же успехом вы можете восстановить содержимое редактора, используя эти данные (при условии, что версии ваших данных и Редактора совпадают)
   Code(source="fromJson")
   p В случае различных идентификаторов данных и редактора, метод fromJSON выбрасывает исключение. Вы должны поймать исключение и уведомить пользователя или попытаться адаптировать данные к новой версии вашего редактора
-
 </template>
 
-<script>
-import Code from '@/shared/Code.vue';
+<code name="editorInstance">
+const editor = new Rete.NodeEditor('demo@0.1.0', container);
+</code>
 
-export default {
-  components: {
-    Code
-  }
+<code name="toJson">
+const data = editor.toJSON();
+</code>
+
+<code name="dataStructure">
+{
+   "id": "demo@0.1.0",
+   "nodes": {
+      "1": {
+         "id": 1,
+         "data": {
+            "num": 2
+         },
+         "inputs": {},
+         "outputs": {
+            "num": {
+               "connections": [{
+                  "node": 3,
+                  "input": "num1",
+                  "data": {}
+               }]
+            }
+         },
+         "position": [80, 200],
+         "name": "Number"
+      }
+   }
 }
-</script>
+</code>
 
-<style lang="sass" scoped>
-.editor
-</style>
+<code name="fromJson">
+await editor.fromJSON(data);
+</code>

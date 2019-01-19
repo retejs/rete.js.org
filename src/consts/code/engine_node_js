@@ -1,4 +1,0 @@
-var engine = new Rete.Engine('demo@0.1.0');
-
-engine.register(myComponent);
-await engine.process(data);

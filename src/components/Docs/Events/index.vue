@@ -33,7 +33,6 @@
 
 
 <script>
-import Code from '@/shared/Code';
 import list from './list';
 
 export default {
@@ -41,9 +40,6 @@ export default {
     return {
       list
     }
-  },
-  components: {
-    Code
   }
 }
 </script>

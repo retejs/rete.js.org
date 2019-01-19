@@ -19,17 +19,29 @@
     | Это необходимо для гарантии того, что Контрол отвечает за предоставление входных данных, когда они не передаются с другого узла.
   p Давайте создадим узел (исключительно для создания в Билдере)
   Code(source="createNode")
-  
 </template>
 
 
+<code name="createNode">
+var in1 = new Rete.Input('num1', 'Number', numSocket);
+var in2 = new Rete.Input('num2', 'Number', numSocket, true); // can have multiple connections
+var out = new Rete.Output('Number', numSocket); // the third parameter must be false to deny multiple connections
+
+var numControl = new NumControl();
+
+var numNode = new Rete.Node('Add');
+numNode.addInput(in1);
+numNode.addInput(in2);
+numNode.addControl(numControl);
+numNode.addOutput(out);
+</code>
+
+
 <script>
-import Code from '@/shared/Code.vue';
 import Node from '../shared/Node.vue';
 
 export default {
   components: {
-    Code,
     Node
   }
 }

@@ -1,2 +1,0 @@
-const numSocket = new Rete.Socket('Number');
-const strSocket = new Rete.Socket('String');

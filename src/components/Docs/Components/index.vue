@@ -21,22 +21,55 @@
     | Данные узла (не экземпляр узла), входы и выходы соответствуют определениям в билдерах (см. выше).
   Code(source="worker")
   p Как вы заметили, вы можете использовать асинхронные функции (или Promise для предыдущих версий ES). Это необходимо для выполнения сложных вычислений без блокировки основного потока (например, в WebWorker).
-
-
 </template>
 
+<code name="componentPure">
+class MyComponent extends Rete.Component {
+  constructor() {
+    super("My Component"); // name
+  }
 
-<script>
-import Code from '@/shared/Code';
+  builder(node) {
+    /// modify node
+  }
 
-export default {
-  components: {
-    Code
+  worker(node, inputs, outputs) {
+    /// process data
   }
 }
-</script>
+</code>
 
+<code name="registerComponent">
+var comp = new MyComponent();
 
-<style lang="sass" scoped>
-.components
-</style>
+editor.register(comp);
+engine.register(comp);
+</code>
+
+<code name="builder">
+class NumberComponent extends Rete.Component {
+  constructor() {
+    super('Number');
+  }
+
+  builder(node){
+    // modify node
+    node.data.num = 3;
+    node.addInput(new Rete.Input('key1', 'Number', numSocket));
+    node.addOutput(new Rete.Output('key2', 'Number', numSocket));
+  }
+}
+</code>
+
+<code name="worker">
+class NumberComponent extends Rete.Component {
+  constructor(){
+    super('Number');
+  }
+
+  async worker(node, inputs, outputs){
+    // inputs['key1']
+    outputs['key2'] = node.data.num;
+  }
+}
+</code>

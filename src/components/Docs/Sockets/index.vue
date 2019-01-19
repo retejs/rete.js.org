@@ -16,17 +16,18 @@
 </template>
 
 
-<script>
-import Code from '@/shared/Code';
+<code name="sockets">
+const numSocket = new Rete.Socket('Number');
+const strSocket = new Rete.Socket('String');
+</code>
 
-export default {
-  components: {
-    Code
-  }
+<code name="socketCSS">
+.socket.number {
+  background: #96b38a
 }
-</script>
+</code>
 
-
-<style lang="sass" scoped>
-.sockets
-</style>
+<code name="combineSocket">
+const anyTypeSocket = new Rete.Socket('Any type');
+numSocket.combineWith(anyTypeSocket);
+</code>

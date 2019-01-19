@@ -1,1 +1,0 @@
-await editor.fromJSON(data);

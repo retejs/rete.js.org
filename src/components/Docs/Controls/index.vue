@@ -6,9 +6,7 @@
     | Вы можете вставить любой HTML-шаблон или сторонний объект (input, select, image, плагин jQuery и т.д.).
   p По умолчанию все контролы отображаются с помощью подключеного рендер плагина (vue-render-plugin, alight-render-plugin), но вы можете создавать и отображать контролы другими способами, используя интерфейсы плагинов.
   p Каждому экземпляру Контрола доступны наследованые методы:
-  Code
-    | getData('key')
-    | setData('key', value)
+  Code(source="getsetData")
   p Таким образом Контролы могут не только отображать некоторую информацию, но и сохранять данные в узле для дальнейшей обработки.
   Code(source="controlVue")
   p В этом случае Контрол помещает число в данные узла. Может использоваться, когда нет соединения к входу.
@@ -17,17 +15,48 @@
   Code this.data.render = 'vue';
 </template>
 
-<script>
-import Code from '@/shared/Code';
+<code name="getsetData">
+getData('key')
+setData('key', value)
+</code>
 
-export default {
-  components: {
-    Code
+<code name="controlVue">
+const VueNumControl = {
+  props: ['readonly', 'emitter', 'ikey', 'getData', 'putData'],
+  template: '<input type="number" :readonly="readonly" :value="value" @input="change($event)" @dblclick.stop=""/>',
+  data() {
+    return {
+      value: 0,
+    }
+  },
+  methods: {
+    change(e){
+      this.value = +e.target.value;
+      this.update();
+    },
+    update() {
+      if (this.ikey)
+        this.putData(this.ikey, this.value)
+      this.emitter.trigger('process');
+    }
+  },
+  mounted() {
+    this.value = this.getData(this.ikey);
   }
 }
-</script>
+</code>
 
+<code name="control">
+class NumControl extends Rete.Control {
 
-<style lang="sass" scoped>
-.controls
-</style>
+  constructor(emitter, key, readonly) {
+    super(key);
+    this.component = VueNumControl;
+    this.props = { emitter, ikey: key, readonly };
+  }
+
+  setValue(val) {
+    this.vueContext.value = val;
+  }
+}
+</code>

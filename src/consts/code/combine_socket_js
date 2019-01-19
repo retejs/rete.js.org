@@ -1,2 +1,0 @@
-const anyTypeSocket = new Rete.Socket('Any type');
-numSocket.combineWith(anyTypeSocket);

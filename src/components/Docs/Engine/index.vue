@@ -22,16 +22,11 @@
     | Если начать обработку с узла Lightness, тогда обработка нижних узлов будет начата только после получения результата в текущем.
   img(:src="startNodeImg")
   p Также вы можете передавать дополнительные аргументы внутрь воркеров
-  Code
-    | engine.process(data, null, arg1, arg2);
+  Code engine.process(data, null, arg1, arg2);
   p Каждому воркеру, обработанному этим процессом, будут переданы аргументы
-  Code 
-    | worker(node, inputs, outputs, arg1, arg2) {
-    |   outputs['num'] = node.data.num;
-    | }
+  Code(source="worker")
   p Если во время обработки возникает ошибка (обнаружена рекурсия, неправильный startId, неверные данные), вы можете получить его сообщение и данные
-  Code
-    | engine.on('error', ({ message, data }) => { });
+  Code engine.on('error', ({ message, data }) => { });
 
   h2 Кроссплатформенный Движок
   p Внимание! Текущая версия движка на С++ не совместима с версией 1.0.0, но может быть обновлена при необходимости
@@ -40,9 +35,27 @@
       a(href="https://github.com/retejs/cpp-engine") Cpp Engine 
 </template>
 
+<code name="engineNode">
+var engine = new Rete.Engine('demo@0.1.0');
+
+engine.register(myComponent);
+await engine.process(data);
+</code>
+
+<code name="engineProcess">
+editor.on('process', async () => {
+    await engine.abort();
+    await engine.process(editor.toJSON());
+});
+</code>
+
+<code name="worker">
+worker(node, inputs, outputs, arg1, arg2) {
+  outputs['num'] = node.data.num;
+}
+</code>
 
 <script>
-import Code from '@/shared/Code'
 import processImg from '../assets/process.gif';
 import startNodeImg from '../assets/processStartNode.png';
 
@@ -52,14 +65,6 @@ export default {
       processImg,
       startNodeImg
     }
-  },
-  components: {
-    Code
   }
 }
 </script>
-
-
-<style lang="sass" scoped>
-.engine
-</style>

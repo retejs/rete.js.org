@@ -1,3 +1,5 @@
+import pluginsRoute from './Plugins/route';
+
 const Main = () => import('./Main/index.vue');
 const Editor = () => import('./Editor/index.vue');
 const Engine = () => import('./Engine/index.vue');
@@ -42,8 +44,9 @@ export default [
         component: Events
     },
     {
-        path: 'plugins/:name?',
-        component: Plugins
+        path: 'plugins',
+        component: Plugins,
+        children: pluginsRoute
     },
     {
         path: '*',

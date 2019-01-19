@@ -5,8 +5,6 @@ pre(v-highlightjs="code")
 
 
 <script>
-import * as sources from '@/consts/code';
-
 export default {
   props: {
     lang: {
@@ -23,13 +21,23 @@ export default {
       code: '',
     }
   },
+  methods: {
+    getParentCode(parent, name) {
+      const { code } = parent.$options;
+      const { $parent } = parent;
+
+      return code && code[name] || $parent && this.getParentCode($parent, name);
+    }
+  },
   mounted() {
     if(this.$slots.default)
       this.code = this.$slots.default[0].text;
     else if(this.source)
-      this.code = sources[this.source];
-    else
-      throw new Error('Slot or source not defined')
+      this.code = this.getParentCode(this.$parent, this.source);
+    
+    // if(!this.code)
+      // throw new Error(`Slot or source ${this.source} not found`);
+    
   }
 }
 </script>
