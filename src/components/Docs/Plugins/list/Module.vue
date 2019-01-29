@@ -1,5 +1,5 @@
 <template lang="pug">
-.plugin
+.plugin(v-t9n.deep="'docs'")
   Code(source="install")
   p
     a(href="https://codepen.io/Ni55aN/pen/QOEbEW") Пример

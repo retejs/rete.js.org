@@ -1,5 +1,5 @@
 <template lang="pug">
-.plugin
+.plugin(v-t9n.deep="'docs'")
   Code(source="install")
   p Внутри конструктора компонента
   Code(source="contruct")

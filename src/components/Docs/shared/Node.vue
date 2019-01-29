@@ -1,5 +1,5 @@
 <template lang="pug">
-.node(@mouseover="always = true" @mouseleave="always = false")
+.node(@mouseover="always = true" @mouseleave="always = false" v-t9n.deep="'docs'")
   Tooltip.title(placement="top" :always="always" offset="12px" @click.native="go('nodes')") Lorem Ipsum
     template(slot="content") Узел
   .output

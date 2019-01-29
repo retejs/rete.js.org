@@ -1,5 +1,5 @@
 <template lang="pug">
-.nodes
+.nodes(v-t9n.deep="'docs'")
   h1 Узлы
   Node
   p Все узлы могут содержать имя, входы, выходы и контролы.
@@ -9,9 +9,7 @@
     | Они представлены сокетом и могут иметь имена. Все выходы могут иметь неограниченное количество соединений. 
     | По умолчанию входы могут иметь только одно соединение. Вы можете изменить это как для входов, так и для выходов
   p Вход с неограниченным количествой подключений, выход с разрешенным только одним соединением:
-  Code
-    | new Rete.Input ('num', 'Number', numSocket, true);
-    | new Rete.Output ('num', 'Number', numSocket, false);
+  Code(source="createIOs")
   p 
     | Контролы могут располагаться либо непосредственно на самом узле, либо прикреплены к конкретному входу. 
     | Фактически, местоположение в первом случае определяется в стандартном шаблоне плагина для рендеринга. 
@@ -21,6 +19,10 @@
   Code(source="createNode")
 </template>
 
+<code name="createIOs">
+new Rete.Input ('num', 'Number', numSocket, true);
+new Rete.Output ('num', 'Number', numSocket, false);
+</code>
 
 <code name="createNode">
 var in1 = new Rete.Input('num1', 'Number', numSocket);

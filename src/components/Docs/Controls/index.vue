@@ -1,5 +1,5 @@
 <template lang="pug">
-.controls
+.controls(v-t9n.deep="'docs'")
   h1 Контролы
   p 
     | Контролы (элементы управления) необходимы для того, чтобы позволить вам расширить функциональность узлов. 
@@ -12,7 +12,7 @@
   p В этом случае Контрол помещает число в данные узла. Может использоваться, когда нет соединения к входу.
   Code(source="control")
   p Чтобы явно указать ренден плагин, который должен отображать контрол, необходимо указать следующее в контрукторе Rete.Control:
-  Code this.data.render = 'vue';
+  Code(source="name")
 </template>
 
 <code name="getsetData">
@@ -59,4 +59,8 @@ class NumControl extends Rete.Control {
     this.vueContext.value = val;
   }
 }
+</code>
+
+<code name="name">
+this.data.render = 'vue';
 </code>

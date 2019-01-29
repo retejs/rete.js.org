@@ -1,5 +1,5 @@
 <template lang="pug">
-.plugins
+.plugins(v-t9n.deep="'docs'")
   h1 Плагины
   Tabs(:value="tab", @on-click="open($event)" :animated="false")
     TabPane(v-for="item in list" :key="item.path" :name="item.path" :label="sentence(item.path)")

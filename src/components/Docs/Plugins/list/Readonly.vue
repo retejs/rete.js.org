@@ -1,5 +1,5 @@
 <template lang="pug">
-.plugin
+.plugin(v-t9n.deep="'docs'")
   Code(source="install")
   p Плагин создает 'readonly' и 'isreadonly' события
   p Проверить, что событие существует, то есть плагин установлен

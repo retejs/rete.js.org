@@ -1,7 +1,10 @@
 <template lang="pug">
-.plugin
+.plugin(v-t9n.deep="'docs'")
   Code(source="install")
-  p где depth - максимальная глубина для аранжировки (0 - без ограничений)
+  p
+    span где 
+    span depth - 
+    span максимальная глубина для аранжировки (0 - без ограничений)
   Code(source="use")
 </template>
 
