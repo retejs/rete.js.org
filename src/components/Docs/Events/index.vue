@@ -38,7 +38,7 @@ editor.on('nodecreate', node => {
 });
 </code>
 
-<code name="">
+<code name="events">
 editor.on('nodecreated connectioncreated noderemoved connectionremoved', () => {});
 </code>
 
