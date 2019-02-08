@@ -6,14 +6,22 @@
   
   h1 Начало работы
   h2 Установка
-  p Подключите зависимости в вашу страницу
-  Code(source="cdn" lang="html" )
-  p или установите из npm
+  p
+    | Главный пакет и его плагины собираются с помощью Rollup.
+    | Собранные пакеты предоставляются в трех форматах: 
+    span UMD (*.min.js), CommonJS (*.common.js), ES модули (*.esm.js).
+    |  Для сборки вашего проекта с помощью Webpack или подобных сборщиков установите пакеты из NPM
   Code(source="install" lang="bash" )
   p Импортируйте следующим образом
   Code(source="importRete")
-  p Если вы хотите использовать только движок на серверной стороне, будет достаточно:
-  Code(source="importEngine")
+  p 
+    | Для использования плагинов, которые собраны с помощью rete-cli до версии 0.5.0, необходимо импортировать 
+    a(href="https://github.com/retejs/rete/issues/249#issuecomment-461757249") следующим образом. 
+  h2 Установка без сборщиков (Webpack, Rollup и т.д.)
+  p Если вы не используете сборщики, можете подключить зависимости в вашу страницу
+  Code(source="cdn" lang="html" )
+  p и подключить UMD модули:
+  Code(source="oldschool_dep")
 
   h2 Создание редактора
   p Для создания редактора необходимо несколько составляющих: Сокеты, Входы, Выходы, Компоненты
@@ -47,8 +55,8 @@ import ConnectionPlugin from 'rete-connection-plugin';
 import VueRenderPlugin from 'rete-vue-render-plugin';
 </code>
 
-<code name="importEngine">
-import { Engine, ComponentWorker } from "rete/build/rete-engine.min";
+<code name="oldschool_dep">
+editor.use(ConnectionPlugin.default)
 </code>
 
 <code name="socket">
