@@ -1,8 +1,13 @@
 <template lang="pug">
-.plugin
+.plugin(v-t9n="'docs'")
   Code(source="install")
   Code(source="components")
   Code(source="use")
+  p 
+    | В случае, если вы подключаете фреймворк в проекте без Vue.js, вы должны подключить 
+    a(href="https://vue-loader.vuejs.org/") vue-loader 
+    | для использования однофайловых Vue.js компонентов или 
+    a(href="https://github.com/retejs/examples/issues/9#issuecomment-436433281") компилировать шаблоны во время выполения.
 </template>
 
 <code name="install">
