@@ -29,7 +29,7 @@
   Code(source="socket")
   p Непосредственно для создания и обрабтки узла необходимо определить Компонент.
   Code(source="component")
-  p В своей HTML странице добавьте контейнер для редактора
+  p В своей HTML странице добавьте контейнер для редактора. Родительский элемент должен иметь заданные размеры, под которые будет подстраиваться данный элемент 
   Code(source="editorHtml" lang="html")
   p Инициализируйте редактор, подключите минимально необходимые плагины (для отображения узлов и соединений) и зарегестрируйте компоненты.
   Code(source="editor")
@@ -82,7 +82,7 @@ class NumComponent extends Rete.Component {
 </code>
 
 <code name="editorHtml">
-<div id="rete" class="node-editor"></div>
+<div id="rete"></div>
 </code>
 
 <code name="editor">
