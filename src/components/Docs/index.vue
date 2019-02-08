@@ -52,5 +52,8 @@ export default {
     margin: 1em 3em
     li
       margin: 0.2em 0
+  img
+    margin: 1em 0
+    max-width: 100%
 </style>
 

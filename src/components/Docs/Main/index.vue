@@ -129,6 +129,4 @@ export default {
 .main
   width: 100%
   text-align: left
-  img
-    margin: 1em 0
 </style>
