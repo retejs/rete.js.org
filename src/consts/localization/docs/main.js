@@ -11,21 +11,49 @@ export default [
         en: "You can define nodes and workers that allow users to create instructions for processing data in your editor without a single line of code",
         ua: "Ви можете визначити вузли і воркери, які дозволять користувачам створити інструкції для обробки даних у Вашому редакторі без єдиного рядка коду"
     }],
-    ["Подключите зависимости в вашу страницу", {
-        en: "Add dependencies to your page",
-        ua: "Підключіть залежності в вашу сторінку"
+    ["Главный пакет и его плагины собираются с помощью Rollup", {
+        en: "Main package and its plugins are built using Rollup",
+        ua: "Головний пакет та його плагіни збираються за допомогою Rollup"
     }],
-    ["или установите из npm", {
-        en: "or install from npm",
-        ua: "або встановіть з npm"
+    ["Собранные пакеты предоставляются в трех форматах", {
+        en: "Bundled packages are provided in three formats.",
+        ua: "Зібрані пакети надаються в трьох форматах"
+    }],
+    ["Для сборки вашего проекта с помощью Webpack или подобных сборщиков установите пакеты из NPM", {
+        en: "To build your project using Webpack or similar builders, install packages from NPM",
+        ua: "Для сборки вашого проекту за допомогою Webpack або подібних збирачів встановіть пакети з NPM"
+    }],
+    ["Для использования плагинов, которые собраны с помощью rete-cli до версии 0.5.0, необходимо импортировать", {
+        en: "To use plugins that are built using rete-cli with version earlier than 0.5.0, you need to import",
+        ua: "Для використання плагінів, які зібрані за допомогою rete-cli до версії 0.5.0, необхідно імпортувати"
+    }],
+    ["следующим образом", {
+        en: "in the following way",
+        ua: "наступним чином"
+    }],
+    ["Модули, транспилированные в CommonJS и ESM не содержат полифилы, поэтому при сборке вашего проекта они должны быть", {
+        en: "Modules transpiled to CommonJS and ESM do not contain polyfills, so when building your project, they must be",
+        ua: "Модулі, транспільовані в CommonJS і ESM не містять поліфіли, тому при сбірці вашого проекту вони повинні бути"
+    }],
+    ["подключены отдельно", {
+        en: "connected separately",
+        ua: "підключені окремо"
+    }],
+    ["Установка без сборщиков (Webpack, Rollup и т.д.)", {
+        en: "Installation without bundlers (Webpack, Rollup, etc.)",
+        ua: "Установка без бандлерів (Webpack, Rollup і т.д.)"
+    }],
+    ["Если вы не используете сборщики, можете подключить зависимости в вашу страницу", {
+        en: "If you are not using bundlers, you can add dependencies to your page.",
+        ua: "Якщо ви не використовуєте збирачі, можете підключити залежності в вашу сторінку"
+    }],
+    ["и подключить UMD модули", {
+        en: "and use UMD modules",
+        ua: "та підключити UMD модулі"
     }],
     ["Импортируйте следующим образом", {
         en: "Import as follows",
         ua: "Імпортуйте наступним чином"
-    }],
-    ["Если вы хотите использовать только движок на серверной стороне, будет достаточно", {
-        en: "If you want to use only the engine on the server side, it will be enough",
-        ua: "Якщо ви хочете використовувати тільки движок на серверній стороні, буде досить"
     }],
     ["Создание редактора", {
         en: "Creating an editor",
