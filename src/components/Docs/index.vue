@@ -19,7 +19,6 @@
 <script>
 import Vue from 'vue';
 import VueHighlightJS from 'vue-highlightjs';
-import 'highlight.js/styles/atom-one-dark.css';
 
 Vue.use(VueHighlightJS);
 
@@ -29,6 +28,11 @@ export default {
 }
 </script>
 
+<style lang="sass">
+@import '~highlight.js/styles/atom-one-dark.css'
+.hljs-comment
+  color: #93c700
+</style>
 
 <style lang="sass" scoped>
 .docs
