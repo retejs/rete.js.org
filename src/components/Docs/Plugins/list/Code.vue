@@ -14,7 +14,7 @@ class NumComponent extends Rete.Component {
     // ...
 
     code(node, inputs, add) { // параметр 'node' как у worker()
-        // 'inputs' содержить имена переменных
+        // 'inputs' содержит имена переменных
         add('console.log("hello!")') // добавить строку кода
         add('num', node.data.num); // добавить переменную со значением "node.data.num"
     }

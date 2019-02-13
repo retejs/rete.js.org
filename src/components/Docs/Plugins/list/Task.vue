@@ -29,7 +29,7 @@ this.task = {
 worker(node, inputs, data) { // data это 'any data' из run()
   console.log('Keydown event', node.id, data);
   // inputs['inp_num1']
-  this.closed = ['num1']; // предотвращает выход таска, который соединен с текущим через первый 'option' сокет
+  this.closed = ['num1']; // предотвращает переход к выходному таску, который соединен с текущим через первый 'option' сокет
   return {num2: data} // возвращает выходные данные
 }
 </code>

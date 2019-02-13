@@ -50,7 +50,7 @@ export default class ModuleComponent extends Component {
     }
 
     builder(node) {
-        var ctrl = new FieldControl(this.editor, 'module', {value: 'Module name..'}); // the key must be 'module'
+        var ctrl = new FieldControl(this.editor, 'module', {value: 'Module name..'}); // ключ должен быть 'module'
         ctrl.onChange = () => {
             this.updateModuleSockets(node);
             node.update();

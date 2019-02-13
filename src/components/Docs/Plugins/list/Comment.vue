@@ -12,6 +12,6 @@
 import CommentPlugin from 'rete-comment-plugin';
 
 editor.use(CommentPlugin, { 
-    margin: 20 // по умолчанию отступ для комментариев нового кадра равен 30px
+    margin: 20 // по умолчанию отступ для новых кадров равен 30px
 });
 </code>
