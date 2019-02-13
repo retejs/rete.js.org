@@ -1,7 +1,9 @@
 import getDocs from './docs';
+import getComments from './comments';
 
 export default () => [
     ...getDocs(),
+    ...getComments(),
     ["Изучение", {
         en: "Learning",
         ua: "Вивчення"
@@ -253,5 +255,6 @@ export default () => [
     ["События", {
         en: "Developments",
         ua: "Події"
-    }]
+    }],
+    
 ]
