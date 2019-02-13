@@ -13,10 +13,10 @@ import CodePlugin from 'rete-code-plugin';
 class NumComponent extends Rete.Component {
     // ...
 
-    code(node, inputs, add) { // 'node' param is similar to worker's "node"
-        // "inputs" contains variables name
-        add('console.log("hello!")') // add code line
-        add('num', node.data.num); // add variable with value "node.data.num"
+    code(node, inputs, add) { // параметр 'node' как у worker()
+        // 'inputs' содержить имена переменных
+        add('console.log("hello!")') // добавить строку кода
+        add('num', node.data.num); // добавить переменную со значением "node.data.num"
     }
 }
 

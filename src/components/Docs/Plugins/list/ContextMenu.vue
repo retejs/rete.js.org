@@ -37,8 +37,8 @@ editor.use(ContextMenuPlugin, {
 
 <code name="allocate">
 allocate() { return ["Single submenu"] }
-allocate(component) { return component.path } // where path is a stack of menu for every component
-allocate(component) { return null } // exclude component from menu items
+allocate(component) { return component.path } // где path это стек меню для каждого компонента
+allocate(component) { return null } // исключение компонента из меню
 </code>
 
 <code name="rename">

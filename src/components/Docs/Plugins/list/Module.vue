@@ -24,8 +24,8 @@ class InputNumber extends Component {
     }
 
     builder(node) {
-        var out = new Output('output', 'Number', sockets.num); // the key must be 'output'
-        var ctrl = new FieldControl(this.editor, 'name', {value: ''}); // the key must be 'name'
+        var out = new Output('output', 'Number', sockets.num); // ключ должен быть 'output'
+        var ctrl = new FieldControl(this.editor, 'name', {value: ''}); // ключ должен быть 'name'
         var ctrl2 = new FieldControl(this.editor, 'number', {type: 'number', value: 1});
         
         return node
@@ -36,7 +36,7 @@ class InputNumber extends Component {
 
     async worker(node, inputs, outputs) {
         if (!outputs['num'])
-            outputs['num'] = node.data.number; // here you can modify received outputs of Input node
+            outputs['num'] = node.data.number; // здесь вы можете модифицировать возвращаемые в модуль выходные данные
     }
 };
 
@@ -70,8 +70,8 @@ class OutputNumber extends Component {
     }
 
     builder(node) {
-        var inp = new Input('input', 'Number', sockets.num); // the key must be 'input'
-        var ctrl = new FieldControl(this.editor, 'name', {value: 'num'}); // the key must be 'name'
+        var inp = new Input('input', 'Number', sockets.num); // ключ должен быть 'input'
+        var ctrl = new FieldControl(this.editor, 'name', {value: 'num'}); // ключ должен быть 'name'
 
         return node
             .addControl(ctrl)

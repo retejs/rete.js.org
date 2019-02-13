@@ -24,8 +24,8 @@ class MyComponent extends Rete.Component {
   constructor(){
     // ...
     this.data.render = 'vue';
-    this.data.component = CustomNodeComponent; // Vue.js component, not required
-    this.data.props = {}; // props for the component above, not required
+    this.data.component = CustomNodeComponent; // Vue.js компонент, не обязателен
+    this.data.props = {}; // свойства для компонента выше, не обязателен
   }
 }
 
@@ -33,8 +33,8 @@ class MyControl extends Rete.Control {
   constructor(){
     // ...
     this.data.render = 'vue';
-    this.data.component = CustomControlComponent; // Vue.js component, required
-    this.data.props = {}; // props for the component above, not required
+    this.data.component = CustomControlComponent; // Vue.js компонент, не обязателен
+    this.data.props = {}; // свойства для компонента выше, не обязателен
   }
 }
 </code>
@@ -43,10 +43,10 @@ class MyControl extends Rete.Control {
 const node = editor.nodes[0];
 const control = node.controls.get('ctrl');
 
-node.update(); // force update
-control.update(); // of view
+node.update(); // принудительное обновление представления
+control.update();
 
-// in some cases you can gt Vue.js context
+// в некоторых случаях вам может потребоваться Vue.js контекст
 node.vueContext
 control.vueContext
 </code>

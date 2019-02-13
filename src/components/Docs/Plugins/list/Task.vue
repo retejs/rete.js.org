@@ -18,7 +18,7 @@ editor.use(TaskPlugin);
 <code name="contruct">
 this.task = {
   outputs: {num1: 'option', num2: 'output'},
-  init(task) {  // сalled when initializing all tasks (at the engine.process())
+  init(task) {  // вызывается при инициализации всех тасков (при engine.process())
     task.run('any data');
     task.reset();
   }
@@ -26,10 +26,10 @@ this.task = {
 </code>
 
 <code name="worker">
-worker(node, inputs, data) { // data is 'any data' from run()
+worker(node, inputs, data) { // data это 'any data' из run()
   console.log('Keydown event', node.id, data);
   // inputs['inp_num1']
-  this.closed = ['num1']; // prevents the call of the Tasks, which are connected to the current task through the first 'option' socket
-  return {num2: data} // return output data
+  this.closed = ['num1']; // предотвращает выход таска, который соединен с текущим через первый 'option' сокет
+  return {num2: data} // возвращает выходные данные
 }
 </code>

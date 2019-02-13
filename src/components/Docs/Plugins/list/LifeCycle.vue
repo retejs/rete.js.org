@@ -22,12 +22,12 @@ class AddComponent extends Rete.Component {
   destroyed(node) {
   }
 
-  onconnect(io) { // input or output
-    return false; // prevent connect
+  onconnect(io) { // вход или выход
+    return false; // предотвратить соединение
   }
 
   ondisconnect(connection) {
-    return false; // prevent disconnect
+    return false; // предотвратить отсоединение
   }
 
   connected(connection) {

@@ -28,13 +28,13 @@
 
 <code name="process">
 editor.on('process', () => {
-  // for example, call editor.process()
+  // например, вызовите editor.process()
 });
 </code>
 
 <code name="nodecreate">
 editor.on('nodecreate', node => {
- return editor.nodes.some(item => item.name === node.name); // prevent adding of new node
+ return editor.nodes.some(item => item.name === node.name); // предотвратить добавление нового узла
 });
 </code>
 

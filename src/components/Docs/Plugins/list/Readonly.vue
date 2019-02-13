@@ -13,7 +13,7 @@
 <code name="install">
 import ReadonlyPlugin from 'rete-readonly-plugin';
 
-editor.use(ReadonlyPlugin, { enabled: false }); // enabled is true by default
+editor.use(ReadonlyPlugin, { enabled: false }); // enabled равен true по умолчанию
 </code>
 
 <code name="exist">

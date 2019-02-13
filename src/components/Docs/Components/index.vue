@@ -26,15 +26,15 @@
 <code name="componentPure">
 class MyComponent extends Rete.Component {
   constructor() {
-    super("My Component"); // name
+    super("My Component"); // имя
   }
 
   builder(node) {
-    /// modify node
+    /// модифицировать узел
   }
 
   worker(node, inputs, outputs) {
-    /// process data
+    /// обработать данные
   }
 }
 </code>
@@ -53,7 +53,7 @@ class NumberComponent extends Rete.Component {
   }
 
   builder(node){
-    // modify node
+    // модифицировать узел
     node.data.num = 3;
     node.addInput(new Rete.Input('key1', 'Number', numSocket));
     node.addOutput(new Rete.Output('key2', 'Number', numSocket));

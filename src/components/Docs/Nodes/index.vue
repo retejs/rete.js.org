@@ -26,8 +26,8 @@ new Rete.Output ('num', 'Number', numSocket, false);
 
 <code name="createNode">
 var in1 = new Rete.Input('num1', 'Number', numSocket);
-var in2 = new Rete.Input('num2', 'Number', numSocket, true); // can have multiple connections
-var out = new Rete.Output('Number', numSocket); // the third parameter must be false to deny multiple connections
+var in2 = new Rete.Input('num2', 'Number', numSocket, true); // может иметь множество соединений
+var out = new Rete.Output('Number', numSocket); // третий параметр должен быть false, чтобы запретить множество подключений
 
 var numControl = new NumControl();
 

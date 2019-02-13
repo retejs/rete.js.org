@@ -57,9 +57,9 @@ class FieldChangeAction extends HistoryPlugin.Action {
   }
 }
 
-// inside a "change" method of your Control (called by user action)
-// this.value - value before changing
-// next - new value
-// (v) => this.set(v) - change value of Field by undo/redo
+// внутри метода "change" вашего Control (вызывается по действию пользователя)
+// this.value - значение до изменения
+// next - новое значение
+// (v) => this.set(v) - коллбэк для изменения значения поля по undo/redo
 this.emitter.trigger('addhistory', new FieldChangeAction(this.value, next, (v) => this.set(v)));
 </code>

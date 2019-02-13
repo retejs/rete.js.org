@@ -12,6 +12,6 @@
 import CommentPlugin from 'rete-comment-plugin';
 
 editor.use(CommentPlugin, { 
-    margin: 20 // indent for new frame comments by default 30 (px)
+    margin: 20 // по умолчанию отступ для комментариев нового кадра равен 30px
 });
 </code>
