@@ -1,5 +1,4 @@
 import Vue from 'vue';
-import Vuex from 'vuex';
 import iView from 'iview';
 import VueMarkdown from 'vue-markdown';
 import { getLocale } from './i18n'
@@ -14,10 +13,9 @@ import './shared';
 
 Vue.config.productionTip = false
 
-Vue.use(Vuex);
 Vue.use(iView);
 Vue.use(VueRouter);
-Vue.use(I18n, new Vuex.Store());
+Vue.use(I18n);
 Vue.use(VueMarkdown);
 
 new Vue({
