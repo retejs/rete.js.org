@@ -22,7 +22,7 @@
     a(href="https://github.com/retejs/rete/issues/249#issuecomment-461755916") подключены отдельно
   h2 Установка без сборщиков (Webpack, Rollup и т.д.)
   p Если вы не используете сборщики, можете подключить зависимости в вашу страницу
-  Code(source="cdn" lang="html" )
+  Code(source="cdn" lang="html" :view="versions")
   p и подключить UMD модули:
   Code(source="oldschool_dep")
 
@@ -43,9 +43,9 @@
 
 
 <code name="cdn">
-<script src="https://cdn.jsdelivr.net/npm/rete@1.0.0/build/rete.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/rete-vue-render-plugin@0.2.6/build/vue-render-plugin.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/rete-connection-plugin@0.3.3/build/connection-plugin.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/rete@{{rete}}/build/rete.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/rete-vue-render-plugin@{{rete-vue-render-plugin}}/build/vue-render-plugin.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/rete-connection-plugin@{{rete-connection-plugin}}/build/connection-plugin.min.js"></script>
 </code>
 
 <code name="install">
@@ -116,13 +116,26 @@ import preview from '../assets/preview.png';
 export default {
   data() {
     return {
-      preview
+      preview,
+      versions: {
+        'rete': '1.1.0',
+        'rete-vue-render-plugin': '0.3.0',
+        'rete-connection-plugin': '0.4.2'
+      }
     }
   },
   methods: {
     go(section) {
       this.$router.push(`/docs/${section}`);
     }
+  },
+  mounted() {
+    Object.keys(this.versions).map(async name => {
+      const resp = await fetch(`https://data.jsdelivr.com/v1/package/npm/${name}`);
+      const data = await resp.json();
+      
+      this.versions[name] = data.tags.latest;
+    })
   }
 };
 </script>
