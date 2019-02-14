@@ -1,7 +1,8 @@
 <template lang="pug">
-Card.view(v-t9n)
+Card.view(v-t9n.deep)
   p(slot="title")
-    Icon(type="md-list") Модули
+    Icon(type="md-list")
+    |  Модули
   Button(slot="extra" shape="circle" size="small" icon="md-add" @click="addModule()")
   
   RadioGroup(v-model="module" vertical)
