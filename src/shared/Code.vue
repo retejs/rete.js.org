@@ -1,5 +1,5 @@
 <template lang="pug">
-pre(v-highlightjs="code")
+pre(v-highlightjs="code()")
   code(:class="{[lang]: true}")
 </template>
 
@@ -27,12 +27,10 @@ export default {
       template: ''
     }
   },
-  computed: {
+  methods: {
     code() {
       return this.translate(micromustache.render(this.template, this.view));
-    }
-  },
-  methods: {
+    },
     getParentCode(parent, name) {
       const { code } = parent.$options;
       const { $parent } = parent;
