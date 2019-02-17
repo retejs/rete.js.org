@@ -101,7 +101,7 @@ editor.register(numComponent);
 
 <code name="engine">
 const engine = new Rete.Engine('demo@0.1.0');
-editor.register(numComponent);
+engine.register(numComponent);
 
 editor.on('process nodecreated noderemoved connectioncreated connectionremoved', async () => {
     await engine.abort();
