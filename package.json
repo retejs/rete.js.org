@@ -40,7 +40,8 @@
     "pug-plain-loader": "^1.0.0",
     "raw-loader": "^1.0.0",
     "sass-loader": "^7.1.0",
-    "vue-template-compiler": "^2.5.17"
+    "vue-template-compiler": "^2.5.17",
+    "workbox-webpack-plugin": "^4.1.0"
   },
   "eslintConfig": {
     "root": true,
