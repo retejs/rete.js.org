@@ -10,6 +10,7 @@ import I18n from './i18n';
 import VueRouter, { router } from './router';
 import App from './App.vue';
 import './shared';
+import './pwa';
 
 Vue.config.productionTip = false
 
