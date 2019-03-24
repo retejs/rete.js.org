@@ -87,5 +87,9 @@ export default meta([
   {
     path: 'history',
     component: () => import('./History.vue')
+  },
+  {
+    path: 'dock',
+    component: () => import('./Dock.vue')
   }
 ]);
