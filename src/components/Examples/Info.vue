@@ -1,23 +1,23 @@
 <template lang="pug">
 .info(v-t9n)
-  router-link.title(:to="item.key") {{text[item.key].title}}
+  router-link.title(:to="item.key") {{text.title}}
   Card.packages-card(:title="$t('Пакеты')" :padding="0" shadow)
     CellGroup
       Cell(v-for="pkg in item.packages" :title="pkg", :key="pkg" :to="'https://www.npmjs.com/package/'+pkg" target="_blank")
         img(:src="'https://img.shields.io/npm/v/'+pkg+'.svg'" slot="extra"  alt="npm version" height="22")     
-  p {{text[item.key].description}}
+  p {{text.description}}
 </template>
 
 <script>
-import text from '../../consts/examples/text.json';
+import getText from './text';
 
 export default {
   props: {
     'item': Object
   },
-  data(){
-    return {
-      text
+  computed: {
+    text() {
+      return getText(this.item.key);
     }
   }
 }

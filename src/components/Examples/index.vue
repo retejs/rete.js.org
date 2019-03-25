@@ -4,20 +4,19 @@
     TabPane(v-for="item in list"
       :key="item.key" 
       :name="item.key"
-      :label="$t(text[item.key].title)"
+      :label="$t(getText(item.key).title)"
       icon="md-arrow-forward"
       )
   router-view(:example="example")
 </template>
 
 <script>
-import text from '../../consts/examples/text.json';
+import getText from './text';
 import list from './list';
 
 export default {
   data() {
     return {
-      text,
       list,
       tab: this.$route.params.key
     }
@@ -28,6 +27,7 @@ export default {
     }
   },
   methods: {
+    getText,
     open(key) {
       this.$router.push(key)
     }
