@@ -5,6 +5,7 @@ import module from './module';
 import task from './task';
 import customization from './customization';
 import reroute from './reroute';
+import dock from './dock';
 
 export default [
     {
@@ -74,6 +75,16 @@ export default [
             'rete-connection-plugin',
             'rete-vue-render-plugin',
             'rete-connection-reroute-plugin'
+        ]
+    },
+    {
+        key: 'dock',
+        init: dock,
+        packages: [
+            'rete',
+            'rete-connection-plugin',
+            'rete-vue-render-plugin',
+            'rete-dock-plugin'
         ]
     }
 ]
