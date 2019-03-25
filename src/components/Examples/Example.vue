@@ -3,6 +3,7 @@
   Info(:item="example")
   .view
     div(ref="view")
+    div(ref="extra")
 </template>
 
 
@@ -14,8 +15,9 @@ export default {
   methods: {
     init() {
       this.$refs.view.innerHTML = '';
-      this.$refs.view.className = '';
-      this.example.init(this.$refs.view);
+      this.$refs.extra.innerHTML = '';
+      this.$refs.extra.className = '';
+      this.example.init(this.$refs.view, this.$refs.extra);
     }
   },
   mounted() {
