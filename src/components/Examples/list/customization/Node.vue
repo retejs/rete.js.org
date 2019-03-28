@@ -20,11 +20,11 @@
 </template>
 
 <script>
-import { mixin } from 'rete-vue-render-plugin';
+import VueRender from 'rete-vue-render-plugin';
 import Socket from './Socket.vue';
 
 export default {
-  mixins: [mixin],
+  mixins: [VueRender.mixin],
   components: {
     Socket
   }

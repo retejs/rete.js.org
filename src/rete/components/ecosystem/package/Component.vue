@@ -21,12 +21,12 @@
 </template>
 
 <script>
-import { mixin, Socket } from 'rete-vue-render-plugin';
+import VueRender from 'rete-vue-render-plugin';
 
 export default {
-  mixins: [mixin],
+  mixins: [VueRender.mixin],
   components: {
-    Socket
+    Socket: VueRender.Socket
   }
 }
 </script>

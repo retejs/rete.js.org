@@ -8,10 +8,10 @@
 
 
 <script>
-import { Socket } from 'rete-vue-render-plugin';
+import VueRender from 'rete-vue-render-plugin';
 
 export default {
-  extends: Socket,
+  extends: VueRender.Socket,
   props: ['used']
 }
 </script>
