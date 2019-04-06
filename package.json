@@ -15,7 +15,7 @@
     "rete": "v1.1.0",
     "rete-area-plugin": "^0.2.1",
     "rete-connection-plugin": "0.4.5",
-    "rete-connection-reroute-plugin": "^0.1.2",
+    "rete-connection-reroute-plugin": "^0.2.1",
     "rete-context-menu-plugin": "^0.3.0",
     "rete-dock-plugin": "^0.1.1",
     "rete-module-plugin": "^0.2.0",
