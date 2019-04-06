@@ -1,6 +1,7 @@
 <template lang="pug">
-.info(v-t9n)
-  router-link.title(:to="item.key") {{text.title}}
+.info(v-t9n.deep)
+  router-link.title(:to="item.key")
+    template {{text.title}}
   Card.packages-card(:title="$t('Пакеты')" :padding="0" shadow)
     CellGroup
       Cell(v-for="pkg in item.packages" :title="pkg", :key="pkg" :to="'https://www.npmjs.com/package/'+pkg" target="_blank")
