@@ -212,6 +212,18 @@ export default () => [
         en: "This plugin allows you to set the key points through which the line will pass",
         ua: "Даний плагін дозволяє задати ключові точки, через які буде проходити лінія"
     }],
+    ["Док меню", {
+        en: "Dock menu",
+        ua: "Док меню"
+    }],
+    ["Меню для быстрого доступа к добавляемым узлам", {
+        en: "Menu for quick access to add nodes",
+        ua: "Меню для швидкого доступу до додаваємих вузлів"
+    }],
+    ["Перетащите псевдоузел в область или кликните на него, предварительно кликнув в области для указания позиции", {
+        en: "Drag a preudo node into area or click on it after clicking in the area to specify position",
+        ua: "Перетягніть псевдовузол в області або клікніть на нього, попередньо клікнувши в області для вказання позиції"
+    }],
     ["Проблемы", {
         en: "Issues",
         ua: "Проблеми"
