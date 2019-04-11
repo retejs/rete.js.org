@@ -24,6 +24,8 @@
   p Перед действием проверяются все слушатели события, и если хотя бы один из них возвращает false, действие не будет выполнено. По умолчанию `return true` не нужен.
   p Также вы можете обрабатывать несколько событий.
   Code(source="events")
+  p Для статической типизации в TypeScript вы можете указать события в виде массива строк
+  Code(source="events_ts")
 </template>
 
 <code name="process">
@@ -40,6 +42,10 @@ editor.on('nodecreate', node => {
 
 <code name="events">
 editor.on('nodecreated connectioncreated noderemoved connectionremoved', () => {});
+</code>
+
+<code name="events_ts">
+editor.on(['nodecreated', 'connectioncreated', 'noderemoved', 'connectionremoved'], () => {});
 </code>
 
 <script>

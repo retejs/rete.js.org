@@ -78,5 +78,9 @@ export default [
     ["Также вы можете обрабатывать несколько событий", {
         en: "You can also handle multiple events",
         ua: "Також ви можете обробляти кілька подій"
+    }],
+    ["Для статической типизации в TypeScript вы можете указать события в виде массива строк", {
+        en: "For static typing in TypeScript you can specify events as an array of strings",
+        ua: "Для статичної типізиції в TypeScript ви можете вказати події у вигляді масива строк"
     }]
 ];
