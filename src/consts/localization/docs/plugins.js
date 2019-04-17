@@ -30,5 +30,13 @@ export default [
     ["компилировать шаблоны во время выполения", {
         en: "to compile templates in runtime",
         ua: "компілювати шаблони під час виконання"
+    }],
+    ["Создание контрола на основе React компонента", {
+        en: "Creating control based on React component",
+        ua: "Створення контрола на основі React компоненту"
+    }],
+    ["Кастомизация узлов", {
+        en: "Customize nodes",
+        ua: "Кастомізація вузлів"
     }]
 ];

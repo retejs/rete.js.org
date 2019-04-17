@@ -17,6 +17,10 @@ export default meta([
     component: () => import('./VueRender.vue')
   },
   {
+    path:  'react-render',
+    component: () => import('./ReactRender.vue')
+  },
+  {
     path:  'stage0-render',
     component: () => import('./Stage0Render.vue')
   },
