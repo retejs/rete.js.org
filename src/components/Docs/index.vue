@@ -1,30 +1,42 @@
 <template lang="pug">
-.docs(v-t9n.deep="'docs'")
-  Menu.menu
+.docs(v-t9n.deep="'docs'" :class="{phone: isPhoneScreen}")
+  Menu.menu(width="auto")
     h1 Документация
-    MenuItem(name="start" to="/docs") Главное
-    MenuItem(name="editor" to="/docs/editor") Редактор
-    MenuItem(name="engine" to="/docs/engine") Движок
-    MenuItem(name="components" to="/docs/components") Компоненты
-    MenuItem(name="nodes" to="/docs/nodes") Узлы
-    MenuItem(name="sockets" to="/docs/sockets") Сокеты
-    MenuItem(name="controls" to="/docs/controls") Контролы
-    MenuItem(name="events" to="/docs/events") События
-    MenuItem(name="plugins" to="/docs/plugins") Плагины
+      Icon.burger-icon(
+        v-if="isPhoneScreen"
+        type="md-menu"
+        :size="20"
+        @click="drawer = true"
+      )
+    MenuItems(v-if="!isPhoneScreen")
   .content
     router-view
+  Drawer.drawer(
+    v-model="drawer"
+  )
+    Menu(width="auto")
+      MenuItems
 </template>
 
 
 <script>
 import Vue from 'vue';
 import VueHighlightJS from 'vue-highlightjs';
+import mediaMixin from '../../utils/media.mixin';
+import MenuItems from './MenuItems';
 
 Vue.use(VueHighlightJS);
 
-
 export default {
-  
+  mixins: [mediaMixin],
+  data() {
+    return {
+      drawer: false
+    }
+  },
+  components: {
+    MenuItems
+  }
 }
 </script>
 
@@ -38,6 +50,10 @@ export default {
 .docs
   display: flex
   text-align: left
+  &.phone
+    flex-direction: column
+    .menu
+      width: 100%
   .menu
     text-align: right
     h1
@@ -48,6 +64,8 @@ export default {
     padding: 2em
     overflow: auto
 
+.burger-icon
+  margin: 0 0.5em
 </style>
 
 <style lang="sass">
@@ -61,3 +79,8 @@ export default {
     max-width: 100%
 </style>
 
+<style lang="sass">
+.drawer
+  .ivu-drawer-body
+    padding: 0
+</style>
