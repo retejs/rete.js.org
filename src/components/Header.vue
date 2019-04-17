@@ -1,44 +1,48 @@
 <template lang="pug">
 .header(v-t9n.deep)
   Menu.menu(
-      :mode="smallScreen?'vertical':'horizontal'"
-      :class="{horizontal: !smallScreen}"
+      mode="horizontal"
       width="100%"
     )
     MenuItem.logo(name="logo", to="/")
       Logo.icon.ivu-icon(:hover="true")
       span Rete.js
+    .menu-burger(v-if="smallScreen" @click="drawer = true")
+      Icon(type="md-menu" :size="20")
     .space
-    Submenu(name="learn")
-      span(slot="title") Изучение
-      MenuItem(name="docs", to="/docs") Документация
-      MenuItem(name="examples", to="/examples") Примеры
-    Submenu(name="ecosystem")
-      span(slot="title") Экосистема
-      MenuItem(name="components", to="/components") Компоненты
-      MenuItem(name="issues", to="/issues") Проблемы
-      MenuItem(name="cli", to="/cli") Rete CLI
-    MenuItem(name="support", to="/support") Поддержать
+    MenuItems(v-if="!smallScreen")
     Language
+  Drawer.drawer(
+    placement="left"
+    v-model="drawer"
+  )
+    Menu(width="auto")
+      MenuItem.logo(name="logo", to="/")
+        Logo.icon.ivu-icon(:hover="true")
+        span Rete.js
+      MenuItems
 </template>
 
 <script>
 import Logo from './Logo';
 import Language from './Language';
+import MenuItems from './MenuItems';
 
 export default {
   data() {
     return {
       smallScreen: false,
+      drawer: false
     }
   },
   components: {
     Logo,
-    Language
+    Language,
+    MenuItems
   },
   methods: {
     resize() {
-      this.smallScreen = window.innerWidth < 500
+      this.smallScreen = window.innerWidth < 600
     }
   },
   mounted(){
@@ -53,14 +57,19 @@ export default {
 .header
   align-self: stretch
   .menu
-    &.horizontal
-      display: flex
-    .logo
-      font-size: 20px
-      .icon
-        height: 50px
-        width: 50px
+    display: flex
     .space
       flex: 1
+  
+.logo
+  font-size: 20px
+  .icon
+    height: 50px
+    width: 50px
 </style>
 
+<style lang="sass">
+.drawer
+  .ivu-drawer-body
+    padding: 0
+</style>
