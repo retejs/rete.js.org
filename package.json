@@ -10,7 +10,7 @@
   "dependencies": {
     "case": "^1.6.0",
     "html-loader": "^0.5.5",
-    "iview": "^3.0.0",
+    "iview": "^3.4.0",
     "micromustache": "^5.4.0",
     "rete": "v1.1.0",
     "rete-area-plugin": "^0.2.1",
