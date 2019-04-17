@@ -7,10 +7,10 @@
     MenuItem.logo(name="logo", to="/")
       Logo.icon.ivu-icon(:hover="true")
       span Rete.js
-    .menu-burger(v-if="smallScreen" @click="drawer = true")
+    .menu-burger(v-if="isPhoneScreen" @click="drawer = true")
       Icon(type="md-menu" :size="20")
     .space
-    MenuItems(v-if="!smallScreen")
+    MenuItems(v-if="!isPhoneScreen")
     Language
   Drawer.drawer(
     placement="left"
@@ -27,11 +27,12 @@
 import Logo from './Logo';
 import Language from './Language';
 import MenuItems from './MenuItems';
+import mediaMixin from '../utils/media.mixin';
 
 export default {
+  mixins: [mediaMixin],
   data() {
     return {
-      smallScreen: false,
       drawer: false
     }
   },
@@ -39,15 +40,6 @@ export default {
     Logo,
     Language,
     MenuItems
-  },
-  methods: {
-    resize() {
-      this.smallScreen = window.innerWidth < 600
-    }
-  },
-  mounted(){
-    this.resize();
-    window.addEventListener('resize', this.resize)
   }
 }
 </script>
