@@ -2,7 +2,7 @@
 Footer.footer
   .lines
     div Released under the {{license}}
-    div Copyright © {{release}}-2018 {{author}}
+    div Copyright © {{releaseYear}}-{{year}} {{author}}
   .links
     Tooltip(v-for="{title, icon, to} of links" :content="title", :key="to")
       Button(size="large" shape="circle" :icon="icon" :to="to" target="_blank")
@@ -10,19 +10,20 @@ Footer.footer
 
 
 <script>
-import { license, author, release } from '../consts/product.json';
+import { license, author, release as releaseYear } from '../consts/product.json';
 
 export default {
   data(){
     return {
       license,
       author,
-      release,
+      releaseYear,
       links: [
         { title: 'GitHub', icon: 'logo-github', to: '//github.com/retejs' },
         { title: 'LinkedIn', icon: 'logo-linkedin', to: '//linkedin.com/in/ni55an/' },
         { title: 'Gitter', icon: 'md-stats', to: '//gitter.im/retejs/Lobby' }
-      ]
+      ],
+      year: new Date().getFullYear()
     }
   }
 }
