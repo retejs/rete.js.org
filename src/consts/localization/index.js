@@ -1,9 +1,11 @@
 import getDocs from './docs';
 import getComments from './comments';
+import getCli from './cli';
 
 export default () => [
     ...getDocs(),
     ...getComments(),
+    ...getCli(),
     ["Изучение", {
         en: "Learning",
         ua: "Вивчення"
