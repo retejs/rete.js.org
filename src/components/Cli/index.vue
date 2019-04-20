@@ -10,11 +10,20 @@
   .steps
     p.title Начало работы
     .step 
-      div Установка
+      p Установка
       Code(lang="bash") npm i -g rete-cli
     .step 
-      div Создание плагина
+      p Создание плагина
       Code(lang="bash") rete --plugin &lt;name&gt; # {{$t('где')}} &lt;name&gt; - {{$t('имя плагина')}}
+      div это создаст директорию на основе 
+        a(href="https://github.com/retejs/rete-cli/tree/master/bin/plugin/boilerplate") шаблона
+    .step
+      p Сборка вашего пакета должна выполняться с помощью команды (которая уже записана в package.json)
+      Code rete --build rete.config.js
+      div в директории build будут созданы бандлы трех форматов: UMD, CommonJS, ES. Сборка выполняется с помощью Rollup, конфигурация которого 
+        a(href="https://github.com/retejs/rete-cli/blob/master/bin/build/config.js") расширена.
+      p Пример конфигурации:
+      Code(source="config_example")
 </template>
 
 <script>
@@ -38,6 +47,23 @@ export default {
 }
 </script>
 
+<code name="config_example">
+export default {
+    input: 'src/index.ts',
+    name: 'Rete',
+    babelPresets: [
+        require('@babel/preset-typescript')
+    ],
+    babelPlugins: [],
+    extensions: ['.js', '.ts'],
+    plugins: [],
+    globals: {
+        'vue': 'Vue'
+    },
+    ...rollupOptions
+}
+</code>
+
 <style lang="sass" scoped>
 .cli
   .logo
@@ -49,5 +75,4 @@ export default {
       font-weight: bold
     .step
       fony-size: 1rem
-   
 </style>
