@@ -11,25 +11,19 @@
     p.title Начало работы
     .step 
       div Установка
-      code.highlight npm i -g rete-cli
+      Code(lang="bash") npm i -g rete-cli
     .step 
       div Создание плагина
-        span :
-      code.highlight rete --plugin &lt;name&gt; 
-        .comment
-          span 
-            | # 
-          span где
-          span 
-            | &lt;name&gt; - 
-          span имя плагина
-
+      Code(lang="bash") rete --plugin &lt;name&gt; # где &lt;name&gt; - имя плагина
 </template>
 
 <script>
-import VueMarkdown from 'vue-markdown';
+import Vue from 'vue';
 import Logo from '../Logo';
 import { title, highlights } from '../../consts/cli.json';
+import Code from '@/shared/Code';
+
+Vue.component('Code', Code); // define for nested components
 
 export default {
   data(){
@@ -39,8 +33,7 @@ export default {
     }
   },
   components: {
-    Logo,
-    VueMarkdown
+    Logo
   }
 }
 </script>

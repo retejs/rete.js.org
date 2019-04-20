@@ -5,7 +5,11 @@ pre(v-highlightjs="code()")
 
 
 <script>
+import Vue from 'vue';
 import micromustache from 'micromustache';
+import VueHighlightJS from 'vue-highlightjs';
+
+Vue.use(VueHighlightJS);
 
 export default {
   props: {
@@ -45,7 +49,7 @@ export default {
   },
   mounted() {
     if(this.$slots.default)
-      this.code = this.$slots.default[0].text;
+      this.template = this.$slots.default[0].text;
     else if(this.source)
       this.template = this.getParentCode(this.$parent, this.source);
 
@@ -56,7 +60,8 @@ export default {
 }
 </script>
 
-
-<style lang="sass" scoped>
-
+<style lang="sass">
+@import '~highlight.js/styles/atom-one-dark.css'
+.hljs-comment
+  color: #93c700
 </style>

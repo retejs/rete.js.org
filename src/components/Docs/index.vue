@@ -21,11 +21,11 @@
 
 <script>
 import Vue from 'vue';
-import VueHighlightJS from 'vue-highlightjs';
 import mediaMixin from '../../utils/media.mixin';
 import MenuItems from './MenuItems';
+import Code from '@/shared/Code';
 
-Vue.use(VueHighlightJS);
+Vue.component('Code', Code);
 
 export default {
   mixins: [mediaMixin],
@@ -39,12 +39,6 @@ export default {
   }
 }
 </script>
-
-<style lang="sass">
-@import '~highlight.js/styles/atom-one-dark.css'
-.hljs-comment
-  color: #93c700
-</style>
 
 <style lang="sass" scoped>
 .docs
