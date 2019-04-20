@@ -2,7 +2,7 @@ const qs = require('querystring')
 
 module.exports = function (source, map) {
   const params = qs.parse(this.resourceQuery);
-  console.log(params)
+  // console.log(params)
   this.callback(
     null,
     `export default function (Component) {
