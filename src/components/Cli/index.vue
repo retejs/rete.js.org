@@ -14,7 +14,7 @@
       Code(lang="bash") npm i -g rete-cli
     .step 
       div Создание плагина
-      Code(lang="bash") rete --plugin &lt;name&gt; # где &lt;name&gt; - имя плагина
+      Code(lang="bash") rete --plugin &lt;name&gt; # {{$t('где')}} &lt;name&gt; - {{$t('имя плагина')}}
 </template>
 
 <script>
