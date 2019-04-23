@@ -1,5 +1,5 @@
 <template lang="pug">
-div
+div(v-t9n.deep)
   Submenu(name="learn")
     span(slot="title") Изучение
     MenuItem(name="docs", to="/docs") Документация
