@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import iView from 'iview';
 import VueMarkdown from 'vue-markdown';
+import InstantSearch from 'vue-instantsearch';
 import { getLocale } from './i18n'
 import 'iview/dist/styles/iview.css';
 import './assets/styles/common.sass';
@@ -17,6 +18,7 @@ Vue.use(iView);
 Vue.use(VueRouter);
 Vue.use(I18n);
 Vue.use(VueMarkdown);
+Vue.use(InstantSearch);
 
 new Vue({
   el: '#app',
