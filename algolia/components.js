@@ -9,11 +9,11 @@ import Controls from '../src/components/Docs/Controls/index.vue'
     // get('../src/components/Docs/Plugins/index.vue')
 
 export default [
-    Main,
-    Editor,
-    Engine,
-    Components,
-    Nodes,
-    Sockets,
-    Controls
+    { component: Main, path: '/docs' },
+    { component: Editor, path: '/docs/editor' },
+    { component: Engine, path: '/docs/engine' },
+    { component: Components, path: '/docs/components' },
+    { component: Nodes, path: '/docs/nodes' },
+    { component: Sockets, path: '/docs/sockets' },
+    { component: Controls, path: '/docs/controls' }
 ]

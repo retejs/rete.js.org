@@ -18,15 +18,15 @@ describe('algolia', () => {
         const index = client.initIndex('common');
         await index.clearIndex();
 
-        components.forEach(c => {
-            const wrapper = mount(c, { 
+        components.forEach(({ component, path }) => {
+            const wrapper = mount(component, { 
                 localVue,
                 stubs: {
                     Tooltip: true
                 }
             });
 
-            index.addObject({ text: wrapper.text() })
+            index.addObject({ text: wrapper.text(), path })
         });
     });
 });
