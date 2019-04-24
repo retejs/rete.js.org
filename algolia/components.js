@@ -1,13 +1,19 @@
-// const get = path => require('../src/components'+path);
+import Main from '../src/components/Docs/Main/index.vue'
+import Editor from '../src/components/Docs/Editor/index.vue'
+import Engine from '../src/components/Docs/Engine/index.vue'
+import Components from '../src/components/Docs/Components/index.vue'
+import Nodes from '../src/components/Docs/Nodes/index.vue'
+import Sockets from '../src/components/Docs/Sockets/index.vue'
+import Controls from '../src/components/Docs/Controls/index.vue'
+    // get('../src/components/Docs/Events/index.vue'),
+    // get('../src/components/Docs/Plugins/index.vue')
 
-module.exports = 
-    require('../src/components/Docs/Main/index.vue')
-    // get('/Docs/Main/index.vue'),
-    // get('/Docs/Editor/index.vue'),
-    // get('/Docs/Engine/index.vue'),
-    // get('/Docs/Components/index.vue'),
-    // get('/Docs/Nodes/index.vue'),
-    // get('/Docs/Sockets/index.vue'),
-    // get('/Docs/Controls/index.vue'),
-    // get('/Docs/Events/index.vue'),
-    // get('/Docs/Plugins/index.vue')
+export default [
+    Main,
+    Editor,
+    Engine,
+    Components,
+    Nodes,
+    Sockets,
+    Controls
+]
