@@ -48,6 +48,7 @@ export default {
     flex-direction: column
     .menu
       width: 100%
+      z-index: 1
   .menu
     text-align: right
     h1
@@ -77,4 +78,6 @@ export default {
 .drawer
   .ivu-drawer-body
     padding: 0
+  .ivu-drawer-wrap
+    z-index: 1100
 </style>
