@@ -5,7 +5,6 @@
     index-name="common"
   )
     ais-search-box.box
-      Icon(slot="submit-icon" type="md-search")
       template(slot-scope="{ currentRefinement, refine }")
         Input(
           suffix="md-search"
@@ -14,9 +13,15 @@
           v-model="currentRefinement"
           @input="refine($event)"
         )
-    ais-hits.hits(v-if="focus")
+    ais-hits.hits(v-show="focus")
       template(slot-scope="{ items }")
-        .hit(v-for="(item, i) in items" :key="i") {{ item.field }}
+        .hit(
+          v-for="(item, i) in items"
+          :key="i"
+          :tabindex="i"
+          @pointerdown="$router.push(item.path)"
+        )
+          |{{ item.text }}
 </template>
 
 
@@ -38,9 +43,6 @@ export default {
 
 
 <style lang="sass">
-$radius: 1em
-$bg: #eee
-
 .instant-search
   .box
     margin: 0 1em
@@ -48,7 +50,12 @@ $bg: #eee
     line-height: normal
     background: white
     box-shadow: 0 3px 3px rgba(0,0,0,0.2)
-    border-radius: 1em
+    overflow-y: auto
+    max-height: calc(100vh - 6em)
+    z-index: 1100
     .hit
       padding: 1em
+      width: 220px
+      max-height: 150px
+      overflow: hidden
 </style>
