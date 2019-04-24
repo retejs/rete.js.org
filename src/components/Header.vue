@@ -56,6 +56,7 @@ export default {
 <style lang="sass" scoped>
 .header
   align-self: stretch
+  z-index: 1100
   .menu
     display: flex
     .space
