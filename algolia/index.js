@@ -7,8 +7,8 @@ global.fetch.mockResponse(JSON.stringify({ tags: { latest: '0.0.0' }}))
 
 const client = algoliasearch(
     '0S8ITD2OZ2',
-    '0e372b36fbb8e1c0116c75a3531e36b4'
-  );
+    process.env.API_KEY
+);
 
 const localVue = createLocalVue()
 localVue.directive('t9n', { })
