@@ -15,6 +15,6 @@
     "babel-preset-env": "^1.7.0",
     "jest": "^21.1.0",
     "jest-transform-stub": "^2.0.0",
-    "vue-jest": "3.0.4"
+    "vue-jest": "^2.6.0"
   }
 }
