@@ -1,16 +1,28 @@
 import T9N from 'vue-t9n';
 
-export function getLocale() {
-    if(localStorage.getItem('lang'))
-        return localStorage.getItem('lang');
-        
-    if (navigator.userLanguage)
-        return navigator.userLanguage.split('-')[0];
+export class LangService {
 
-    if (navigator.language)
-        return navigator.language.split('-')[0];
-    
-    return 'en';
+    constructor() {
+        this.lang = this.getLocale();
+    }
+
+    getLocale() {
+        if(localStorage.getItem('lang'))
+            return localStorage.getItem('lang');
+            
+        if (navigator.userLanguage)
+            return navigator.userLanguage.split('-')[0];
+
+        if (navigator.language)
+            return navigator.language.split('-')[0];
+        
+        return 'en';
+    }
+
+    setLocale(value) {
+        localStorage.setItem('lang', value);
+        this.lang = value;
+    }
 }
 
 export function assignSection(list, name) {

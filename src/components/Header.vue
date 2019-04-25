@@ -7,10 +7,11 @@
     MenuItem.logo(name="logo", to="/")
       Logo.icon.ivu-icon(:hover="true")
       span Rete.js
-    .menu-burger(v-if="isPhoneScreen" @click="drawer = true")
+    .menu-burger(v-if="isTabletScreen" @click="drawer = true")
       Icon(type="md-menu" :size="20")
     .space
-    MenuItems(v-if="!isPhoneScreen")
+    Search
+    MenuItems(v-if="!isTabletScreen")
     Language
   Drawer.drawer(
     placement="left"
@@ -27,6 +28,7 @@
 import Logo from './Logo';
 import Language from './Language';
 import MenuItems from './MenuItems';
+import Search from './Search';
 import mediaMixin from '../utils/media.mixin';
 
 export default {
@@ -36,10 +38,16 @@ export default {
       drawer: false
     }
   },
+  computed: {
+    isTabletScreen() {
+      return this.screenWidth < 850;
+    }
+  },
   components: {
     Logo,
     Language,
-    MenuItems
+    MenuItems,
+    Search
   }
 }
 </script>
@@ -48,6 +56,7 @@ export default {
 <style lang="sass" scoped>
 .header
   align-self: stretch
+  z-index: 1100
   .menu
     display: flex
     .space
