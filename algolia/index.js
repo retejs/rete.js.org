@@ -1,21 +1,14 @@
 import { mount, createLocalVue } from '@vue/test-utils';
 import loadTranslations from './src/consts/localization';
 import VueT9N from 'vue-t9n';
-import algoliasearch from 'algoliasearch';
 import components from './components';
+import { indices } from './client';
 
 global.fetch = require('jest-fetch-mock')
 global.fetch.mockResponse(JSON.stringify({ tags: { latest: '0.0.0' }}))
 
-const client = algoliasearch(
-    '0S8ITD2OZ2',
-    process.env.API_KEY
-);
-
 const localVue = createLocalVue()
 localVue.use(VueT9N)
-
-const indices = ['ru', 'en', 'ua'].map(lang => ({ lang, index: client.initIndex(lang)}));
 
 function createWrapper(component) {
     const wrapper = mount(component, { 
