@@ -43,6 +43,8 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+@import '@/assets/styles/media.sass'
+
 .docs
   display: flex
   text-align: left
@@ -55,20 +57,28 @@ export default {
     text-align: right
     h1
       margin: 1em
+      +phone
+        margin: 0.5em
   .content
     flex: 1
     position: relative
     padding: 2em
     overflow: auto
+    +phone
+      padding: 5vw
 
 .burger-icon
   margin: 0 0.5em
 </style>
 
 <style lang="sass">
+@import '@/assets/styles/media.sass'
+
 .docs .content
   ul
     margin: 1em 3em
+    +phone
+      margin: 0.5em 1.5em
     li
       margin: 0.2em 0
   img

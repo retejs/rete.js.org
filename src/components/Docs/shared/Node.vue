@@ -1,16 +1,16 @@
 <template lang="pug">
 .node(@mouseover="always = true" @mouseleave="always = false" v-t9n.deep="'docs'")
-  Tooltip.title(placement="top" :always="always" offset="12px" @click.native="go('nodes')") Lorem Ipsum
+  Tooltip.tooltip.title(placement="top" :always="always" offset="12px" @click.native="go('nodes')") Lorem Ipsum
     template(slot="content") Узел
   .output
     .title dolor
-    Tooltip.socket(placement="right" :always="always" @click.native.stop="go('sockets')")
+    Tooltip.tooltip.socket(placement="right" :always="always" @click.native.stop="go('sockets')")
       template(slot="content") Сокет выхода
   .control
-    Tooltip.input(placement="right" :always="always" @click.native.stop="go('controls')")
+    Tooltip.tooltip.input(placement="right" :always="always" @click.native.stop="go('controls')")
       template(slot="content") Контрол
   .input
-    Tooltip.socket(placement="left" :always="always" @click.native.stop="go('sockets')")
+    Tooltip.tooltip.socket(placement="left" :always="always" @click.native.stop="go('sockets')")
       template(slot="content") Сокет входа
     .title sit amet
       template(slot="content") Название входа
@@ -81,4 +81,8 @@ export default {
 
   & > .title, .socket, .control
     cursor: pointer
+  
+  .tooltip
+    position: relative
+    z-index: 1
 </style>

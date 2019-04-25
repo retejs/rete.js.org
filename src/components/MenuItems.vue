@@ -1,5 +1,5 @@
 <template lang="pug">
-div(v-t9n.deep)
+.menu-items(v-t9n.deep)
   Submenu(name="learn")
     span(slot="title") Изучение
     MenuItem(name="docs", to="/docs") Документация
@@ -11,3 +11,8 @@ div(v-t9n.deep)
     MenuItem(name="cli", to="/cli") Rete CLI
   MenuItem(name="support", to="/support") Поддержать
 </template>
+
+<style lang="sass" scoped>
+.menu-items
+  white-space: nowrap
+</style>

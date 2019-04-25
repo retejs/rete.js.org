@@ -1,4 +1,4 @@
-const PHONE_MAX_WIDTH = 650;
+const PHONE_MAX_WIDTH = 600;
 
 export default {
     data() {
