@@ -1,5 +1,6 @@
 module.exports = {
     verbose: true,
+    cache: false,
     testMatch: ['<rootDir>/index.js'],
     moduleFileExtensions: [
       "js",
@@ -8,7 +9,7 @@ module.exports = {
     ],
     transform: {
       "^.+\\.js$": "babel-jest",
-      ".*\\.(vue)$": "vue-jest",
+      ".*\\.(vue)$": "./transform",
       ".+\\.(css|styl|less|sass|scss|png|jpg|svg|ttf|woff|woff2|gif)$": "jest-transform-stub"
     },
     moduleNameMapper: {

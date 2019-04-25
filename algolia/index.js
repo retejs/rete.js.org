@@ -22,11 +22,21 @@ function createWrapper(component) {
     return wrapper;
 }
 
-async function extractText(wrapper) {
+async function extractText(wrapper, component) {
     return await new Promise((res) => {
         wrapper.vm.$nextTick(() => {
-            const elements = wrapper.findAll('p,h1,h2,h3,h4,h5,h6').wrappers;
-            const text = elements.map(w => w.text());
+            const elements = wrapper.findAll('p,h1,h2,h3,h4,h5,h6,Code').wrappers;
+
+            const text = elements.map(w => {
+                if(w.is('Code')) {
+                    const block = component.customBlocks.find(b => b.type === 'code' && b.attrs.name && b.attrs.name === w.attributes('source'));
+
+                    if(block) return block.content.trim();
+                    return w.text();
+                }
+
+                return w.text();
+            });
 
             res(text);
         });
@@ -46,7 +56,11 @@ describe('algolia', () => {
             for(let { index, lang } of indices) {
                 wrapper.vm.$setLocale(lang);
 
-                index.addObject({ text: await extractText(wrapper), path })
+                const texts = await extractText(wrapper, component);
+                
+                for(let text of texts) {
+                    index.addObject({ text, path })
+                }
             }
         }
     });

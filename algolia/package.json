@@ -2,7 +2,7 @@
   "name": "algolia-vue-extractor",
   "version": "1.0.0",
   "scripts": {
-    "extract": "jest"
+    "extract": "jest --no-cache"
   },
   "author": "Vitaliy Stoliarov",
   "license": "ISC",
