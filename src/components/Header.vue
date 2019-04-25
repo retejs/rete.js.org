@@ -18,9 +18,6 @@
     v-model="drawer"
   )
     Menu(width="auto")
-      MenuItem.logo(name="logo", to="/")
-        Logo.icon.ivu-icon(:hover="true")
-        span Rete.js
       MenuItems
 </template>
 
@@ -29,6 +26,7 @@ import Logo from './Logo';
 import Language from './Language';
 import MenuItems from './MenuItems';
 import Search from './Search';
+import Drawer from '../shared/Drawer';
 import mediaMixin from '../utils/media.mixin';
 
 export default {
@@ -47,16 +45,18 @@ export default {
     Logo,
     Language,
     MenuItems,
-    Search
+    Search,
+    Drawer
   }
 }
 </script>
 
 
 <style lang="sass" scoped>
+@import '@/assets/styles/media.sass'
+
 .header
   align-self: stretch
-  z-index: 1100
   .menu
     display: flex
     .space
@@ -64,13 +64,10 @@ export default {
   
 .logo
   font-size: 20px
+  white-space: nowrap
+  +phone
+    padding: 0 1vw
   .icon
     height: 50px
     width: 50px
-</style>
-
-<style lang="sass">
-.drawer
-  .ivu-drawer-body
-    padding: 0
 </style>

@@ -24,6 +24,7 @@ import Vue from 'vue';
 import mediaMixin from '../../utils/media.mixin';
 import MenuItems from './MenuItems';
 import Code from '@/shared/Code';
+import Drawer from '@/shared/Drawer';
 
 Vue.component('Code', Code);
 
@@ -35,7 +36,8 @@ export default {
     }
   },
   components: {
-    MenuItems
+    MenuItems,
+    Drawer
   }
 }
 </script>
@@ -72,12 +74,4 @@ export default {
   img
     margin: 1em 0
     max-width: 100%
-</style>
-
-<style lang="sass">
-.drawer
-  .ivu-drawer-body
-    padding: 0
-  .ivu-drawer-wrap
-    z-index: 1100
 </style>
