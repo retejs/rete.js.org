@@ -51,6 +51,8 @@ export default {
 
 
 <style lang="sass">
+@import '@/assets/styles/media.sass'
+
 .instant-search
   .box
     margin: 0 1em
@@ -62,6 +64,10 @@ export default {
     width: 240px
     overflow-y: auto
     z-index: 1100
+    +phone
+      position: absolute
+      left: 20%
+      width: 80%
     .hit
       padding: 1em
       overflow: hidden
