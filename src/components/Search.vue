@@ -8,31 +8,33 @@
       template(slot-scope="{ currentRefinement, refine }")
         Input(
           suffix="md-search"
-          @on-focus="focus = true"
-          @on-blur="focus = false"
+          @on-focus="focus"
+          @on-blur="blur"
           v-model="currentRefinement"
           @input="refine($event)"
         )
-    ais-hits.hits(v-show="focus")
+    ais-hits.hits(v-show="isFocused")
       template(slot-scope="{ items }")
-        pre.hit(
+        router-link(
           v-for="(item, i) in items"
           :key="i"
+          :to="item.path"
           :tabindex="i"
-          @pointerdown="$router.push(item.path)"
         )
-          |{{ item.text.join('\n') }}
+          pre.hit
+            | {{ item.text.join('\n') }}
 </template>
 
 
 <script>
 import algoliasearch from 'algoliasearch/lite';
+import focusTimeoutMixin from '../utils/focus-timeout.mixin';
 
 export default {
+  mixins: [focusTimeoutMixin(500)],
   inject: ['langService'],
   data() {
     return {
-      focus: false,
       searchClient: algoliasearch(
         '0S8ITD2OZ2',
         '850c7c3f1bdf218a069f39a5ec4dcc70'
