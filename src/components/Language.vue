@@ -6,19 +6,18 @@
 </template>
 
 <script>
-import { getLocale } from '../i18n'
-
 export default {
+  inject: ['langService'],
   data(){
     return {
-      lang: getLocale(),
+      lang: this.langService.lang,
       list: ['ru', ...this.$getLangs().list]
     }
   },
   watch: {
     lang(value){
       this.$setLocale(value);
-      localStorage.setItem('lang', value);
+      this.langService.setLocale(value);
     }
   }
 }

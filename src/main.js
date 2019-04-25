@@ -2,10 +2,9 @@ import Vue from 'vue';
 import iView from 'iview';
 import VueMarkdown from 'vue-markdown';
 import InstantSearch from 'vue-instantsearch';
-import { getLocale } from './i18n'
+import { LangService } from './i18n'
 import 'iview/dist/styles/iview.css';
 import './assets/styles/common.sass';
-import loadTranslations from './consts/localization';
 
 import I18n from './i18n';
 import VueRouter, { router } from './router';
@@ -24,8 +23,9 @@ new Vue({
   el: '#app',
   router,
   render: h => h(App),
-  created(){
-    this.$setTranslations(loadTranslations())
-    this.$setLocale(getLocale())
+  provide() {
+    return {
+      langService: Vue.observable(new LangService())
+    }
   }
 })

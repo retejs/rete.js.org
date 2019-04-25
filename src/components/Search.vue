@@ -2,7 +2,7 @@
 .instant-search
   ais-instant-search(
     :search-client="searchClient"
-    index-name="common"
+    :index-name="lang"
   )
     ais-search-box.box
       template(slot-scope="{ currentRefinement, refine }")
@@ -15,13 +15,13 @@
         )
     ais-hits.hits(v-show="focus")
       template(slot-scope="{ items }")
-        .hit(
+        pre.hit(
           v-for="(item, i) in items"
           :key="i"
           :tabindex="i"
           @pointerdown="$router.push(item.path)"
         )
-          |{{ item.text }}
+          |{{ item.text.join('\n') }}
 </template>
 
 
@@ -29,15 +29,21 @@
 import algoliasearch from 'algoliasearch/lite';
 
 export default {
+  inject: ['langService'],
   data() {
     return {
       focus: false,
       searchClient: algoliasearch(
         '0S8ITD2OZ2',
         '850c7c3f1bdf218a069f39a5ec4dcc70'
-      ),
+      )
     };
   },
+  computed: {
+    lang() {
+      return this.langService.lang
+    }
+  }
 }
 </script>
 
@@ -50,12 +56,16 @@ export default {
     line-height: normal
     background: white
     box-shadow: 0 3px 3px rgba(0,0,0,0.2)
-    overflow-y: auto
     max-height: calc(100vh - 6em)
+    width: 240px
+    overflow-y: auto
     z-index: 1100
     .hit
       padding: 1em
-      width: 220px
-      max-height: 150px
       overflow: hidden
+      cursor: pointer
+      text-overflow: ellipsis
+      &:hover
+        transition: .5s
+        background: #eef
 </style>

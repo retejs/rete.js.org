@@ -6,20 +6,22 @@
 </template>
 
 <script>
+import loadTranslations from './consts/localization';
 import Header from './components/Header';
 import Content from './components/Content';
 import Footer from './components/Footer';
 
 export default {
   name: 'app',
-  data() {
-    return {
-    }
-  },
+  inject: ['langService'],
   components: {
     Header,
     Content,
     Footer
+  },
+  created(){
+    this.$setTranslations(loadTranslations())
+    this.$setLocale(this.langService.lang)
   }
 }
 </script>
