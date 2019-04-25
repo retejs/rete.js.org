@@ -9,6 +9,7 @@
     "algolia": "npm run --prefix ./algolia extract"
   },
   "dependencies": {
+    "algolia-vue-extractor": "file:algolia",
     "algoliasearch": "^3.32.1",
     "case": "^1.6.0",
     "html-loader": "^0.5.5",
