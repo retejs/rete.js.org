@@ -13,16 +13,18 @@
           v-model="currentRefinement"
           @input="refine($event)"
         )
-    ais-hits.hits(v-show="isFocused")
-      template(slot-scope="{ items }")
-        router-link(
-          v-for="(item, i) in items"
-          :key="i"
-          :to="item.path"
-          :tabindex="i"
-        )
-          pre.hit
-            | {{ item.text.join('\n') }}
+    ais-state-results
+      template(slot-scope="{ query }")
+        ais-hits.hits(v-show="isFocused && query.length > 1")
+          template(slot-scope="{ items }")
+            router-link(
+              v-for="(item, i) in items"
+              :key="i"
+              :to="item.path"
+              :tabindex="i"
+            )
+              pre.hit
+                | {{ item.text }}
 </template>
 
 
@@ -73,6 +75,8 @@ export default {
       overflow: hidden
       cursor: pointer
       text-overflow: ellipsis
+      border-bottom: 1px solid #eee
+      margin: 0
       &:hover
         transition: .5s
         background: #eef
