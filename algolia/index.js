@@ -1,4 +1,6 @@
 import { mount, createLocalVue } from '@vue/test-utils';
+import loadTranslations from './src/consts/localization';
+import VueT9N from 'vue-t9n';
 import algoliasearch from 'algoliasearch';
 import components from './components';
 
@@ -11,23 +13,49 @@ const client = algoliasearch(
 );
 
 const localVue = createLocalVue()
-localVue.directive('t9n', { })
+localVue.use(VueT9N)
+
+const indices = ['ru', 'en', 'ua'].map(lang => ({ lang, index: client.initIndex(lang)}));
+
+function createWrapper(component) {
+    const wrapper = mount(component, { 
+        localVue,
+        stubs: {
+            Tooltip: true
+        }
+    });
+    wrapper.vm.$setTranslations(loadTranslations())
+
+    return wrapper;
+}
+
+async function extractText(wrapper) {
+    return await new Promise((res) => {
+        wrapper.vm.$nextTick(() => {
+            const elements = wrapper.findAll('p,h1,h2,h3,h4,h5,h6').wrappers;
+            const text = elements.map(w => w.text());
+
+            res(text);
+        });
+    });
+}
+
 
 describe('algolia', () => {
     it('', async () => {
-        const index = client.initIndex('common');
-        await index.clearIndex();
+        for(let { index } of indices) {
+            await index.clearIndex()
+        }
 
-        components.forEach(({ component, path }) => {
-            const wrapper = mount(component, { 
-                localVue,
-                stubs: {
-                    Tooltip: true
-                }
-            });
+        for(let { component, path } of components) {
+            const wrapper = createWrapper(component);
 
-            index.addObject({ text: wrapper.text(), path })
-        });
+            for(let { index, lang } of indices) {
+                wrapper.vm.$setLocale(lang);
+
+                index.addObject({ text: await extractText(wrapper), path })
+            }
+        }
     });
 });
   

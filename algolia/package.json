@@ -16,6 +16,7 @@
     "jest": "^21.1.0",
     "jest-fetch-mock": "^2.1.2",
     "jest-transform-stub": "^2.0.0",
-    "vue-jest": "^2.6.0"
+    "vue-jest": "^2.6.0",
+    "vue-t9n": "^1.2.4"
   }
 }
