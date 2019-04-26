@@ -22,20 +22,23 @@ function createWrapper(component) {
     return wrapper;
 }
 
+function extractCode(name, customBlocks) {
+    const block = customBlocks.find(b => b.type === 'code' && b.attrs.name && b.attrs.name === name);
+
+    if(block) return block.content.trim();
+    return null;
+}
+
 async function extractText(wrapper, component) {
     return await new Promise((res) => {
         wrapper.vm.$nextTick(() => {
             const elements = wrapper.findAll('p,h1,h2,h3,h4,h5,h6,Code').wrappers;
 
             const text = elements.map(w => {
-                if(w.is('Code')) {
-                    const block = component.customBlocks.find(b => b.type === 'code' && b.attrs.name && b.attrs.name === w.attributes('source'));
+                const isCode = w.is('Code');
+                const source = w.attributes('source');
 
-                    if(block) return block.content.trim();
-                    return w.text();
-                }
-
-                return w.text();
+                return (isCode && extractCode(source, component.customBlocks)) || w.text()
             });
 
             res(text);
