@@ -6,6 +6,7 @@ import Nodes from './src/components/Docs/Nodes/index.vue'
 import Sockets from './src/components/Docs/Sockets/index.vue'
 import Controls from './src/components/Docs/Controls/index.vue'
 import Events from './src/components/Docs/Events/index.vue'
+
 import AreaPlugin from './src/components/Docs/Plugins/list/Area.vue'
 import AutoArrangePlugin from './src/components/Docs/Plugins/list/AutoArrange.vue'
 import CodePlugin from './src/components/Docs/Plugins/list/Code.vue'
@@ -28,6 +29,8 @@ import Stage0MenuPlugin from './src/components/Docs/Plugins/list/Stage0Menu.vue'
 import Stage0RenderPlugin from './src/components/Docs/Plugins/list/Stage0Render.vue'
 import TaskPlugin from './src/components/Docs/Plugins/list/Task.vue'
 import VueRenderPlugin from './src/components/Docs/Plugins/list/VueRender.vue'
+
+import ExampleInfo from './src/components/Examples/Info.vue';
 
 export default [
     { component: Main, path: '/docs' },
@@ -60,4 +63,7 @@ export default [
     { component: Stage0RenderPlugin, path: '/docs/plugins/stage0-render/stage0-render' },
     { component: TaskPlugin , path: '/docs/plugins/task' },
     { component: VueRenderPlugin , path: '/docs/plugins/vue-render' },
+    ...['basic', 'readonly', 'area', 'module', 'task', 'customization', 'reroute', 'dock'].map((key) => {
+        return { component: ExampleInfo, path: '/examples/'+key, props: { item: { key }}}
+    })
 ]

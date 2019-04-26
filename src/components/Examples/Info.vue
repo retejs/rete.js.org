@@ -1,5 +1,5 @@
 <template lang="pug">
-.info(v-t9n.deep)
+.info(v-t9n.deep='')
   router-link.title(:to="item.key")
     template {{text.title}}
   Card.packages-card(:title="$t('Пакеты')" :padding="0" shadow)

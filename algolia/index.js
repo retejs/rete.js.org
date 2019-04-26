@@ -10,12 +10,16 @@ global.fetch.mockResponse(JSON.stringify({ tags: { latest: '0.0.0' }}))
 const localVue = createLocalVue()
 localVue.use(VueT9N)
 
-function createWrapper(component) {
+function createWrapper(component, props) {
     const wrapper = mount(component, { 
         localVue,
         stubs: {
-            Tooltip: true
-        }
+            Tooltip: true,
+            'router-link': true,
+            CellGroup: true,
+            Card: true,
+        },
+        propsData: props || {}
     });
     wrapper.vm.$setTranslations(loadTranslations())
 
@@ -53,8 +57,8 @@ describe('algolia', () => {
             await index.clearIndex()
         }
 
-        for(let { component, path } of components) {
-            const wrapper = createWrapper(component);
+        for(let { component, path, props } of components) {
+            const wrapper = createWrapper(component, props);
 
             for(let { index, lang } of indices) {
                 wrapper.vm.$setLocale(lang);
