@@ -75,6 +75,14 @@ export default [
         en: "By default, `return true` is not needed",
         ua: "За замовчуванням `return true` не потрібен"
     }],
+    ["Не используйте `return false` в асинхронных обработчиках", {
+        en: "Don't use `return false` in async handlers",
+        ua: "Не використовуйте `return false` в асинхронних обробниках"
+    }],
+    ["Все обработчики, которые могут предотвращать действия, должны быть синхронными", {
+        en: "All handlers that can prevent actions must be synchronous",
+        ua: "Всі обробники, які можуть запобігати діям, повинні бути синхронними"
+    }],
     ["Также вы можете обрабатывать несколько событий", {
         en: "You can also handle multiple events",
         ua: "Також ви можете обробляти кілька подій"

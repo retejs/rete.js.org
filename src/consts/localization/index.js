@@ -267,8 +267,11 @@ export default () => [
         ua: "Контроли"
     }],
     ["События", {
-        en: "Developments",
+        en: "Events",
         ua: "Події"
     }],
-    
+    ["Будьте внимательны", {
+        en: "Be attentive",
+        ua: "Будьте уважні"
+    }],
 ]

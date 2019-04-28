@@ -6,7 +6,7 @@ import components from './components';
 import nodes from './nodes';
 import sockets from './sockets';
 import controls from './controls';
-import developments from './developments';
+import events from './events';
 import plugins from './plugins';
 
 export default () => assignSection([
@@ -17,6 +17,6 @@ export default () => assignSection([
   ...nodes,
   ...sockets,
   ...controls,
-  ...developments,
+  ...events,
   ...plugins
 ], 'docs');
