@@ -30,4 +30,6 @@ export default async function(container, extra) {
 
     resize();
     process();
+
+    return { editor, engine }
 }

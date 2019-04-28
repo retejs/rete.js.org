@@ -13,11 +13,24 @@ import Info from './Info';
 export default {
   props: ['example'],
   methods: {
-    init() {
+    async init() {
       this.$refs.view.innerHTML = '';
       this.$refs.extra.innerHTML = '';
       this.$refs.extra.className = '';
-      this.example.init(this.$refs.view, this.$refs.extra);
+
+      if(this.editor) this.editor.destroy();
+      if(this.engine) this.engine.destroy();
+
+      const { editor, engine } = await this.example.init(this.$refs.view, this.$refs.extra);
+
+      this.editor = editor;
+      this.engine = engine;
+    }
+  },
+  data() {
+    return {
+      editor: null,
+      engine: null
     }
   },
   mounted() {

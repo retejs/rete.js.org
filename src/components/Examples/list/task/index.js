@@ -28,4 +28,6 @@ export default async function(container) {
 
     resize();
     process();
+
+    return { editor, engine }
 }
