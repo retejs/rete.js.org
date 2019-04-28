@@ -5,7 +5,17 @@ const WebpackPwaManifest = require('webpack-pwa-manifest');
 const production = process.env.NODE_ENV === 'production';
 
 module.exports = {
+    chainWebpack: config => {
+        !production && config.module
+            .rule('js-source-maps')
+            .test(/\.js$/)
+            .enforce('pre')
+            .use('source-map-loader')
+            .loader('source-map-loader')
+            .end()
+    },
     configureWebpack: {
+        devtool: !production ? "source-map" : false,
         plugins: [
             ...(production ? [new WorkboxPlugin.GenerateSW({
                 clientsClaim: true,
