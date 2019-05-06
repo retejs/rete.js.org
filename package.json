@@ -47,6 +47,7 @@
     "sass-loader": "^7.1.0",
     "source-map-loader": "^0.2.4",
     "vue-template-compiler": "2.6.10",
+    "webpack-cdn-plugin": "^3.1.1",
     "webpack-pwa-manifest": "^4.0.0",
     "workbox-webpack-plugin": "^4.1.0"
   },

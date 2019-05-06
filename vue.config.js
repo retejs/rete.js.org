@@ -1,6 +1,7 @@
 const path = require('path');
 const WorkboxPlugin = require('workbox-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
+const WebpackCdnPlugin = require('webpack-cdn-plugin');
 
 const production = process.env.NODE_ENV === 'production';
 
@@ -31,7 +32,27 @@ module.exports = {
                     sizes: [96, 128, 192, 256, 384, 512]
                   }
                 ]
-              })
+            }),
+            new WebpackCdnPlugin({
+                modules: [
+                  {
+                    name: 'vue',
+                    var: 'Vue',
+                    path: 'dist/vue.runtime.min.js'
+                  },
+                  {
+                    name: 'vue-router',
+                    var: 'VueRouter',
+                    path: 'dist/vue-router.min.js'
+                  },
+                  {
+                    name: 'iview',
+                    var: 'iview',
+                    path: 'dist/iview.min.js'
+                  }
+                ],
+                publicPath: '/node_modules'
+            })
         ],
         module: {
             rules: [{
