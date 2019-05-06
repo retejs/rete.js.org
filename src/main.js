@@ -1,6 +1,5 @@
 import Vue from 'vue';
 import iView from 'iview';
-import VueMarkdown from 'vue-markdown';
 import InstantSearch from 'vue-instantsearch';
 import { LangService } from './i18n'
 import 'iview/dist/styles/iview.css';
@@ -16,7 +15,6 @@ Vue.config.productionTip = false
 Vue.use(iView);
 Vue.use(VueRouter);
 Vue.use(I18n);
-Vue.use(VueMarkdown);
 Vue.use(InstantSearch);
 
 new Vue({
