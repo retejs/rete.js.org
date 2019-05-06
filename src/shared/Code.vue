@@ -1,15 +1,25 @@
 <template lang="pug">
-pre(v-highlightjs="code()")
-  code(:class="{[lang]: true}")
+highlight-code(:lang="lang") {{code()}}
 </template>
 
 
 <script>
 import Vue from 'vue';
 import micromustache from 'micromustache';
-import VueHighlightJS from 'vue-highlightjs';
+import VueHighlightJS from 'vue-highlight.js';
+import html from 'highlight.js/lib/languages/xml';
+import bash from 'highlight.js/lib/languages/bash';
+import css from 'highlight.js/lib/languages/css';
+import javascript from 'highlight.js/lib/languages/javascript';
 
-Vue.use(VueHighlightJS);
+Vue.use(VueHighlightJS, {
+	languages: {
+    bash,
+		css,
+    javascript,
+    html
+  }
+});
 
 export default {
   props: {
