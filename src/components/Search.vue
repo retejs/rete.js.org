@@ -25,12 +25,14 @@
             )
               pre.hit
                 | {{ item.text }}
+            img.algolia(:src="algoliaLogo" alt="Algolia")
 </template>
 
 
 <script>
 import algoliasearch from 'algoliasearch/lite';
 import focusTimeoutMixin from '../utils/focus-timeout.mixin';
+import algoliaLogo from '../assets/images/algolia.svg'
 
 export default {
   mixins: [focusTimeoutMixin(500)],
@@ -40,7 +42,8 @@ export default {
       searchClient: algoliasearch(
         '0S8ITD2OZ2',
         '850c7c3f1bdf218a069f39a5ec4dcc70'
-      )
+      ),
+      algoliaLogo
     };
   },
   computed: {
@@ -80,4 +83,8 @@ export default {
       &:hover
         transition: .5s
         background: #eef
+  .algolia
+    width: 55%
+    padding: 5%
+    float: right
 </style>
