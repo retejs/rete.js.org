@@ -20,7 +20,7 @@
             router-link(
               v-for="(item, i) in items"
               :key="i"
-              :to="item.path"
+              :to="$tosearch(item.path, item.text)"
               :tabindex="i"
             )
               pre.hit

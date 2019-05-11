@@ -7,6 +7,7 @@ import './assets/styles/common.sass';
 
 import I18n from './i18n';
 import VueRouter, { router } from './router';
+import ToSearch from './plugins/to-search'
 import App from './App.vue';
 import './pwa';
 
@@ -16,6 +17,7 @@ Vue.use(iView);
 Vue.use(VueRouter);
 Vue.use(I18n);
 Vue.use(InstantSearch);
+Vue.use(ToSearch, { router });
 
 new Vue({
   el: '#app',
