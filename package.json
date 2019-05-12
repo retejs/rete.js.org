@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@sentry/browser": "^5.2.0",
+    "@sentry/integrations": "^5.2.0",
     "algolia-vue-extractor": "file:algolia",
     "algoliasearch": "^3.32.1",
     "case": "^1.6.0",
