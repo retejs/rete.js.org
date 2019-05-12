@@ -2,8 +2,12 @@ import { parse, stringify } from 'query-string';
 
 function install(Vue, { router, langService }) {
     function saveText() {
+        const text = window.getSelection().toString();
+
+        if(!text) return;
+
         router.push({ hash: stringify({
-            tosearch: window.getSelection().toString(),
+            tosearch: text,
             lang: langService.lang
         })})
     }
