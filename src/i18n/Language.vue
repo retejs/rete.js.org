@@ -1,7 +1,11 @@
 <template lang="pug">
 .lang
-  Select.select.upper(v-model="lang" size="small")
-    Option.upper(v-for="lang in list" :value="lang" :key="lang")
+  Select.select.upper(
+    :value="langService.lang"
+    @on-change="langService.setLocale($event)"
+    size="small"
+  )
+    Option.upper(v-for="lang in this.langService.langs" :value="lang" :key="lang")
       | {{lang}}
 </template>
 
@@ -14,22 +18,13 @@ Vue.use(VueT9N);
 
 export default {
   inject: ['langService'],
-  data(){
-    return {
-      lang: this.langService.lang,
-      list: ['ru']
-    }
-  },
-  watch: {
-    lang(value){
-      this.langService.setLocale(value);
-    }
-  },
   created() {
     this.langService.$on('setLocale', (v) => this.$setLocale(v));
-    this.$setTranslations(loadTranslations())
-    this.list = ['ru', ...this.$getLangs().list]
-    this.langService.setLocale(this.lang)
+
+    this.$setTranslations(loadTranslations());
+
+    this.langService.setLangs(['ru', ...this.$getLangs().list]);
+    this.langService.setLocale(this.langService.getLocale());
   }
 }
 </script>
