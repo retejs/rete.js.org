@@ -6,19 +6,30 @@
 </template>
 
 <script>
+import Vue from 'vue';
+import VueT9N from 'vue-t9n';
+import loadTranslations from '../consts/localization';
+
+Vue.use(VueT9N);
+
 export default {
   inject: ['langService'],
   data(){
     return {
       lang: this.langService.lang,
-      list: ['ru', ...this.$getLangs().list]
+      list: ['ru']
     }
   },
   watch: {
     lang(value){
-      this.$setLocale(value);
       this.langService.setLocale(value);
     }
+  },
+  created() {
+    this.langService.$on('setLocale', (v) => this.$setLocale(v));
+    this.$setTranslations(loadTranslations())
+    this.list = ['ru', ...this.$getLangs().list]
+    this.langService.setLocale(this.lang)
   }
 }
 </script>

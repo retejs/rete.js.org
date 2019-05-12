@@ -3,7 +3,7 @@ import iView from 'iview';
 import InstantSearch from 'vue-instantsearch';
 import * as Sentry from '@sentry/browser';
 import * as SentryIntegrations from '@sentry/integrations';
-import { LangService } from './i18n'
+import LangService from './i18n/service'
 import 'iview/dist/styles/iview.css';
 import './assets/styles/common.sass';
 
