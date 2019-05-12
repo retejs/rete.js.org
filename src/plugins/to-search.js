@@ -1,20 +1,25 @@
-function install(Vue, { router }) {
-    function findText(hash) {
-        const text = hash.split('#tosearch=')[1];
-            
-        if(text) window.find(text)
-    }
+import { parse, stringify } from 'query-string';
+
+function install(Vue, { router, langService }) {
     function saveText() {
-        router.push({ hash: '#tosearch='+window.getSelection().toString() })
+        router.push({ hash: stringify({
+            tosearch: window.getSelection().toString(),
+            lang: langService.lang
+        })})
     }
     router.afterEach((to) => {
-        setTimeout(() => findText(to.hash), 500);
+        const { lang, tosearch } = parse(to.hash);
+
+        if(lang)
+            langService.setLocale(lang);
+        if(tosearch)
+            setTimeout(() => window.find(tosearch), 500);
     })
     document.addEventListener('mouseup', saveText);
     document.addEventListener('touchup', saveText);
 
     Vue.prototype.$tosearch = (path, text) => {
-        return `${path}#tosearch=${text}`;
+        return `${path}#${stringify({ tosearch: text, lang: langService.lang })}`;
     }
 }
 

@@ -7,7 +7,6 @@ import LangService from './i18n/service'
 import 'iview/dist/styles/iview.css';
 import './assets/styles/common.sass';
 
-import I18n from './i18n';
 import VueRouter, { router } from './router';
 import ToSearch from './plugins/to-search'
 import App from './App.vue';
@@ -15,11 +14,12 @@ import './pwa';
 
 Vue.config.productionTip = false
 
+const langService = Vue.observable(new LangService(router))
+
 Vue.use(iView);
 Vue.use(VueRouter);
-Vue.use(I18n);
 Vue.use(InstantSearch);
-Vue.use(ToSearch, { router });
+Vue.use(ToSearch, { router, langService });
 
 
 if(process.env.NODE_ENV === 'production') {
@@ -35,7 +35,7 @@ new Vue({
   render: h => h(App),
   provide() {
     return {
-      langService: Vue.observable(new LangService())
+      langService
     }
   }
 })
