@@ -20,7 +20,8 @@ function install(Vue, { router, langService }) {
             setTimeout(() => window.find(tosearch), 500);
     })
     document.addEventListener('mouseup', saveText);
-    document.addEventListener('touchup', saveText);
+    document.addEventListener('touchend', saveText);
+    document.addEventListener('touchcancel', saveText);
 
     Vue.prototype.$tosearch = (path, text) => {
         return `${path}#${stringify({ tosearch: text, lang: langService.lang })}`;
