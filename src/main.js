@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import iView from 'iview';
 import InstantSearch from 'vue-instantsearch';
+import * as Sentry from '@sentry/browser';
 import { LangService } from './i18n'
 import 'iview/dist/styles/iview.css';
 import './assets/styles/common.sass';
@@ -18,6 +19,10 @@ Vue.use(VueRouter);
 Vue.use(I18n);
 Vue.use(InstantSearch);
 Vue.use(ToSearch, { router });
+
+Sentry.init({
+  dsn: 'https://41d8b37116ff4a9dbf1d0acdd4d4c3ba@sentry.io/1457700'
+});
 
 new Vue({
   el: '#app',
