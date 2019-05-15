@@ -1,10 +1,12 @@
-export default () => [
+import { assignSection } from '@/i18n';
+
+export default () => assignSection([
     ["это создаст директорию на основе", {
         en: "this will create a directory based on",
         ua: "це створить директорію на основі"
     }],
     ["шаблона", {
-        en: "the template",
+        en: "the boilerplate",
         ua: "шаблону"
     }],
     ["Сборка вашего пакета должна выполняться с помощью команды (которая уже записана в package.json)", {
@@ -27,4 +29,4 @@ export default () => [
         en: "Configuration example",
         ua: "Приклад конфігурації"
     }]
-]
+], 'cli')

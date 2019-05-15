@@ -1,5 +1,5 @@
 <template lang="pug">
-.cli(v-t9n)
+.cli(v-t9n="'cli'")
   .section
     p.title {{title}}
   Logo.logo
