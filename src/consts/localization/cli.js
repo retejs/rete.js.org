@@ -15,7 +15,7 @@ export default () => assignSection([
     }],
     ["в директории build будут созданы бандлы трех форматов: UMD, CommonJS, ES", {
         en: "In the build directory will be created a bundles of three formats: UMD, CommonJS, ES",
-        ua: ""
+        ua: "в директорії build будуть створені бандли трьох форматів: UMD, CommonJS, ES"
     }],
     ["Сборка выполняется с помощью Rollup, конфигурация которого", {
         en: "Build is performed using Rollup, whose configuration",
