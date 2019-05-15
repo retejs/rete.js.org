@@ -15,7 +15,7 @@
       .output-title
       Socket(v-socket:output="output", type="output", :socket="output.socket")
   .row(vertical)
-    a(:href="'https://www.npmjs.com/package/'+node.data.name" target="_blank")
+    a.shield-container(:href="'https://www.npmjs.com/package/'+node.data.name" target="_blank")
       img.shield(:src="'https://img.shields.io/npm/v/'+node.data.name+'.svg'")
     .name {{node.data.name}}
 </template>
@@ -45,8 +45,8 @@ $color: #cb3837
   &:hover
     background: $color
   .image
-    height: 100px
-    width: 260px
+    height: 50px
+    width: 130px
     flex: 1
   .inputs, .outputs
     margin-top: 1em
@@ -55,8 +55,10 @@ $color: #cb3837
     color: white
     font-size: 42px
     margin: 0.2em 0.7em
-  .shield
-    display: block
-    margin: 1em auto
-    height: 20px
+  .shield-container
+    padding: 0 1em
+    .shield
+      display: block
+      margin: 1em auto
+      height: 40px
 </style>
