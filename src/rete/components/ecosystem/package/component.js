@@ -16,4 +16,6 @@ export class PackageComponent extends Component {
 
         return node.addInput(inp).addOutput(out);
     }
+
+    worker() {}
 }
