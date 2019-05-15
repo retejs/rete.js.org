@@ -43,8 +43,8 @@ class MyControl extends Rete.Control {
 const node = editor.nodes[0];
 const control = node.controls.get('ctrl');
 
-node.update(); // принудительное обновление представления
-control.update();
+await node.update(); // принудительное обновление представления
+await control.update();
 
 // в некоторых случаях вам может потребоваться Vue.js контекст
 node.vueContext
