@@ -1,12 +1,17 @@
 <template lang="pug">
 Tooltip.select-tooltip(
+  v-if="this.searchService.rect"
   v-t9n.deep
   content="Top Left text"
   placement="bottom"
   always="true"
   :style="style"
 )
-  Button(slot="content" type="primary" @click="copy") Скопировать ссылку
+  Button(
+    slot="content"
+    type="primary"
+    @click="copy"
+  ) Скопировать ссылку
 </template>
 
 <script>
@@ -16,7 +21,6 @@ export default {
   inject: ['searchService'],
   computed: {
     style() {
-      if(!this.searchService.rect) return {}
       const { top, left, width, height } = this.searchService.rect;
 
       return {
