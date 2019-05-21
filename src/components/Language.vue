@@ -1,5 +1,5 @@
 <template lang="pug">
-.lang
+Affix.lang(relative-element-selector=".content")
   Select.select.upper(
     :value="langService.lang"
     @on-change="langService.setLocale($event)"
@@ -13,6 +13,7 @@
 import Vue from 'vue';
 import VueT9N from 'vue-t9n';
 import loadTranslations from '../consts/localization';
+import { Affix } from 'vue-affix';
 
 Vue.use(VueT9N);
 
@@ -25,6 +26,9 @@ export default {
 
     this.langService.setLangs(['ru', ...this.$getLangs().list]);
     this.langService.setLocale(this.langService.getLocale());
+  },
+  components: {
+    Affix
   }
 }
 </script>
@@ -37,5 +41,9 @@ export default {
     width: 4em
   .upper
     text-transform: uppercase
+
+.affix
+  top: 0px !important
+  right: 0px
 </style>
 
