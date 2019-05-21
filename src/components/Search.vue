@@ -20,7 +20,7 @@
             router-link(
               v-for="(item, i) in items"
               :key="i"
-              :to="$tosearch(item.path, item.text)"
+              :to="item.path + searchService.getHash(item.text)"
               :tabindex="i"
             )
               pre.hit
@@ -36,7 +36,7 @@ import algoliaLogo from '../assets/images/algolia.svg'
 
 export default {
   mixins: [focusTimeoutMixin(500)],
-  inject: ['langService'],
+  inject: ['langService', 'searchService'],
   data() {
     return {
       searchClient: algoliasearch(

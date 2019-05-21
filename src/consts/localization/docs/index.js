@@ -1,4 +1,4 @@
-import { assignSection } from '@/i18n';
+import { assignSection } from '@/services/i18n';
 import main from './main';
 import editor from './editor';
 import engine from './engine';

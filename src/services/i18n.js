@@ -1,4 +1,4 @@
-import Vue from 'vue';
+import Vue from 'vue'; // use event emitter
 
 export default class LangService extends Vue {
 
@@ -33,4 +33,8 @@ export default class LangService extends Vue {
     setLangs(list) {
         this.langs = list;
     }
+}
+
+export function assignSection(list, name) {
+    return list.map(([origin, translation]) => ([origin, translation, name]))
 }

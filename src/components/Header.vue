@@ -23,7 +23,7 @@
 
 <script>
 import Logo from './Logo';
-import Language from '../i18n/Language';
+import Language from './Language';
 import MenuItems from './MenuItems';
 import Search from './Search';
 import Drawer from '../shared/Drawer';

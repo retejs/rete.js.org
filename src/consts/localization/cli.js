@@ -1,4 +1,4 @@
-import { assignSection } from '@/i18n';
+import { assignSection } from '@/services/i18n';
 
 export default () => assignSection([
     ["это создаст директорию на основе", {
