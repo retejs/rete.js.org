@@ -4,6 +4,7 @@ export default class ToSearchService {
     constructor(router, langService) {
         this.router = router;
         this.langService = langService;
+        this.rect = null;
 
         router.afterEach((to) => {
             const { lang, tosearch } = parse(to.hash);
@@ -18,9 +19,9 @@ export default class ToSearchService {
 
     saveText() {
         const selection = window.getSelection();
-        // const range = selection.getRangeAt(0);
-        // const rect = range.getBoundingClientRect();
         const text = selection.toString();
+
+        this.rect = text ? selection.getRangeAt(0).getBoundingClientRect() : null;
 
         if(!text) return;
 

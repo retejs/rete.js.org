@@ -1,7 +1,19 @@
 <template lang="pug">
 Content.content
   router-view
+  ToSearch
 </template>
+
+<script>
+import ToSearch from './ToSearch';
+
+export default {
+  components: {
+    ToSearch
+  }
+}
+</script>
+
 
 <style lang="sass" scoped>
 .content
