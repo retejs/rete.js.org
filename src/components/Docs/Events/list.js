@@ -33,5 +33,6 @@ export default [
   ['export',	'data'],
   ['process', '', false, 'предназначен для внешнего использования'],
   ['error',	'{ message, data }'],
-  ['warn',	'message']
+  ['warn',	'message'],
+  ['destroy', '', false, 'предзначен для очистки глобальных данных в плагинах. Например, window.addEventListener']
 ]

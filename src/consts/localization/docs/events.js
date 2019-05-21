@@ -90,5 +90,13 @@ export default [
     ["Для статической типизации в TypeScript вы можете указать события в виде массива строк", {
         en: "For static typing in TypeScript you can specify events as an array of strings",
         ua: "Для статичної типізиції в TypeScript ви можете вказати події у вигляді масива строк"
+    }],
+    ["предзначен для очистки глобальных данных в плагинах", {
+        en: "intended to clean global data in plugins",
+        ua: "призначено для очищення глобальних змін в плагінах"
+    }],
+    ["Например, window.addEventListener", {
+        en: "For example, window.addEventListener",
+        ua: "Наприклад, window.addEventListener"
     }]
 ];
