@@ -3,8 +3,14 @@
   Code(source="install")
   p Создание контрола на основе React компонента
   Code(source="create_control")
-  p Кастомизация узлов
-  Code(source="customize")
+  p Кастомизация узлов. Кастомный узел создается в виде React компонента
+  Code(source="custom_node")
+  p Он может быть передан в свойство component при подключении плагина
+  Code(source="global_node")
+  p или в определенный компонент
+    Code(source="component_node")
+  p
+    a(href="https://codesandbox.io/s/retejs-react-render-t899c") Пример
 </template>
 
 <code name="install">
@@ -38,7 +44,7 @@ class MyControl extends Rete.Control {
 }
 </code>
 
-<code name="customize">
+<code name="custom_node">
 import ReactRenderPlugin, { Node, Socket, Control } from 'rete-react-render-plugin';
 
 export class MyNode extends Node {
@@ -72,8 +78,19 @@ export class MyNode extends Node {
     )
   }
 }
+</code>
 
+<code name="global_node">
 editor.use(ReactRenderPlugin, {
     component: MyNode
 }
+</code>
+
+<code name="component_node">
+class AddComponent extends Rete.Component {
+  constructor() {
+    super("Add");
+    this.data.component = MyNode;
+  }
+// ...
 </code>
