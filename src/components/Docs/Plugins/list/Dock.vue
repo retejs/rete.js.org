@@ -13,6 +13,8 @@ import DockPlugin from 'rete-dock-plugin';
 editor.use(DockPlugin, {
     container: document.querySelector('.dock'), // html элемент, в который будут добавлены псевдоузлы
     plugins: [VueRenderPlugin], // список с плагинами для рендеринга
+    // или двумерный массив с опциями для плагина:
+    // plugins: [[VueRenderPlugin, pluginOptions]]
     itemClass: 'item' // по умолчанию: dock-item 
 });
 </code>
