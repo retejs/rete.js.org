@@ -4,7 +4,7 @@ export default class LangService extends Vue {
 
     constructor() {
         super();
-        this.lang = 'ru';
+        this.lang = this.getLocale();
         this.langs = ['ru'];
     }
 

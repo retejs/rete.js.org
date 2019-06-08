@@ -43,13 +43,12 @@ export default {
         '0S8ITD2OZ2',
         '850c7c3f1bdf218a069f39a5ec4dcc70'
       ),
-      algoliaLogo
+      algoliaLogo,
+      lang: this.langService.lang
     };
   },
-  computed: {
-    lang() {
-      return this.langService.lang
-    }
+  created() {
+    this.langService.$on('setLocale', l => this.lang = l)
   }
 }
 </script>
