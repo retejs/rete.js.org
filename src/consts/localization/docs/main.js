@@ -79,6 +79,10 @@ export default [
         en: "In your HTML page, add a container for the editor",
         ua: "У своїй HTML сторінці додайте контейнер для редактора"
     }],
+    ["Родительский элемент должен иметь свою ширину и высоту, под которые будет подстраиваться данный элемент", {
+        en: "The parent element must have its width and height, according to them this element will be adjusted",
+        ua: "Батьківський елемент повинен мати свою ширину і висоту, під які буде підлаштовуватися даний елемент"
+    }],
     ["Инициализируйте редактор, подключите минимально необходимые плагины (для отображения узлов и соединений) и зарегестрируйте компоненты", {
         en: "Initialize the editor, connect the minimum necessary plug-ins (to display nodes and connections) and register the components",
         ua: "Ініціалізуйте редактор, підключіть мінімально необхідні плагіни (для відображення вузлів і з'єднань) та зареєструйте компоненти"
