@@ -166,5 +166,25 @@ export default () => [
     ["по умолчанию: dock-item", {
         ua: "за замовчуванням: dock-item",
         en: "by default: dock-item"
+    }],
+    ["тип для передачи управления", {
+        en: "type for transfering control",
+        ua: "тип для передачі управління"
+    }],
+    ["тип для передачи данных", {
+        en: "type for transfering data",
+        ua: "тип для передачі даних"
+    }],
+    ["таск может быть сохранен для его отложенного запуска", {
+        en: "task can be saved for its delayed run",
+        ua: "таск може бути збережений для його відкладеного запуску"
+    }],
+    ["например, вызывается по клику на кнопку для старта обработки", {
+        en: "for example, triggered by clicking on the button to start processing",
+        ua: "наприклад, викликається при натисканні на кнопку для старту обробки"
+    }],
+    ["очистить выходные данные, которые были сохранены ранее", {
+        en: "clear the output data that was previously saved",
+        ua: "очистити вихідні дані, які були збережені раніше"
     }]
 ]
