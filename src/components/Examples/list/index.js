@@ -6,6 +6,7 @@ import task from './task';
 import customization from './customization';
 import reroute from './reroute';
 import dock from './dock';
+import minimap from './minimap';
 
 export default [
     {
@@ -85,6 +86,16 @@ export default [
             'rete-connection-plugin',
             'rete-vue-render-plugin',
             'rete-dock-plugin'
+        ]
+    },
+    {
+        key: 'minimap',
+        init: minimap,
+        packages: [
+            'rete',
+            'rete-connection-plugin',
+            'rete-vue-render-plugin',
+            'rete-minimap-plugin'
         ]
     }
 ]

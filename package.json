@@ -26,6 +26,7 @@
     "rete-connection-reroute-plugin": "^0.2.2",
     "rete-context-menu-plugin": "^0.3.7",
     "rete-dock-plugin": "^0.1.1",
+    "rete-minimap-plugin": "^0.3.0",
     "rete-module-plugin": "^0.3.0",
     "rete-readonly-plugin": "^0.3.0",
     "rete-task-plugin": "^0.2.0-rc.2",
