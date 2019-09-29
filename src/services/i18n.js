@@ -22,7 +22,7 @@ export default class LangService extends Vue {
         if(!this.langs.includes(value)) {
             // eslint-disable-next-line no-console
             console.info(`Translation for language ${value} not found`);
-            return;
+            value = 'en';
         }
 
         localStorage.setItem('lang', value);
