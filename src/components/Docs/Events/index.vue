@@ -32,7 +32,7 @@
 
 <code name="process">
 editor.on('process', () => {
-  // например, вызовите editor.process()
+  // например, вызовите engine.process()
 });
 </code>
 
