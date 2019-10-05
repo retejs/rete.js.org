@@ -19,9 +19,9 @@ export default () => [
         ua: "третій параметр повинен бути false, щоб заборонити безліч підключень",
         en: "the third parameter must be false to disable multiple connections"
     }],
-    ["например, вызовите editor.process()", {
-        ua: "наприклад, визвіть editor.process()",
-        en: "for example, call editor.process()"
+    ["например, вызовите engine.process()", {
+        ua: "наприклад, визвіть engine.process()",
+        en: "for example, call engine.process()"
     }],
     ["предотвратить добавление нового узла", {
         ua: "запобігти додаванню нового вузла",
