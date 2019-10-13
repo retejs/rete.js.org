@@ -282,4 +282,12 @@ export default () => [
         en: "Minimap",
         ua: "Міні карта"
     }],
+    ["Вам нравится Rete.js?", {
+        en: "Do you like Rete.js?",
+        ua: "Вам подобається Rete.js?"
+    }],
+    ["Ваша финансовая помощь способствует развитию данного фреймворка", {
+        en: 'Your financial assistance will promote to the development of this framework',
+        ua: 'Ваша фінансова допомога сприятиме розвитку цього фреймворку'
+    }]
 ]

@@ -3,32 +3,14 @@
   .section
     .title Пожертвовать Rete.js
   .methods
-    a.payment.liqpay(:href="liqpay", target="_blank")
-      img.logo(src="../../assets/images/LIQPAY.svg")
-    Divider
-    a.payment.patreon(:href="patreon", target="_blank")
+    a.payment.patreon(@click="supportService.goToPatreon()")
       img.logo(src="../../assets/images/patreon.png")
-    Divider
-    .payment.bitcoin
-      img.logo(src="../../assets/images/bitcoin.svg")
-      h2.info 
-        | Bitcoin: 
-        br 
-        | {{btc}}
-      img.qr(src="../../assets/images/btc-qr.png")
 </template>
 
 <script>
-import { liqpay, patreon, btc } from '../../consts/support.json';
 
 export default {
-  data(){
-    return {
-      liqpay,
-      patreon,
-      btc
-    }
-  }
+  inject: ['supportService']
 }
 </script>
 
@@ -51,15 +33,7 @@ export default {
       display: block
       word-wrap: break-word
 
-.liqpay .logo
-    height: 40px
 .patreon .logo
+    cursor: pointer
     height: 40px
-.bitcoin
-  .logo
-    height: 70px
-  .qr
-    display: block
-    max-width: 80vw
-    margin: auto
 </style>

@@ -1,12 +1,13 @@
 import Vue from 'vue';
 import iView from 'iview';
 import InstantSearch from 'vue-instantsearch';
-import LangService from './services/i18n'
+import LangService from './services/i18n';
+import SearchService from './services/to-search';
+import SupportService from './services/support';
 import 'iview/dist/styles/iview.css';
 import './assets/styles/common.sass';
 
 import VueRouter, { router } from './router';
-import SearchService from './services/to-search'
 import App from './App.vue';
 import './pwa';
 import './bug-handler';
@@ -24,10 +25,17 @@ new Vue({
   provide() {
     const langService = Vue.observable(new LangService(router));
     const searchService = Vue.observable(new SearchService(router, langService));
+    const supportService = Vue.observable(new SupportService(router, ['/docs'], this.$Notice, this.$t));
 
     return {
       langService,
-      searchService
+      searchService,
+      supportService
     }
+  },
+  created() {
+    this.$Notice.config({
+      top: 80
+    });
   }
 })

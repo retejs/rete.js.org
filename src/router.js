@@ -17,8 +17,7 @@ const router = new VueRouter({
     {
       path: '/docs',
       component: Docs,
-      children: docsRoute,
-      // beforeEnter(){ window.open('https://rete.readthedocs.io')}
+      children: docsRoute
     },
     {
       path: '/examples',
