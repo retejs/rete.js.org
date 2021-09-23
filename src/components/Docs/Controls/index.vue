@@ -6,7 +6,7 @@
     | Вы можете вставить любой HTML-шаблон или сторонний объект (input, select, image, плагин jQuery и т.д.).
   p По умолчанию все контролы отображаются с помощью подключеного рендер плагина (vue-render-plugin, alight-render-plugin), но вы можете создавать и отображать контролы другими способами, используя интерфейсы плагинов.
   p Каждому экземпляру Контрола доступны наследованые методы:
-  Code(source="getsetData")
+  Code(source="getputData")
   p Таким образом Контролы могут не только отображать некоторую информацию, но и сохранять данные в узле для дальнейшей обработки.
   Code(source="controlVue")
   p В этом случае Контрол помещает число в данные узла. Может использоваться, когда нет соединения к входу.
@@ -15,9 +15,9 @@
   Code(source="name")
 </template>
 
-<code name="getsetData">
+<code name="getputData">
 getData('key')
-setData('key', value)
+putData('key', value)
 </code>
 
 <code name="controlVue">
