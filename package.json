@@ -45,7 +45,7 @@
   "devDependencies": {
     "@vue/cli-plugin-babel": "3.5.3",
     "@vue/cli-plugin-eslint": "3.5.1",
-    "@vue/cli-service": "3.5.3",
+    "@vue/cli-service": "5.0.8",
     "node-sass": "^4.9.3",
     "pug": "^2.0.3",
     "pug-plain-loader": "^1.0.0",
