@@ -22,35 +22,34 @@
 </template>
 
 <script>
-import Logo from './Logo';
-import Language from './Language';
-import MenuItems from './MenuItems';
-import Search from './Search';
-import Drawer from '../shared/Drawer';
+import Logo from './Logo.vue';
+import Language from './Language.vue';
+import MenuItems from './MenuItems.vue';
+import Search from './Search.vue';
+import Drawer from '../shared/Drawer.vue';
 import mediaMixin from '../utils/media.mixin';
 
 export default {
   mixins: [mediaMixin],
   data() {
     return {
-      drawer: false
-    }
+      drawer: false,
+    };
   },
   computed: {
     isTabletScreen() {
       return this.screenWidth < 850;
-    }
+    },
   },
   components: {
     Logo,
     Language,
     MenuItems,
     Search,
-    Drawer
-  }
-}
+    Drawer,
+  },
+};
 </script>
-
 
 <style lang="sass" scoped>
 @import '@/assets/styles/media.sass'
@@ -61,7 +60,7 @@ export default {
     display: flex
     .space
       flex: 1
-  
+
 .logo
   font-size: 20px
   white-space: nowrap
@@ -70,4 +69,7 @@ export default {
   .icon
     height: 50px
     width: 50px
+  & > *
+    vertical-align: middle
+
 </style>

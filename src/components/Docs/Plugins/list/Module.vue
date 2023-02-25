@@ -27,7 +27,7 @@ class InputNumber extends Component {
         var out = new Output('output', 'Number', sockets.num); // ключ должен быть 'output'
         var ctrl = new FieldControl(this.editor, 'name', {value: ''}); // ключ должен быть 'name'
         var ctrl2 = new FieldControl(this.editor, 'number', {type: 'number', value: 1});
-        
+
         return node
             .addControl(ctrl)
             .addControl(ctrl2)

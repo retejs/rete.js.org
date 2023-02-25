@@ -5,15 +5,14 @@ Content.content
 </template>
 
 <script>
-import ToSearch from './ToSearch';
+import ToSearch from './ToSearch.vue';
 
 export default {
   components: {
-    ToSearch
-  }
-}
+    ToSearch,
+  },
+};
 </script>
-
 
 <style lang="sass" scoped>
 .content

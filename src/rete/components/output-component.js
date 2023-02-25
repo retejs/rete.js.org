@@ -3,19 +3,18 @@ import { FieldControl } from '../controls/field/index';
 import Socket from '../sockets';
 
 export class OutputComponent extends Component {
+  constructor() {
+    super('Output');
+    this.module = {
+      nodeType: 'output',
+      socket: Socket.num,
+    };
+  }
 
-    constructor() {
-        super("Output");
-        this.module = {
-            nodeType: 'output',
-            socket: Socket.num
-        }
-    }
+  builder(node) {
+    const inp = new Input('input', 'Number', Socket.num);
+    const ctrl = new FieldControl(this.editor, 'name');
 
-    builder(node) {
-        var inp = new Input('input', "Number", Socket.num);
-        var ctrl = new FieldControl(this.editor, 'name');
-
-        return node.addControl(ctrl).addInput(inp);
-    }
+    return node.addControl(ctrl).addInput(inp);
+  }
 }

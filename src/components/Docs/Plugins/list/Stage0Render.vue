@@ -1,9 +1,9 @@
 <template lang="pug">
 .plugin
   Code(source="install")
-  p 
-    span Rete renderer using 
-    a(href="https://www.npmjs.com/package/stage0") Stage0 
+  p
+    span Rete renderer using
+    a(href="https://www.npmjs.com/package/stage0") Stage0
     span (~1.6 kb framewok)
   p
     a(href="https://codepen.io/anon/pen/jQBxKe") Example

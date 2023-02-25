@@ -3,8 +3,8 @@
   Header
   Content
   Footer
-  Tooltip.report-button(content="Report a bug" placement="left-start")
-    Button(
+  div.report-button(content="Report a bug" placement="left-start")
+    button(
       type="warning"
       size="large"
       shape="circle"
@@ -14,9 +14,9 @@
 </template>
 
 <script>
-import Header from './components/Header';
-import Content from './components/Content';
-import Footer from './components/Footer';
+import Header from './components/Header.vue';
+import Content from './components/Content.vue';
+import Footer from './components/Footer.vue';
 import { openReportDialog } from './bug-handler';
 
 export default {
@@ -24,29 +24,27 @@ export default {
   components: {
     Header,
     Content,
-    Footer
+    Footer,
   },
   methods: {
-    openReportDialog
-  }
-}
+    openReportDialog,
+  },
+};
 </script>
 
-<style lang="sass" scoped>
-@import url('https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700')
+  <style lang="sass" scoped>
+  @import url('https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700')
 
-.app
-  display: flex
-  min-height: 100vh
-  align-items: center
-  flex-direction: column
-  font-family: Ubuntu
-  font-size: 1rem
+  .app
+    display: flex
+    min-height: 100vh
+    align-items: center
+    flex-direction: column
+    font-family: Ubuntu
+    font-size: 1rem
 
-  .report-button
-    position: fixed
-    right: 1em
-    bottom: 1em
-</style>
-
-
+    .report-button
+      position: fixed
+      right: 1em
+      bottom: 1em
+  </style>

@@ -2,9 +2,9 @@
 .examples
   Tabs(v-model="tab", @on-click="open(tab)", :animated="false")
     TabPane(v-for="item in list"
-      :key="item.key" 
+      :key="item.key"
       :name="item.key"
-      :label="$t(getText(item.key).title)"
+      :label="(getText(item.key).title)"
       icon="md-arrow-forward"
       )
   router-view(:example="example")
@@ -18,23 +18,22 @@ export default {
   data() {
     return {
       list,
-      tab: this.$route.params.key
-    }
+      tab: this.$route.params.key,
+    };
   },
   computed: {
     example() {
-      return list.find(i => i.key === this.tab);
-    }
+      return list.find((i) => i.key === this.tab);
+    },
   },
   methods: {
     getText,
     open(key) {
-      this.$router.push(key)
-    }
-  }
-}
+      this.$router.push(key);
+    },
+  },
+};
 </script>
-
 
 <style lang="sass" scoped>
 .examples

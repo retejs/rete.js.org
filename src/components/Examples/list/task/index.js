@@ -3,31 +3,33 @@ import TaskPlugin from 'rete-task-plugin';
 import { MouseComponent } from '@/rete/components/mouse-component';
 import { EnterPressComponent } from '@/rete/components/match-component';
 import { AlertComponent } from '@/rete/components/alert-component';
-import { initialize as init } from '@/rete'
+import { initialize as init } from '@/rete';
 import data from '@/rete/data/task.json';
 import { initEvents } from './events';
 import alert from './alert';
 import './style.sass';
 
-export default async function(container) {
-    const { editor, engine, resize, process } = await init(container)
+export default async function (container) {
+  const {
+    editor, engine, resize, process,
+  } = await init(container);
 
-    editor.use(ContextMenuPlugin);
-    editor.use(TaskPlugin);
-    
-    [
-        new MouseComponent(initEvents(container)),
-        new EnterPressComponent,
-        new AlertComponent(alert(container))
-    ].map(c => {
-        editor.register(c);
-        engine.register(c);
-    });
+  editor.use(ContextMenuPlugin);
+  editor.use(TaskPlugin);
 
-    await editor.fromJSON(data);
+  [
+    new MouseComponent(initEvents(container)),
+    new EnterPressComponent(),
+    new AlertComponent(alert(container)),
+  ].forEach((c) => {
+    editor.register(c);
+    engine.register(c);
+  });
 
-    resize();
-    process();
+  await editor.fromJSON(data);
 
-    return { editor, engine }
+  resize();
+  process();
+
+  return { editor, engine };
 }

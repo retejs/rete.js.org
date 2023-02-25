@@ -22,20 +22,19 @@ editor.use(ConnectionPathPlugin, {
 });
 </code>
 
-
 <script>
 export default {
   data() {
     return {
-      head: ['Свойство','Описание'],
+      head: ['Свойство', 'Описание'],
       items: [
-        ['type',	'Type of built-in transformer'],
-        ['transformer',	'Custom transformer'],
-        ['curve',	'any curve from d3-shape'],
-        ['options',	'{ vertical: Boolean, curvature: Number }'],
-        ['arrow',	'Boolean or { color, marker: /* path d attribute */ }']
-      ]
-    }
-  }
-}
+        ['type', 'Type of built-in transformer'],
+        ['transformer', 'Custom transformer'],
+        ['curve', 'any curve from d3-shape'],
+        ['options', '{ vertical: Boolean, curvature: Number }'],
+        ['arrow', 'Boolean or { color, marker: /* path d attribute */ }'],
+      ],
+    };
+  },
+};
 </script>

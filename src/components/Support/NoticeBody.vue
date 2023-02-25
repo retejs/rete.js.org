@@ -8,13 +8,13 @@
 import src from '../../assets/images/patreon.png';
 
 export default {
-    props: ['buttonClick'],
-    data() {
-        return {
-            src
-        }
-    }
-}
+  props: ['buttonClick'],
+  data() {
+    return {
+      src,
+    };
+  },
+};
 </script>
 
 <style lang="stylus" lang="sass" scoped>

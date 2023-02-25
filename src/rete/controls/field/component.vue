@@ -1,3 +1,4 @@
+<!-- eslint-disable vuejs-accessibility/form-control-has-label -->
 <template>
 <input
   :type="type || 'text'"
@@ -14,30 +15,29 @@ export default {
   data() {
     return {
       value: this.initial || 0,
-    }
+    };
   },
   methods: {
     parse(value) {
       return this.type === 'number' ? +value : value;
     },
-    onChange(e){
+    onChange(e) {
       this.value = this.parse(e.target.value);
       this.update();
     },
     update() {
       if (this.ikey) {
-        this.putData(this.ikey, this.value)
+        this.putData(this.ikey, this.value);
         this.change(this.value);
       }
       this.emitter.trigger('process');
-    }
+    },
   },
   mounted() {
     this.value = this.getData(this.ikey);
-  }
-}
+  },
+};
 </script>
-
 
 <style lang="sass" scoped>
 input

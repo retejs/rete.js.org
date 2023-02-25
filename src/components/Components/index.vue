@@ -1,5 +1,5 @@
 <template lang="pug">
-.components 
+.components
   .viewer(ref="viewer")
 </template>
 
@@ -7,12 +7,11 @@
 import initViewer from './viewer';
 
 export default {
-  async mounted(){
+  async mounted() {
     await initViewer(this.$refs.viewer);
-  }
-}
+  },
+};
 </script>
-
 
 <style lang="sass" scoped>
 .components

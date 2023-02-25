@@ -32,13 +32,13 @@ export default {
   props: ['repo'],
   data() {
     return {
-      issues: []
-    }
+      issues: [],
+    };
   },
   async mounted() {
     this.issues = await api(`repos/retejs/${this.repo.name}/issues`);
-  }
-}
+  },
+};
 </script>
 
 <style lang="sass" scoped>

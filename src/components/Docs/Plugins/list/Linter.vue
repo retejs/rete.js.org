@@ -11,7 +11,7 @@ editor.use(LinterPlugin, { analyzeOnChange: true, delay: 500 });
 </code>
 
 <code name="use">
-editor.on('analyzed', warnings => {}); 
+editor.on('analyzed', warnings => {});
 
 editor.trigger('analyze');
 </code>

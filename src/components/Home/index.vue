@@ -13,22 +13,22 @@
 </template>
 
 <script>
-import Logo from '../Logo';
+import Logo from '../Logo.vue';
 import { title, description, highlights } from '../../consts/product.json';
 
 export default {
-  data(){
+  data() {
     return {
       title,
       description,
       highlights,
-      gitHubBadge: 'https://ghbtns.com/github-btn.html?user=retejs&repo=rete&type=star&count=true&size=large'
-    }
+      gitHubBadge: 'https://ghbtns.com/github-btn.html?user=retejs&repo=rete&type=star&count=true&size=large',
+    };
   },
   components: {
-    Logo
-  }
-}
+    Logo,
+  },
+};
 </script>
 
 <style lang="sass" scoped>
@@ -39,7 +39,7 @@ export default {
     margin-top: 5vh
     text-align: center
   .logo
-    max-height: 50vh
+    max-height: calc(10vh + 20vw)
     max-width: 80vw
     margin: calc(1vw + 3vh)
 </style>

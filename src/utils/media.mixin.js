@@ -1,20 +1,20 @@
 const PHONE_MAX_WIDTH = 600;
 
 export default {
-    data() {
-        return {
-            isPhoneScreen: false,
-            screenWidth: 0
-        }
+  data() {
+    return {
+      isPhoneScreen: false,
+      screenWidth: 0,
+    };
+  },
+  methods: {
+    resize() {
+      this.screenWidth = window.innerWidth;
+      this.isPhoneScreen = window.innerWidth < PHONE_MAX_WIDTH;
     },
-    methods: {
-        resize() {
-            this.screenWidth = window.innerWidth
-            this.isPhoneScreen = window.innerWidth < PHONE_MAX_WIDTH
-        }
-    },
-    mounted(){
-        this.resize();
-        window.addEventListener('resize', this.resize)
-    }
-}
+  },
+  mounted() {
+    this.resize();
+    window.addEventListener('resize', this.resize);
+  },
+};

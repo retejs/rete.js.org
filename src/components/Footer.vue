@@ -8,12 +8,11 @@ Footer.footer
       Button(size="large" shape="circle" :icon="icon" :to="to" target="_blank")
 </template>
 
-
 <script>
 import { license, author, release as releaseYear } from '../consts/product.json';
 
 export default {
-  data(){
+  data() {
     return {
       license,
       author,
@@ -21,14 +20,13 @@ export default {
       links: [
         { title: 'GitHub', icon: 'logo-github', to: '//github.com/retejs' },
         { title: 'LinkedIn', icon: 'logo-linkedin', to: '//linkedin.com/in/ni55an/' },
-        { title: 'Gitter', icon: 'md-stats', to: '//gitter.im/retejs/Lobby' }
+        { title: 'Gitter', icon: 'md-stats', to: '//gitter.im/retejs/Lobby' },
       ],
-      year: new Date().getFullYear()
-    }
-  }
-}
+      year: new Date().getFullYear(),
+    };
+  },
+};
 </script>
-
 
 <style lang="sass" scoped>
 .footer

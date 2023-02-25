@@ -5,31 +5,33 @@ import { AddComponent } from '@/rete/components/add-component';
 import { InputComponent } from '@/rete/components/input-component';
 import { ModuleComponent } from '@/rete/components/module-component';
 import { OutputComponent } from '@/rete/components/output-component';
-import { initialize as init } from '@/rete'
-import createController from './controller';
+import { initialize as init } from '@/rete';
 import modules from '@/rete/data/module.json';
+import createController from './controller';
 
-export default async function(container) {
-    const { editor, engine, resize, process } = await init(container)
-    
-    editor.use(ContextMenuPlugin);
-    editor.use(ModulePlugin, { engine, modules });
+export default async function (container) {
+  const {
+    editor, engine, resize, process,
+  } = await init(container);
 
-    [
-        new NumComponent, 
-        new AddComponent,
-        new InputComponent, 
-        new ModuleComponent,
-        new OutputComponent
-    ].map(c => {
-        editor.register(c);
-        engine.register(c);
-    });
+  editor.use(ContextMenuPlugin);
+  editor.use(ModulePlugin, { engine, modules });
 
-    createController(container, { editor, modules, resize });
+  [
+    new NumComponent(),
+    new AddComponent(),
+    new InputComponent(),
+    new ModuleComponent(),
+    new OutputComponent(),
+  ].forEach((c) => {
+    editor.register(c);
+    engine.register(c);
+  });
 
-    resize();
-    process();
+  createController(container, { editor, modules, resize });
 
-    return { editor, engine }
+  resize();
+  process();
+
+  return { editor, engine };
 }

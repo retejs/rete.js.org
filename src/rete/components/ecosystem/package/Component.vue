@@ -4,7 +4,7 @@
     // Inputs
     .input(v-for='input in inputs()')
       Socket(v-socket:input="input", type="input", :socket="input.socket")
-      .input-title(v-show='!input.showControl()') 
+      .input-title(v-show='!input.showControl()')
       .input-control(
         v-show='input.showControl()'
         v-control="input.control"
@@ -26,14 +26,14 @@ import VueRender from 'rete-vue-render-plugin';
 export default {
   mixins: [VueRender.mixin],
   components: {
-    Socket: VueRender.Socket
-  }
-}
+    Socket: VueRender.Socket,
+  },
+};
 </script>
 
 <style lang="sass" scoped>
 $color: #cb3837
-  
+
 .node
   background: $color
   border-radius: 0
@@ -51,7 +51,7 @@ $color: #cb3837
   .inputs, .outputs
     margin-top: 1em
   .name
-    text-align:: center
+    text-align: center
     color: white
     font-size: 42px
     margin: 0.2em 0.7em

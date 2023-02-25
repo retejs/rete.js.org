@@ -27,7 +27,7 @@ editor.use(Stage0MenuPlugin, {
             return ["menu", "submenu"];
         },
         items: {
-            Menu: {
+            span: {
                 "Add component": {
                     Add: components[1]
                 },
@@ -43,7 +43,7 @@ editor.use(Stage0MenuPlugin, {
             return false;
         },
         items: {
-            Menu: {
+            span: {
                 "Add component": {
                     Add: components[1]
                 },
@@ -62,12 +62,12 @@ export default {
     return {
       head: ['Опция', 'Описание', 'По умолчанию'],
       items: [
-        ['searchBar',	'Showing search bar',	true],
-        ['delay',	'Delay hide, ms',	100],
-        ['allocate',	'function for placing of components into submenu (return false to exclude)',	'() => []'],
-        ['items',	'Hand crafted menu',	'{}']
-      ]
-    }
-  }
-}
+        ['searchBar', 'Showing search bar', true],
+        ['delay', 'Delay hide, ms', 100],
+        ['allocate', 'function for placing of components into submenu (return false to exclude)', '() => []'],
+        ['items', 'Hand crafted menu', '{}'],
+      ],
+    };
+  },
+};
 </script>

@@ -4,55 +4,61 @@
     :search-client="searchClient"
     :index-name="lang"
   )
-    ais-search-box.box
-      template(slot-scope="{ currentRefinement, refine }")
+    ais-search-box
+      template(v-slot="{ currentRefinement, isSearchStalled, refine }")
         Input(
           suffix="md-search"
-          @on-focus="focus"
-          @on-blur="blur"
-          v-model="currentRefinement"
-          @input="refine($event)"
+          :value="currentRefinement"
+          @input="refine($event.currentTarget.value)"
         )
     ais-state-results
-      template(slot-scope="{ query }")
-        ais-hits.hits(v-show="isFocused && query.length > 1")
-          template(slot-scope="{ items }")
-            router-link(
-              v-for="(item, i) in items"
-              :key="i"
-              :to="item.path + searchService.getHash(item.text)"
-              :tabindex="i"
-            )
-              pre.hit
-                | {{ item.text }}
-            img.algolia(:src="algoliaLogo" alt="Algolia")
+      template(v-slot="{ state: { query }, results: { hits } }")
+        div(v-show="!hits.length")
+          | No results found for the query:
+          q {{ query }}
+
+    //- ais-state-results
+    //-   template(slot-scope="{ query }")
+    //-     ais-hits.hits(v-show="isFocused && query.length > 1")
+    //-       template(slot-scope="{ items }")
+    //-         router-link(
+    //-           v-for="(item, i) in items"
+    //-           :key="i"
+    //-           :to="item.path + searchService.getHash(item.text)"
+    //-           :tabindex="i"
+    //-         )
+    //-           pre.hit
+    //-             | {{ item.text }}
+    //-         img.algolia(:src="algoliaLogo" alt="Algolia")
 </template>
 
-
-<script>
+<script lang="ts">
+import { defineComponent, watch } from 'vue';
 import algoliasearch from 'algoliasearch/lite';
-import focusTimeoutMixin from '../utils/focus-timeout.mixin';
-import algoliaLogo from '../assets/images/algolia.svg'
+// import focusTimeoutMixin from '../utils/focus-timeout.mixin';
+// import algoliaLogo from '../assets/images/algolia.svg';
+import LangService from '../services/i18n';
 
-export default {
-  mixins: [focusTimeoutMixin(500)],
+export default defineComponent({
+  // mixins: [focusTimeoutMixin(500)],
   inject: ['langService', 'searchService'],
   data() {
     return {
       searchClient: algoliasearch(
         '0S8ITD2OZ2',
-        '850c7c3f1bdf218a069f39a5ec4dcc70'
+        '850c7c3f1bdf218a069f39a5ec4dcc70',
       ),
-      algoliaLogo,
-      lang: this.langService.lang
+      // algoliaLogo,
+      lang: 'ru' as null | string, // (this.langService as LangService).lang,
     };
   },
   created() {
-    this.langService.$on('setLocale', l => this.lang = l)
-  }
-}
+    watch((this.langService as LangService).lang$, (l) => {
+      this.lang = l;
+    });
+  },
+});
 </script>
-
 
 <style lang="sass">
 @import '@/assets/styles/media.sass'

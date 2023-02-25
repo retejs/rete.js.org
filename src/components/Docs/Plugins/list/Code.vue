@@ -23,7 +23,6 @@ class NumComponent extends Rete.Component {
 const sourceCode = await CodePlugin.generate(engine, editor.toJSON());
 </code>
 
-
 <code name="visualize">
 Number 6
         \ Add 11 -- Add 16

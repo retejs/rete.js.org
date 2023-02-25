@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import Repo from './Repo';
+import Repo from './Repo.vue';
 import api from './api';
 import { title, description } from '../../consts/issues.json';
 
@@ -16,20 +16,20 @@ export default {
     return {
       title,
       description,
-      repos: []
-    }
+      repos: [],
+    };
   },
   async mounted() {
-    const allRepos = await api(`orgs/retejs/repos`);
- 
+    const allRepos = await api('orgs/retejs/repos');
+
     this.repos = allRepos
-      .filter(r => r.open_issues_count > 0)
-      .sort((a, b) => new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime()) 
+      .filter((r) => r.open_issues_count > 0)
+      .sort((a, b) => new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime());
   },
   components: {
-    Repo
-  }
-}
+    Repo,
+  },
+};
 </script>
 
 <style lang="sass" scoped>

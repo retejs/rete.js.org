@@ -10,10 +10,9 @@
 <script>
 
 export default {
-  inject: ['supportService']
-}
+  inject: ['supportService'],
+};
 </script>
-
 
 <style lang="sass" scoped>
 .support

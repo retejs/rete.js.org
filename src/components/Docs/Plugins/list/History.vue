@@ -7,7 +7,7 @@
   Code(source="custom")
   p
     span Пример
-    span : 
+    span :
     span добавление изменений текстового поля в историю
   Code(source="example")
 </template>

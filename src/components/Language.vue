@@ -1,7 +1,7 @@
 <template lang="pug">
 Affix.lang(relative-element-selector=".content")
   Select.select.upper(
-    :value="langService.lang"
+    :model-value="langService.lang"
     @on-change="langService.setLocale($event)"
     size="small"
   )
@@ -9,28 +9,35 @@ Affix.lang(relative-element-selector=".content")
       | {{lang}}
 </template>
 
-<script>
-import Vue from 'vue';
-import VueT9N from 'vue-t9n';
-import loadTranslations from '../consts/localization';
-import { Affix } from 'vue-affix';
+<script lang="ts">
+import { watch, defineComponent } from 'vue';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import LangService from '../services/i18n';
+// import Vue from 'vue';
+// import { Affix } from 'vue-affix';
+// import loadTranslations from '../consts/localization';
 
-Vue.use(VueT9N);
-
-export default {
+export default defineComponent({
   inject: ['langService'],
   created() {
-    this.langService.$on('setLocale', (v) => this.$setLocale(v));
+    if (!this.langService) return;
+    const langService = this.langService as LangService;
 
-    this.$setTranslations(loadTranslations());
+    watch((langService as LangService).lang$, (v) => {
+      // this.$setLocale(v)
+    });
 
-    this.langService.setLangs(['ru', ...this.$getLangs().list]);
-    this.langService.setLocale(this.langService.getLocale());
+    // this.$setTranslations(loadTranslations());
+
+    // this.langService.setLangs(['ru', ...this.$getLangs().list]);
+    langService.setLocale(langService.getLocale());
+    langService.setLocale('ru');
   },
   components: {
-    Affix
-  }
-}
+    // Affix,
+  },
+});
 </script>
 
 <style lang="sass" scoped>
@@ -46,4 +53,3 @@ export default {
   top: 0px !important
   right: 0px
 </style>
-

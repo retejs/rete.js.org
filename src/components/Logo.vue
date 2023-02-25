@@ -55,12 +55,11 @@ export default {
   props: {
     hover: {
       type: Boolean,
-      default: false
+      default: false,
     },
-  }
-}
+  },
+};
 </script>
-
 
 <style scoped>
 .g1 {
@@ -107,12 +106,12 @@ svg:hover #node3, svg.hover #node3 {
 
 svg:hover .s, svg.hover .s {
   r: 0;
-} 
+}
 
 svg:hover #content1, svg:hover #content2, svg:hover #content3,
 svg.hover #content1, svg.hover #content2, svg.hover #content3 {
   opacity: 0;
-} 
+}
 
 #connection1 {
   stroke-dasharray: 70; stroke-dashoffset: 140;

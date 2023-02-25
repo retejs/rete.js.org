@@ -7,24 +7,23 @@ Drawer.custom-drawer(
   slot
 </template>
 
-
 <script>
-import { Drawer } from 'iview';
+import { Drawer } from 'view-ui-plus';
 
 export default {
   props: {
     value: Boolean,
-    placement: String
+    placement: String,
   },
   components: {
-    Drawer
+    Drawer,
   },
   mounted() {
     this.$router.afterEach(() => {
-      this.$emit('input', false)
+      this.$emit('input', false);
     });
-  }
-}
+  },
+};
 </script>
 
 <style lang="sass">

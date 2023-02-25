@@ -2,10 +2,9 @@
 import VueNumControl from '@/rete/controls/field/component.vue';
 
 export default {
-  extends: VueNumControl
-}
+  extends: VueNumControl,
+};
 </script>
-
 
 <style lang="sass" scoped>
 input

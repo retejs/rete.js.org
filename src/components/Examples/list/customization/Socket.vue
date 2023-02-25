@@ -3,19 +3,17 @@
   :class="[type, socket.name, used ? 'used' : ''] | kebab",
   :title="socket.name+'\\n'+socket.hint"
 )
-  
-</template>
 
+</template>
 
 <script>
 import VueRender from 'rete-vue-render-plugin';
 
 export default {
   extends: VueRender.Socket,
-  props: ['used']
-}
+  props: ['used'],
+};
 </script>
-
 
 <style lang="sass" scoped>
 $socket-size: 16px

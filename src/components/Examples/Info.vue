@@ -2,10 +2,10 @@
 .info(v-t9n.deep='')
   router-link.title(:to="item.key")
     template {{text.title}}
-  Card.packages-card(:title="$t('Пакеты')" :padding="0" shadow)
+  Card.packages-card(:title="('Пакеты')" :padding="0" shadow)
     CellGroup
       Cell(v-for="pkg in item.packages" :title="pkg", :key="pkg" :to="'https://www.npmjs.com/package/'+pkg" target="_blank")
-        img(:src="'https://img.shields.io/npm/v/'+pkg+'.svg'" slot="extra"  alt="npm version" height="22")     
+        img(:src="'https://img.shields.io/npm/v/'+pkg+'.svg'" slot="extra"  alt="npm version" height="22")
   p {{text.description}}
 </template>
 
@@ -14,14 +14,14 @@ import getText from './text';
 
 export default {
   props: {
-    'item': Object
+    item: Object,
   },
   computed: {
     text() {
       return getText(this.item.key);
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style lang="sass" scoped>

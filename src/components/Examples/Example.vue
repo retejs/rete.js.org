@@ -6,9 +6,8 @@
     div(ref="extra")
 </template>
 
-
 <script>
-import Info from './Info';
+import Info from './Info.vue';
 
 export default {
   props: ['example'],
@@ -18,31 +17,31 @@ export default {
       this.$refs.extra.innerHTML = '';
       this.$refs.extra.className = '';
 
-      if(this.editor) this.editor.destroy();
-      if(this.engine) this.engine.destroy();
+      if (this.editor) this.editor.destroy();
+      if (this.engine) this.engine.destroy();
 
       const { editor, engine } = await this.example.init(this.$refs.view, this.$refs.extra);
 
       this.editor = editor;
       this.engine = engine;
-    }
+    },
   },
   data() {
     return {
       editor: null,
-      engine: null
-    }
+      engine: null,
+    };
   },
   mounted() {
     this.init();
   },
   updated() {
-    this.init(); 
+    this.init();
   },
   components: {
-    Info
-  }
-}
+    Info,
+  },
+};
 </script>
 
 <style lang="sass" scoped>

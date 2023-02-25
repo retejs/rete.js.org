@@ -3,22 +3,22 @@
   h1 Введение
   img(:src="preview")
   p Rete.js это модульный фреймворк для визуального программирования. Rete позволяет Вам создавать редакторы узлов прямо в браузере. Вы можете определить узлы и воркеры, которые возволят пользователям создать инструкции для обработки данных в Вашем редакторе без единой строки кода.
-  
+
   h1 Начало работы
   h2 Установка
   p
     | Главный пакет и его плагины собираются с помощью Rollup.
-    | Собранные пакеты предоставляются в трех форматах: 
+    | Собранные пакеты предоставляются в трех форматах:
     span UMD (*.min.js), CommonJS (*.common.js), ES модули (*.esm.js).
     |  Для сборки вашего проекта с помощью Webpack или подобных сборщиков установите пакеты из NPM
   Code(source="install" lang="bash" )
   p Импортируйте следующим образом
   Code(source="importRete")
-  p 
-    | Для использования плагинов, которые собраны с помощью rete-cli до версии 0.5.0, необходимо импортировать 
-    a(href="https://github.com/retejs/rete/issues/249#issuecomment-461757249") следующим образом. 
-  p 
-    | Модули, транспилированные в CommonJS и ESM не содержат полифилы, поэтому при сборке вашего проекта они должны быть 
+  p
+    | Для использования плагинов, которые собраны с помощью rete-cli до версии 0.5.0, необходимо импортировать
+    a(href="https://github.com/retejs/rete/issues/249#issuecomment-461757249") следующим образом.
+  p
+    | Модули, транспилированные в CommonJS и ESM не содержат полифилы, поэтому при сборке вашего проекта они должны быть
     a(href="https://github.com/retejs/rete/issues/249#issuecomment-461755916") подключены отдельно
   h2 Установка без сборщиков (Webpack, Rollup и т.д.)
   p Если вы не используете сборщики, можете подключить зависимости в вашу страницу
@@ -32,7 +32,7 @@
   Code(source="socket")
   p Непосредственно для создания и обрабтки узла необходимо определить Компонент.
   Code(source="component")
-  p В своей HTML странице добавьте контейнер для редактора. Родительский элемент должен иметь свою ширину и высоту, под которые будет подстраиваться данный элемент 
+  p В своей HTML странице добавьте контейнер для редактора. Родительский элемент должен иметь свою ширину и высоту, под которые будет подстраиваться данный элемент
   Code(source="editorHtml" lang="html")
   p Инициализируйте редактор, подключите минимально необходимые плагины (для отображения узлов и соединений) и зарегестрируйте компоненты.
   Code(source="editor")
@@ -40,7 +40,6 @@
   Code(source="engine")
   p Рассмотрены самые необходимые этапы, которые нужно выполнить для работы редактора. Полный пример смотрите на Codepen
 </template>
-
 
 <code name="cdn">
 <script src="https://cdn.jsdelivr.net/npm/rete@{{rete}}/build/rete.min.js"></script>
@@ -109,7 +108,6 @@ editor.on('process nodecreated noderemoved connectioncreated connectionremoved',
 });
 </code>
 
-
 <script>
 import preview from '../assets/preview.png';
 
@@ -118,28 +116,27 @@ export default {
     return {
       preview,
       versions: {
-        'rete': '1.1.0',
+        rete: '1.1.0',
         'rete-vue-render-plugin': '0.3.0',
-        'rete-connection-plugin': '0.4.2'
-      }
-    }
+        'rete-connection-plugin': '0.4.2',
+      },
+    };
   },
   methods: {
     go(section) {
       this.$router.push(`/docs/${section}`);
-    }
+    },
   },
   mounted() {
-    Object.keys(this.versions).map(async name => {
+    Object.keys(this.versions).map(async (name) => {
       const resp = await fetch(`https://data.jsdelivr.com/v1/package/npm/${name}`);
       const data = await resp.json();
-      
+
       this.versions[name] = data.tags.latest;
-    })
-  }
+    });
+  },
 };
 </script>
-
 
 <style lang="sass" scoped>
 .main

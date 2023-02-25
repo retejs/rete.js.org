@@ -8,7 +8,7 @@
     tbody
       tr(v-for="row in items")
         td(v-for="cell in row") {{cell}}
-  p 
+  p
     span Вы можете произвольно поместить компонент в подменю.
     span Примеры
     span :
@@ -58,13 +58,13 @@ export default {
     return {
       head: ['Опция', 'Описание', 'По умолчанию'],
       items: [
-        ['searchBar',	'Showing search bar',	true],
-        ['delay',	'Delay hide, ms',	1000],
-        ['allocate',	'function for placing of components into submenu',	'() => []'],
-        ['rename',	'function for renaming of items',	'component => component.name'],
-        ['items',	'custom items (Object with nested objects and functions)',	'{}']
-      ]
-    }
-  }
-}
+        ['searchBar', 'Showing search bar', true],
+        ['delay', 'Delay hide, ms', 1000],
+        ['allocate', 'function for placing of components into submenu', '() => []'],
+        ['rename', 'function for renaming of items', 'component => component.name'],
+        ['items', 'custom items (Object with nested objects and functions)', '{}'],
+      ],
+    };
+  },
+};
 </script>

@@ -18,5 +18,5 @@ export default () => assignSection([
   ...sockets,
   ...controls,
   ...events,
-  ...plugins
+  ...plugins,
 ], 'docs');

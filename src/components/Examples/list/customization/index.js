@@ -2,62 +2,64 @@ import ContextMenuPlugin from 'rete-context-menu-plugin';
 import AreaPlugin from 'rete-area-plugin';
 import { NumComponent } from '@/rete/components/num-component';
 import { AddComponent } from '@/rete/components/add-component';
-import { initialize as init } from '@/rete'
+import { initialize as init } from '@/rete';
 import { FieldControl } from '@/rete/controls/field/index';
+import data from '@/rete/data/simple.json';
 import Control from './Control.vue';
 import Node from './Node.vue';
-import data from '@/rete/data/simple.json';
 import 'style-loader!./style.sass';
 
 class CustomFieldControl extends FieldControl {
-    constructor(){
-        super(...arguments);
-        this.component = Control;
-    }
+  constructor(...args) {
+    super(...args);
+    this.component = Control;
+  }
 }
 
 class CustomNumComponent extends NumComponent {
-    constructor(){
-        super(CustomFieldControl);
-        this.data = {
-            render: 'vue',
-            component: Node
-        }
-    }
+  constructor() {
+    super(CustomFieldControl);
+    this.data = {
+      render: 'vue',
+      component: Node,
+    };
+  }
 }
 class CustomAddComponent extends AddComponent {
-    constructor(){
-        super(CustomFieldControl);
-        this.data = {
-            render: 'vue',
-            component: Node
-        }
-    }
+  constructor() {
+    super(CustomFieldControl);
+    this.data = {
+      render: 'vue',
+      component: Node,
+    };
+  }
 }
 
-export default async function(container) {
-    container.classList.add('custom-node-editor');
-    
-    const { editor, engine, resize, process } = await init(container)
+export default async function (container) {
+  container.classList.add('custom-node-editor');
 
-    const background = document.createElement('div');
-    background.classList = 'background';
+  const {
+    editor, engine, resize, process,
+  } = await init(container);
 
-    editor.use(ContextMenuPlugin);
-    editor.use(AreaPlugin, { background });
+  const background = document.createElement('div');
+  background.classList = 'background';
 
-    [
-        new CustomNumComponent, 
-        new CustomAddComponent
-    ].map(c => {
-        editor.register(c);
-        engine.register(c);
-    });
+  editor.use(ContextMenuPlugin);
+  editor.use(AreaPlugin, { background });
 
-    await editor.fromJSON(data);
+  [
+    new CustomNumComponent(),
+    new CustomAddComponent(),
+  ].forEach((c) => {
+    editor.register(c);
+    engine.register(c);
+  });
 
-    resize();
-    process();
+  await editor.fromJSON(data);
 
-    return { editor, engine }
+  resize();
+  process();
+
+  return { editor, engine };
 }

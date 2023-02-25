@@ -22,16 +22,16 @@ export default {
   data() {
     return {
       always: false,
-    }
+    };
   },
   methods: {
     go(section) {
       this.$router.push(`/docs/${section}`);
-    }
+    },
   },
   mounted() {
-    setTimeout(() => this.always = true, 500);
-  }
+    setTimeout(() => { this.always = true; }, 500);
+  },
 };
 </script>
 
@@ -81,7 +81,7 @@ export default {
 
   & > .title, .socket, .control
     cursor: pointer
-  
+
   .tooltip
     position: relative
     z-index: 1

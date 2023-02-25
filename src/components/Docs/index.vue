@@ -1,7 +1,7 @@
 <template lang="pug">
 .docs(v-t9n.deep="'docs'" :class="{phone: isPhoneScreen}")
   Menu.menu(width="auto")
-    h1 Документация
+    h1.title Документация
       Icon.burger-icon(
         v-if="isPhoneScreen"
         type="md-menu"
@@ -18,28 +18,27 @@
       MenuItems
 </template>
 
-
 <script>
-import Vue from 'vue';
+import Code from '@/shared/Code.vue';
+import Drawer from '@/shared/Drawer.vue';
+import { app } from '../../main';
 import mediaMixin from '../../utils/media.mixin';
-import MenuItems from './MenuItems';
-import Code from '@/shared/Code';
-import Drawer from '@/shared/Drawer';
+import MenuItems from './MenuItems.vue';
 
-Vue.component('Code', Code);
+app.component('Code', Code);
 
 export default {
   mixins: [mediaMixin],
   data() {
     return {
-      drawer: false
-    }
+      drawer: false,
+    };
   },
   components: {
     MenuItems,
-    Drawer
-  }
-}
+    Drawer,
+  },
+};
 </script>
 
 <style lang="sass" scoped>
@@ -55,7 +54,7 @@ export default {
       z-index: 1
   .menu
     text-align: right
-    h1
+    .title
       margin: 1em
       +phone
         margin: 0.5em

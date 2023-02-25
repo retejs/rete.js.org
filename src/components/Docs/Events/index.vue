@@ -56,10 +56,10 @@ import list from './list';
 export default {
   data() {
     return {
-      list
-    }
-  }
-}
+      list,
+    };
+  },
+};
 </script>
 
 <style lang="sass" scoped>

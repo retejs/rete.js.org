@@ -3,33 +3,35 @@ import DockPlugin from 'rete-dock-plugin';
 import VueRenderPlugin from 'rete-vue-render-plugin';
 import { NumComponent } from '@/rete/components/num-component';
 import { AddComponent } from '@/rete/components/add-component';
-import { initialize as init } from '@/rete'
+import { initialize as init } from '@/rete';
 import data from '@/rete/data/simple.json';
 import './styles.sass';
 
-export default async function(container, extra) {
-    const { editor, engine, resize, process } = await init(container)
+export default async function (container, extra) {
+  const {
+    editor, engine, resize, process,
+  } = await init(container);
 
-    extra.classList.add('dock-menu');
+  extra.classList.add('dock-menu');
 
-    editor.use(ContextMenuPlugin);
-    editor.use(DockPlugin, {
-        container: extra,
-        plugins: [VueRenderPlugin]
-    });
+  editor.use(ContextMenuPlugin);
+  editor.use(DockPlugin, {
+    container: extra,
+    plugins: [VueRenderPlugin],
+  });
 
-    [
-        new NumComponent, 
-        new AddComponent
-    ].map(c => {
-        editor.register(c);
-        engine.register(c);
-    });
+  [
+    new NumComponent(),
+    new AddComponent(),
+  ].forEach((c) => {
+    editor.register(c);
+    engine.register(c);
+  });
 
-    await editor.fromJSON(data);
+  await editor.fromJSON(data);
 
-    resize();
-    process();
+  resize();
+  process();
 
-    return { editor, engine }
+  return { editor, engine };
 }

@@ -10,7 +10,6 @@
   router-view
 </template>
 
-
 <script>
 import { sentence } from 'case';
 import list from './list/index';
@@ -19,22 +18,21 @@ export default {
   data() {
     return {
       list,
-      sentence
-    }
+      sentence,
+    };
   },
   computed: {
     tab() {
       return this.$route.meta.name;
-    }
+    },
   },
   methods: {
     open(name) {
-      this.$router.push('/docs/plugins/'+name)
-    }
-  }
-}
+      this.$router.push(`/docs/plugins/${name}`);
+    },
+  },
+};
 </script>
-
 
 <style lang="sass" scoped>
 .plugins

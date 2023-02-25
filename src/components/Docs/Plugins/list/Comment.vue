@@ -11,7 +11,7 @@
 <code name="install">
 import CommentPlugin from 'rete-comment-plugin';
 
-editor.use(CommentPlugin, { 
+editor.use(CommentPlugin, {
     margin: 20 // по умолчанию отступ для новых кадров равен 30px
 });
 </code>

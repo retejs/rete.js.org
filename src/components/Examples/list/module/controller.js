@@ -1,12 +1,12 @@
 import Vue from 'vue';
-import View from './View';
+import View from './View.vue';
 
-export default async function(container, props){
-    const list = document.createElement('div');
+export default async function (container, props) {
+  const list = document.createElement('div');
 
-    container.appendChild(list);
+  container.appendChild(list);
 
-    new Vue({
-        render: h => h(View, { props })
-    }).$mount(list)
+  new Vue({
+    render: (h) => h(View, { props }),
+  }).$mount(list);
 }

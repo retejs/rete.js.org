@@ -26,12 +26,12 @@ import Socket from './Socket.vue';
 export default {
   mixins: [VueRender.mixin],
   components: {
-    Socket
-  }
-}
+    Socket,
+  },
+};
 </script>
 
-<style lang="sass" scoped>   
+<style lang="sass" scoped>
 $node-color: rgba(35,35,35,0.7)
 $color-active: darken($node-color,5%)
 $title-light: rgba(0, 255, 0,0.5)
