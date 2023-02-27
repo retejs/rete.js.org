@@ -3,9 +3,8 @@ node_js: 10
 
 before_script:
   - npm install
-script: 
+script:
   - npm run build
-  - npm run algolia
 
 cache:
   directories:
