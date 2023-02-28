@@ -6,5 +6,48 @@
   "support": "Підтримати",
   "learn": "Вивчення",
   "ecosystem": "Екосистема",
-  "report-bug": "Повідомити про помилку"
+  "report-bug": "Повідомити про помилку",
+  "docsearch": {
+    "placeholder": "Шукати",
+    "button": {
+      "buttonText": "Пошук",
+      "buttonAriaLabel": "Пошук"
+    },
+    "modal": {
+      "searchBox": {
+        "resetButtonTitle": "Очистити запит",
+        "resetButtonAriaLabel": "Очистити запит",
+        "cancelButtonText": "Скасувати",
+        "cancelButtonAriaLabel": "Скасувати"
+      },
+      "startScreen": {
+        "recentSearchesTitle": "Останні",
+        "noRecentSearchesText": "Немає останніх пошуків",
+        "saveRecentSearchButtonTitle": "Зберегти цей пошук",
+        "removeRecentSearchButtonTitle": "Видалити цей пошук з історії",
+        "favoriteSearchesTitle": "Вибране",
+        "removeFavoriteSearchButtonTitle": "Видалити цей пошуковий запит із вибраного"
+      },
+      "errorScreen": {
+        "titleText": "Не вдалося отримати результати",
+        "helpText": "Вам може знадобитися перевірити ваше мережеве з'єднання."
+      },
+      "footer": {
+        "selectText": "вибрати",
+        "selectKeyAriaLabel": "Введіть ключ",
+        "navigateText": "для навігації",
+        "navigateUpKeyAriaLabel": "Стрілка вгору",
+        "navigateDownKeyAriaLabel": "Стрілка вниз",
+        "closeText": "закрити",
+        "closeKeyAriaLabel": "Клавіша Escape",
+        "searchByText": "Пошук від"
+      },
+      "noResultsScreen": {
+        "noResultsText": "Немає результатів для",
+        "suggestedQueryText": "Спробуйте знайти",
+        "reportMissingResultsText": "Вірите, що цей запит має повернути результати?",
+        "reportMissingResultsLinkText": "Дайте нам знати."
+      }
+    }
+  }
 }
