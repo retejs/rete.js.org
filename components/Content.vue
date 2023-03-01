@@ -16,7 +16,7 @@ export default {
 <style lang="sass" scoped>
 .content
   flex: 1
-  max-width: 1400px
+  max-width: auto
   align-self: center
   text-align: center
   width: 100%

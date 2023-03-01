@@ -8,21 +8,22 @@
         :size="20"
         @click="drawer = true"
       )
-    DocsMenu(v-if="!isPhoneScreen" :docsPath="docsPath" :sanitizePath="sanitizePath")
+    ContentNavigation(v-if="!isPhoneScreen" v-slot="{ navigation }" :query="queryContent($i18n.locale, 'docs')")
+      Nav(:list="navigation[0].children[0].children")
   .content
     ContentDoc(:path="contentPath")
       template(#not-found)
         Alert(type="warning") Docs section not found
   Drawer.drawer(v-model="drawer")
-    Menu(width="auto")
-      DocsMenu(:docsPath="docsPath" :sanitizePath="sanitizePath")
+    ContentNavigation(v-slot="{ navigation }" :query="query")
+      Nav(:list="navigation[0].children[0].children")
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent, computed, ref } from 'vue';
 import { useWindowSize } from 'vue-window-size';
 import Drawer from '@/components/shared/Drawer.vue';
-import DocsMenu from '@/components/DocsMenu.vue';
+import Nav from '@/components/Nav.vue';
 
 // import MenuItems from '@/components/Docs/MenuItems.vue';
 
@@ -39,9 +40,6 @@ export default defineComponent({
     contentPath() {
       return `/${this.locale}${this.omitLocale(this.$route.path, this.locale)}`;
     },
-    docsPath() {
-      return `/${this.locale}/docs`;
-    },
     locale() {
       return this.$i18n.locale;
     },
@@ -57,7 +55,7 @@ export default defineComponent({
   },
   components: {
     Drawer,
-    DocsMenu,
+    Nav,
   },
 });
 </script>
@@ -68,17 +66,19 @@ export default defineComponent({
 .docs
   display: flex
   text-align: left
+  .menu
+    min-width: 200px
   &.phone
-    flex-direction: column
     .menu
+      text-align: right
       width: 100%
       z-index: 1
-  .menu
-    text-align: right
-    .title
-      margin: 1em
-      +phone
-        margin: 0.5em
+      position: absolute
+      right: 0
+  .title
+    margin: 1em
+    +phone
+      margin: 0.5em
   .content
     flex: 1
     position: relative
