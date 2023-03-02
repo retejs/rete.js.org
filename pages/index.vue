@@ -1,26 +1,30 @@
 <template lang="pug">
 .home
   .section
-    p.title {{title}}
-    p.description {{description}}
+    p.title {{ $t('main.title') }}
+    p.description {{ $t('main.description') }}
   .links
     iframe(:src="gitHubBadge" frameborder="0" scrolling="0" width="160px" height="30px")
   Logo.logo
   .highlights.section
-    .highlight(v-for="{ title, description } in highlights")
-      .title {{title}}
-      .description {{description}}
+    .highlight
+      .title {{ $t('main.highlights.ts.title')}}
+      .description {{ $t('main.highlights.ts.description') }}
+    .highlight
+      .title {{ $t('main.highlights.processing.title')}}
+      .description {{ $t('main.highlights.processing.description') }}
+    .highlight
+      .title {{ $t('main.highlights.tailorable.title')}}
+      .description {{ $t('main.highlights.tailorable.description') }}
 </template>
 
 <script>
 import Logo from '@/components/Logo.vue';
-import { title, description, highlights } from '@/consts/product.json';
+import { highlights } from '@/consts/product.json';
 
 export default {
   data() {
     return {
-      title,
-      description,
       highlights,
       gitHubBadge: 'https://ghbtns.com/github-btn.html?user=retejs&repo=rete&type=star&count=true&size=large',
     };
@@ -32,6 +36,7 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+@import '@/assets/styles/common.sass'
 @import '@/assets/styles/media.sass'
 
 .home

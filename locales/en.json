@@ -7,6 +7,24 @@
   "learn": "Learning",
   "ecosystem": "Ecosystem",
   "report-bug": "Report a bug",
+  "main": {
+    "title": "JavaScript framework for visual programming",
+    "description": "A tailorable TypeScript-first framework for creating processing-oriented node-based editors",
+    "highlights": {
+      "ts": {
+        "title": "TypeScript-first",
+        "description": "Enhanced developer experience and facilitated maintainable code creation"
+      },
+      "processing": {
+        "title": "Processing-oriented",
+        "description": "Besides visualization, the framework provides Engine and other modules for graph processing"
+      },
+      "tailorable": {
+        "title": "Tailorable",
+        "description": "Customizable with diverse plugins and integrable with Angular, Vue.js, React.js, etc"
+      }
+    }
+  },
   "docsearch": {
     "placeholder": "Search for",
     "button": {

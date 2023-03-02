@@ -4,21 +4,20 @@
         "link": "https://opensource.org/license/mit/"
     },
     "author": "Vitaliy Stoliarov",
-    "release": "2017",
-    "title": "JavaScript фреймворк для визуального программирования",
-    "description": "Rete это модульный фреймворк для визуального программирования. Rete позволяет Вам создавать редакторы узлов прямо в браузере. Вы можете определить узлы и воркеры, которые позволят пользователям создавать инструкции для обработки данных без единой строчки кода",
+    "release": "2018",
     "highlights": [
         {
-            "title": "Модульный",
-            "description": "Основанная на событиях архитектура дает возможность добавлять новые функциональные возможности в виде плагинов"
+            "title": "TypeScript-first",
+            "description": "Enhanced developer experience and facilitated maintainable code creation"
         },
         {
-            "title": "Гибкий",
-            "description": "Вы свободны в выборе необходимых компонентов. Подключайте те плагины, которые лучше всего подходят для Вашей задачи"
+            "title": "Processing-oriented",
+            "description": "Besides visualization, the framework provides Engine and other modules for graph processing"
         },
         {
-            "title": "Универсальный",
-            "description": "Фреймворк не привязак к какой либо предметной области, а только визуализирует и обрабатывает редактор узлов"
+            "title": "Tailorable",
+            "description": "Customizable with diverse plugins for features and integration with frameworks such as Angular, Vue.js, React.js"
         }
+
     ]
 }
