@@ -5,7 +5,7 @@
     p.description {{ $t('main.description') }}
   .links
     iframe(:src="gitHubBadge" frameborder="0" scrolling="0" width="160px" height="30px")
-  Logo.logo
+  Logo.logo(:hover="logoIsHovered" :zoomIn="false")
   .highlights.section
     .highlight
       .title {{ $t('main.highlights.ts.title')}}
@@ -26,11 +26,16 @@ export default {
   data() {
     return {
       highlights,
+      logoIsHovered: false,
       gitHubBadge: 'https://ghbtns.com/github-btn.html?user=retejs&repo=rete&type=star&count=true&size=large',
     };
   },
   components: {
     Logo,
+  },
+  mounted() {
+    setTimeout(() => { this.logoIsHovered = true; }, 1000);
+    setTimeout(() => { this.logoIsHovered = false; }, 3000);
   },
 };
 </script>
