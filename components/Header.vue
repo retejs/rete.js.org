@@ -54,8 +54,14 @@ export default defineComponent({
 
 .header
   align-self: stretch
+  position: sticky
+  top: 0
+  z-index: 2
+  backdrop-filter: blur(10px)
+  background: rgba(255, 255, 255, 0.8)
   .menu
     display: flex
+    background: none
     .space
       flex: 1
 

@@ -1,5 +1,5 @@
 <template lang="pug">
-Affix.lang(relative-element-selector=".content")
+.lang
   client-only
     Select.select.upper(
       :model-value="$i18n.locale"
@@ -31,8 +31,4 @@ export default defineComponent({
     width: 4em
   .upper
     text-transform: uppercase
-
-.affix
-  top: 0px !important
-  right: 0px
 </style>
