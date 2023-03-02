@@ -1,5 +1,8 @@
 {
-    "license": "MIT License",
+    "license": {
+        "name": "MIT License",
+        "link": "https://opensource.org/license/mit/"
+    },
     "author": "Vitaliy Stoliarov",
     "release": "2017",
     "title": "JavaScript фреймворк для визуального программирования",

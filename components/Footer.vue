@@ -1,7 +1,9 @@
 <template lang="pug">
 IViewFooter.footer
   .lines
-    div Released under the {{license}}
+    div Released under the
+      | !{' '}
+      a(:href="license.link", target="_blank") {{license.name}}
     div Copyright © {{releaseYear}}-{{year}} {{author}}
   .links
     Tooltip(v-for="{title, icon, to} of links" :content="title", :key="to")
