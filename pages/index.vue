@@ -44,7 +44,8 @@ export default {
     margin-top: 5vh
     text-align: center
   .logo
-    max-height: calc(10vh + 20vw)
-    max-width: 80vw
+    max-height: calc(15vh + 15vw)
+    width: 70vw
+    max-width: 40em
     margin: calc(1vw + 3vh)
 </style>
