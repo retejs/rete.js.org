@@ -4,5 +4,22 @@
         "link": "https://opensource.org/license/mit/"
     },
     "author": "Vitaliy Stoliarov",
-    "release": "2018"
+    "release": "2018",
+    "social": [
+        {
+          "title": "GitHub",
+          "icon": "fa-github",
+          "to": "//github.com/retejs"
+        },
+        {
+          "title": "Twitter",
+          "icon": "fa-twitter",
+          "to": "//twitter.com/rete_js"
+        },
+        {
+          "title": "Discord",
+          "icon": "fa-discord",
+          "to": "//discord.gg/cxSFkPZdsV"
+        }
+    ]
 }

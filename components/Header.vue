@@ -10,6 +10,7 @@
     .menu-burger(v-if="isTabletScreen" @click="drawer = true")
       Icon(type="md-menu" :size="20")
     .space
+    Links.links
     Search
     MenuItems(v-if="!isTabletScreen")
     Language
@@ -19,6 +20,7 @@
   )
     Menu(width="auto")
       MenuItems
+      Links.links
 </template>
 
 <script>
@@ -27,6 +29,7 @@ import { useWindowSize } from 'vue-window-size';
 import Logo from './Logo.vue';
 import Language from './Language.vue';
 import MenuItems from './MenuItems.vue';
+import Links from './Links.vue';
 import Search from './Search.vue';
 import Drawer from './shared/Drawer.vue';
 
@@ -45,6 +48,7 @@ export default defineComponent({
     MenuItems,
     Search,
     Drawer,
+    Links,
   },
 });
 </script>

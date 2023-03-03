@@ -2,7 +2,7 @@
 .app
   Header
   Content
-  //- Footer
+  Footer
   .report-button(content="Report a bug" placement="left-start")
     Button(
       type="warning"
@@ -15,7 +15,7 @@
 <script>
 import Header from './components/Header.vue';
 import Content from './components/Content.vue';
-// import Footer from './components/Footer.vue';
+import Footer from './components/Footer.vue';
 import { openReportDialog } from './bug-handler';
 
 export default {
@@ -23,7 +23,7 @@ export default {
   components: {
     Header,
     Content,
-    // Footer,
+    Footer,
   },
   methods: {
     openReportDialog,
