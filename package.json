@@ -47,7 +47,6 @@
     "vue-highlight.js": "^3.1.0",
     "vue-instantsearch": "^4.8.5",
     "vue-router": "^4.0.3",
-    "vue-window-size": "^2.0.0",
     "vue3-highlightjs": "^1.0.5",
     "vuex": "^4.1.0",
     "vuex-i18n": "^1.13.1"

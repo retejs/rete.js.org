@@ -7,12 +7,13 @@
     MenuItem.logo(name="logo", :to="localePath('/')")
       Logo.icon.ivu-icon(:hover="true")
       span Rete.js
-    .menu-burger(v-if="isTabletScreen" @click="drawer = true")
+    .menu-burger(@click="drawer = true")
       Icon(type="md-menu" :size="20")
     .space
     Links.links
     Search
-    MenuItems(v-if="!isTabletScreen")
+    .main-items
+      MenuItems
     Language
   Drawer.drawer(
     placement="left"
@@ -24,8 +25,7 @@
 </template>
 
 <script>
-import { defineComponent, ref, computed } from 'vue';
-import { useWindowSize } from 'vue-window-size';
+import { defineComponent } from 'vue';
 import Logo from './Logo.vue';
 import Language from './Language.vue';
 import MenuItems from './MenuItems.vue';
@@ -34,12 +34,9 @@ import Search from './Search.vue';
 import Drawer from './shared/Drawer.vue';
 
 export default defineComponent({
-  setup() {
-    const { width } = useWindowSize();
-
+  data() {
     return {
-      drawer: ref(false),
-      isTabletScreen: process.client ? computed(() => width.value <= 768) : false,
+      drawer: false,
     };
   },
   components: {
@@ -54,7 +51,7 @@ export default defineComponent({
 </script>
 
 <style lang="sass" scoped>
-// @import '@/assets/styles/media.sass'
+@import '@/assets/styles/media.sass'
 
 .header
   align-self: stretch
@@ -66,14 +63,26 @@ export default defineComponent({
   .menu
     display: flex
     background: none
+    .menu-burger
+      display: none
     .space
       flex: 1
+    +tablet
+      .menu-burger
+        display: unset
+      .links
+        display: none
+      .main-items
+        display: none
+
+.links
+  text-align: center
 
 .logo
   font-size: 20px
   white-space: nowrap
-  // +phone
-  //   padding: 0 1vw
+  +phone
+    padding: 0 1vw
   .icon
     height: 50px
     width: 50px

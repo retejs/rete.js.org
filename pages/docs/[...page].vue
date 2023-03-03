@@ -1,39 +1,33 @@
 <template lang="pug">
-.docs(:class="{phone: isPhoneScreen}")
+.docs
   Menu.menu(width="auto")
     h1.title() {{ $t('docs') }}
       Icon.burger-icon(
-        v-if="isPhoneScreen"
         type="md-menu"
         :size="20"
         @click="drawer = true"
       )
-    ContentNavigation(v-if="!isPhoneScreen" v-slot="{ navigation }" :query="queryContent($i18n.locale, 'docs')")
-      Nav(:list="navigation[0].children[0].children")
+    .content-nav
+      ContentNavigation(v-slot="{ navigation }" :query="queryContent($i18n.locale, 'docs')")
+        Nav(:list="navigation[0].children[0].children")
   .content
     ContentDoc(:path="contentPath")
       template(#not-found)
         Alert(type="warning") Docs section not found
   Drawer.drawer(v-model="drawer")
-    ContentNavigation(v-slot="{ navigation }" :query="query")
+    ContentNavigation(v-slot="{ navigation }" :query="queryContent($i18n.locale, 'docs')")
       Nav(:list="navigation[0].children[0].children")
 </template>
 
 <script lang="ts">
-import { defineComponent, computed, ref } from 'vue';
-import { useWindowSize } from 'vue-window-size';
+import { defineComponent } from 'vue';
 import Drawer from '@/components/shared/Drawer.vue';
 import Nav from '@/components/Nav.vue';
 
-// import MenuItems from '@/components/Docs/MenuItems.vue';
-
 export default defineComponent({
-  setup() {
-    const { width } = useWindowSize();
-
+  data() {
     return {
-      drawer: ref(false),
-      isPhoneScreen: process.client ? computed(() => width.value < 600) : false,
+      drawer: false,
     };
   },
   computed: {
@@ -68,13 +62,19 @@ export default defineComponent({
   text-align: left
   .menu
     min-width: 200px
-  &.phone
+    .burger-icon
+      display: none
+  +phone
     .menu
       text-align: right
       width: 100%
       z-index: 1
       position: absolute
       right: 0
+      .burger-icon
+        display: unset
+      .content-nav
+        display: none
   .title
     margin: 1em
     +phone
