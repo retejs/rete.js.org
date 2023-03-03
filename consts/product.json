@@ -4,20 +4,5 @@
         "link": "https://opensource.org/license/mit/"
     },
     "author": "Vitaliy Stoliarov",
-    "release": "2018",
-    "highlights": [
-        {
-            "title": "TypeScript-first",
-            "description": "Enhanced developer experience and facilitated maintainable code creation"
-        },
-        {
-            "title": "Processing-oriented",
-            "description": "Besides visualization, the framework provides Engine and other modules for graph processing"
-        },
-        {
-            "title": "Tailorable",
-            "description": "Customizable with diverse plugins for features and integration with frameworks such as Angular, Vue.js, React.js"
-        }
-
-    ]
+    "release": "2018"
 }

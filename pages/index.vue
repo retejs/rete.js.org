@@ -20,12 +20,10 @@
 
 <script>
 import Logo from '@/components/Logo.vue';
-import { highlights } from '@/consts/product.json';
 
 export default {
   data() {
     return {
-      highlights,
       logoIsHovered: false,
       gitHubBadge: 'https://ghbtns.com/github-btn.html?user=retejs&repo=rete&type=star&count=true&size=large',
     };
