@@ -1,5 +1,6 @@
 <template lang="pug">
 .header(v-t9n.deep)
+  Notice
   Menu.menu(
       mode="horizontal"
       width="100%"
@@ -26,6 +27,7 @@ import Logo from './Logo';
 import Language from './Language';
 import MenuItems from './MenuItems';
 import Search from './Search';
+import Notice from './Notice';
 import Drawer from '../shared/Drawer';
 import mediaMixin from '../utils/media.mixin';
 
@@ -46,7 +48,8 @@ export default {
     Language,
     MenuItems,
     Search,
-    Drawer
+    Drawer,
+    Notice
   }
 }
 </script>
@@ -61,7 +64,7 @@ export default {
     display: flex
     .space
       flex: 1
-  
+
 .logo
   font-size: 20px
   white-space: nowrap
