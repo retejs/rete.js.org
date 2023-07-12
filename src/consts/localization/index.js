@@ -294,16 +294,12 @@ export default () => [
         en: "You're browsing Rete.js 1 docs",
         ua: "Ви переглядаєте документацію для Rete.js версії 1"
     }],
-    ["Ознакомьтесь с", {
-        en: "Check out",
-        ua: "Ознайомтесь з "
+    ["Крайне рекомендуем перейти на", {
+        en: "It is highly recommended to switch to",
+        ua: "Вкрай рекомендуємо перейти на"
     }],
-    ["документацией для версии 2 Бета", {
-        en: "docs for Rete.js 2 Beta",
-        ua: "документацією для версії 2 Бета"
-    }],
-    ["или начните работу с текущей версии", {
-        en: "or get started with the current version",
-        ua: "або почніть роботу з поточної версії"
+    ["вторую версию фреймворка", {
+        en: "the framework's version 2",
+        ua: "другу версію фреймворку"
     }]
 ]
